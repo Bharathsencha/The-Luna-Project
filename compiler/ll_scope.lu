@@ -5,6 +5,7 @@
 
 use { BUILTINS, uid } from "shared.lu"
 use { ll, ll_alloca, ll_args_array, ll_call_out, ll_copy, ll_reg, ll_slot } from "ll_state.lu"
+use { box_raw, new_typed_var, ty_load, ty_store, unbox_checked } from "ll_unbox.lu"
 use { ST } from "state.lu"
 
 export func push_scope() {
@@ -66,9 +67,20 @@ export func declare(name, init_ptr) {
     return v
 }
 
+# A variable kept as a raw int, float or bool. Its first value is raw, an SSA operand.
+export func declare_typed(name, kind, raw) {
+    let v = new_typed_var(name, kind)
+    ty_store(v, raw)
+    ST.ctx.scopes[len(ST.ctx.scopes) - 1][name] = v
+    return v
+}
+
 # The variable's value as a slot pointer. A cell is copied out, so a later write through
 # another closure does not change a value that is already part of an expression.
 export func var_get(v) {
+    if (v.ty != null) {
+        return box_raw(v.ty, ty_load(v))
+    }
     if (v.cell) {
         let cell = ll_reg()
         ll("{cell} = load ptr, ptr {v.c}")
@@ -80,6 +92,10 @@ export func var_get(v) {
 }
 
 export func var_set(v, expr) {
+    if (v.ty != null) {
+        ty_store(v, unbox_checked(expr, v.ty, v.name))
+        return null
+    }
     if (v.cell) {
         let cell = ll_reg()
         ll("{cell} = load ptr, ptr {v.c}")

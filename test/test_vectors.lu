@@ -4,7 +4,7 @@ print("=== Running Vector/Array Tests ===")
 print("\n[1] Testing Array Mutation...")
 
 # Basic mutation
-let arr = [10, 20, 30]
+let arr: list = [10, 20, 30]
 assert(arr[1] == 20)
 arr[1] = 500
 assert(arr[1] == 500)

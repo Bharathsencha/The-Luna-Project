@@ -410,29 +410,34 @@ declare { i64, i1 } @llvm.sadd.with.overflow.i64(i64, i64)
 @.n326 = private unnamed_addr constant [39 x i8] c"%s() expects %d argument%s, but got %d\00"
 @.n327 = private unnamed_addr constant [38 x i8] c"Pass one value per required parameter\00"
 @.n328 = private unnamed_addr constant [44 x i8] c"%s() expects %d to %d arguments, but got %d\00"
-@.n329 = private unnamed_addr constant [3 x i8] c"ok\00"
-@.n330 = private unnamed_addr constant [26 x i8] c"bloc name cannot be empty\00"
-@.n331 = private unnamed_addr constant [31 x i8] c"bloc has duplicate field names\00"
-@.n332 = private unnamed_addr constant [50 x i8] c"bloc exceeds the cache-line size limit (64 bytes)\00"
-@.n333 = private unnamed_addr constant [16 x i8] c"box is not live\00"
-@.n334 = private unnamed_addr constant [30 x i8] c"template name cannot be empty\00"
-@.n335 = private unnamed_addr constant [35 x i8] c"template has duplicate field names\00"
-@.n336 = private unnamed_addr constant [46 x i8] c"template with this name is already registered\00"
-@.n337 = private unnamed_addr constant [63 x i8] c"template constructor argument count does not match field count\00"
-@.n338 = private unnamed_addr constant [46 x i8] c"template does not have a field with that name\00"
-@.n339 = private unnamed_addr constant [72 x i8] c"containment hierarchy violation: type cannot be stored inside this tier\00"
-@.n340 = private unnamed_addr constant [27 x i8] c"unknown data runtime error\00"
-@.n341 = private unnamed_addr constant [44 x i8] c"cannot take address_of() of a pointer value\00"
-@.n342 = private unnamed_addr constant [47 x i8] c"pointer cannot escape the current unsafe block\00"
-@.n343 = private unnamed_addr constant [46 x i8] c"ptr_add() moved outside the allocation bounds\00"
-@.n344 = private unnamed_addr constant [33 x i8] c"pointer was freed or freed twice\00"
-@.n345 = private unnamed_addr constant [51 x i8] c"pointers cannot be stored inside GC-managed values\00"
-@.n346 = private unnamed_addr constant [40 x i8] c"alloc() size must be a positive integer\00"
-@.n347 = private unnamed_addr constant [58 x i8] c"ordered pointer comparisons need the same base allocation\00"
-@.n348 = private unnamed_addr constant [33 x i8] c"pointers may only be cast to int\00"
-@.n349 = private unnamed_addr constant [64 x i8] c"memory from alloc() was not freed before the unsafe block ended\00"
-@.n350 = private unnamed_addr constant [55 x i8] c"unsafe error: pointer is not registered in the runtime\00"
-@.n351 = private unnamed_addr constant [36 x i8] c"unsafe error: unknown runtime error\00"
+@.n329 = private unnamed_addr constant [7 x i8] c"an int\00"
+@.n330 = private unnamed_addr constant [8 x i8] c"a float\00"
+@.n331 = private unnamed_addr constant [10 x i8] c"a boolean\00"
+@.n332 = private unnamed_addr constant [61 x i8] c"The type checker could not follow where this value came from\00"
+@.n333 = private unnamed_addr constant [33 x i8] c"variable '%s' must be %s, got %s\00"
+@.n334 = private unnamed_addr constant [3 x i8] c"ok\00"
+@.n335 = private unnamed_addr constant [26 x i8] c"bloc name cannot be empty\00"
+@.n336 = private unnamed_addr constant [31 x i8] c"bloc has duplicate field names\00"
+@.n337 = private unnamed_addr constant [50 x i8] c"bloc exceeds the cache-line size limit (64 bytes)\00"
+@.n338 = private unnamed_addr constant [16 x i8] c"box is not live\00"
+@.n339 = private unnamed_addr constant [30 x i8] c"template name cannot be empty\00"
+@.n340 = private unnamed_addr constant [35 x i8] c"template has duplicate field names\00"
+@.n341 = private unnamed_addr constant [46 x i8] c"template with this name is already registered\00"
+@.n342 = private unnamed_addr constant [63 x i8] c"template constructor argument count does not match field count\00"
+@.n343 = private unnamed_addr constant [46 x i8] c"template does not have a field with that name\00"
+@.n344 = private unnamed_addr constant [72 x i8] c"containment hierarchy violation: type cannot be stored inside this tier\00"
+@.n345 = private unnamed_addr constant [27 x i8] c"unknown data runtime error\00"
+@.n346 = private unnamed_addr constant [44 x i8] c"cannot take address_of() of a pointer value\00"
+@.n347 = private unnamed_addr constant [47 x i8] c"pointer cannot escape the current unsafe block\00"
+@.n348 = private unnamed_addr constant [46 x i8] c"ptr_add() moved outside the allocation bounds\00"
+@.n349 = private unnamed_addr constant [33 x i8] c"pointer was freed or freed twice\00"
+@.n350 = private unnamed_addr constant [51 x i8] c"pointers cannot be stored inside GC-managed values\00"
+@.n351 = private unnamed_addr constant [40 x i8] c"alloc() size must be a positive integer\00"
+@.n352 = private unnamed_addr constant [58 x i8] c"ordered pointer comparisons need the same base allocation\00"
+@.n353 = private unnamed_addr constant [33 x i8] c"pointers may only be cast to int\00"
+@.n354 = private unnamed_addr constant [64 x i8] c"memory from alloc() was not freed before the unsafe block ended\00"
+@.n355 = private unnamed_addr constant [55 x i8] c"unsafe error: pointer is not registered in the runtime\00"
+@.n356 = private unnamed_addr constant [36 x i8] c"unsafe error: unknown runtime error\00"
 @_class_sizes = internal constant [26 x i32] [i32 16, i32 32, i32 48, i32 64, i32 80, i32 96, i32 112, i32 128, i32 160, i32 192, i32 224, i32 256, i32 320, i32 384, i32 448, i32 512, i32 640, i32 768, i32 1024, i32 1280, i32 1536, i32 2048, i32 3072, i32 4096, i32 6144, i32 8192], align 16
 @_class_of = internal global [520 x i8] zeroinitializer, align 16
 @_class_list = internal global [512 x i8] zeroinitializer, align 16
@@ -34374,2622 +34379,2670 @@ start:
 d25923:
   ret i64 0
 }
-define i64 @lvv_global_store_check(i64 %p0, i64 %p1, i32 %p2) {
+define i64 @lvv_unbox_fail(i64 %p0, i32 %p1, i64 %p2, i64 %p3) {
 entry:
   %a25924 = alloca i64, align 8
   %a25925 = alloca i64, align 8
-  %a25926 = alloca i64, align 8
-  %a25928 = alloca [16 x i8], align 8
-  %a25930 = alloca i64, align 8
+  %a25927 = alloca i64, align 8
+  %a25928 = alloca i64, align 8
+  %a25929 = alloca [16 x i8], align 8
+  %a25931 = alloca i64, align 8
+  %a25936 = alloca i64, align 8
   br label %start
 start:
   store i64 %p0, ptr %a25924
-  store i64 %p1, ptr %a25925
-  %r25927 = sext i32 %p2 to i64
-  store i64 %r25927, ptr %a25926
-  %r25929 = ptrtoint ptr %a25928 to i64
-  store i64 %r25929, ptr %a25930
-  %r25931 = load i64, ptr %a25930
-  %r25932 = load i64, ptr %a25924
-  %r25933 = load i64, ptr %a25925
-  %r25934 = call i64 @_set(i64 %r25931, i64 %r25932, i64 %r25933)
-  %r25935 = load i64, ptr %a25930
-  %r25936 = load i64, ptr %a25926
-  %r25937 = trunc i64 %r25936 to i32
-  %r25938 = call i64 @lvp_global_store_check(i64 %r25935, i32 %r25937)
+  %r25926 = sext i32 %p1 to i64
+  store i64 %r25926, ptr %a25925
+  store i64 %p2, ptr %a25927
+  store i64 %p3, ptr %a25928
+  %r25930 = ptrtoint ptr %a25929 to i64
+  store i64 %r25930, ptr %a25931
+  %r25932 = load i64, ptr %a25931
+  %r25933 = load i64, ptr %a25927
+  %r25934 = load i64, ptr %a25928
+  %r25935 = call i64 @_set(i64 %r25932, i64 %r25933, i64 %r25934)
+  store i64 ptrtoint (ptr @.n329 to i64), ptr %a25936
+  %r25940 = load i64, ptr %a25925
+  %r25942 = icmp eq i64 %r25940, 3
+  %r25941 = zext i1 %r25942 to i64
+  %r25943 = icmp ne i64 %r25941, 0
+  br i1 %r25943, label %it25937, label %ix25939
+it25937:
+  store i64 ptrtoint (ptr @.n330 to i64), ptr %a25936
+  br label %ix25939
+ix25939:
+  %r25947 = load i64, ptr %a25925
+  %r25949 = icmp eq i64 %r25947, 1
+  %r25948 = zext i1 %r25949 to i64
+  %r25950 = icmp ne i64 %r25948, 0
+  br i1 %r25950, label %it25944, label %ix25946
+it25944:
+  store i64 ptrtoint (ptr @.n331 to i64), ptr %a25936
+  br label %ix25946
+ix25946:
+  %r25951 = load i64, ptr %a25924
+  %r25952 = load i64, ptr %a25936
+  %r25953 = load i64, ptr %a25931
+  %r25954 = call i64 @_type_name(i64 %r25953)
+  %r25955 = call i64 @_errf(i64 1, i64 ptrtoint (ptr @.n332 to i64), i64 ptrtoint (ptr @.n333 to i64), i64 %r25951, i64 %r25952, i64 %r25954)
+  ret i64 0
+}
+define i64 @lvv_global_store_check(i64 %p0, i64 %p1, i32 %p2) {
+entry:
+  %a25956 = alloca i64, align 8
+  %a25957 = alloca i64, align 8
+  %a25958 = alloca i64, align 8
+  %a25960 = alloca [16 x i8], align 8
+  %a25962 = alloca i64, align 8
+  br label %start
+start:
+  store i64 %p0, ptr %a25956
+  store i64 %p1, ptr %a25957
+  %r25959 = sext i32 %p2 to i64
+  store i64 %r25959, ptr %a25958
+  %r25961 = ptrtoint ptr %a25960 to i64
+  store i64 %r25961, ptr %a25962
+  %r25963 = load i64, ptr %a25962
+  %r25964 = load i64, ptr %a25956
+  %r25965 = load i64, ptr %a25957
+  %r25966 = call i64 @_set(i64 %r25963, i64 %r25964, i64 %r25965)
+  %r25967 = load i64, ptr %a25962
+  %r25968 = load i64, ptr %a25958
+  %r25969 = trunc i64 %r25968 to i32
+  %r25970 = call i64 @lvp_global_store_check(i64 %r25967, i32 %r25969)
   ret i64 0
 }
 define i64 @lvp_gundef(i64 %p0, i64 %p1) {
 entry:
-  %a25939 = alloca i64, align 8
-  %a25940 = alloca i64, align 8
+  %a25971 = alloca i64, align 8
+  %a25972 = alloca i64, align 8
   br label %start
 start:
-  store i64 %p0, ptr %a25939
-  store i64 %p1, ptr %a25940
-  %r25941 = load i64, ptr %a25940
-  %r25942 = call i64 @lv_undefined(i64 %r25941)
+  store i64 %p0, ptr %a25971
+  store i64 %p1, ptr %a25972
+  %r25973 = load i64, ptr %a25972
+  %r25974 = call i64 @lv_undefined(i64 %r25973)
   ret i64 0
 }
 define i64 @lvv_box_escape_check(i64 %p0, i64 %p1, ptr %p2) {
 entry:
-  %a25943 = alloca i64, align 8
-  %a25944 = alloca i64, align 8
-  %a25945 = alloca i64, align 8
-  %a25947 = alloca [16 x i8], align 8
-  %a25949 = alloca i64, align 8
+  %a25975 = alloca i64, align 8
+  %a25976 = alloca i64, align 8
+  %a25977 = alloca i64, align 8
+  %a25979 = alloca [16 x i8], align 8
+  %a25981 = alloca i64, align 8
   br label %start
 start:
-  store i64 %p0, ptr %a25943
-  store i64 %p1, ptr %a25944
-  %r25946 = ptrtoint ptr %p2 to i64
-  store i64 %r25946, ptr %a25945
-  %r25948 = ptrtoint ptr %a25947 to i64
-  store i64 %r25948, ptr %a25949
-  %r25950 = load i64, ptr %a25949
-  %r25951 = load i64, ptr %a25943
-  %r25952 = load i64, ptr %a25944
-  %r25953 = call i64 @_set(i64 %r25950, i64 %r25951, i64 %r25952)
-  %r25954 = load i64, ptr %a25949
-  %r25955 = load i64, ptr %a25945
-  %r25956 = inttoptr i64 %r25955 to ptr
-  %r25957 = call i64 @lvp_box_escape_check(i64 %r25954, ptr %r25956)
+  store i64 %p0, ptr %a25975
+  store i64 %p1, ptr %a25976
+  %r25978 = ptrtoint ptr %p2 to i64
+  store i64 %r25978, ptr %a25977
+  %r25980 = ptrtoint ptr %a25979 to i64
+  store i64 %r25980, ptr %a25981
+  %r25982 = load i64, ptr %a25981
+  %r25983 = load i64, ptr %a25975
+  %r25984 = load i64, ptr %a25976
+  %r25985 = call i64 @_set(i64 %r25982, i64 %r25983, i64 %r25984)
+  %r25986 = load i64, ptr %a25981
+  %r25987 = load i64, ptr %a25977
+  %r25988 = inttoptr i64 %r25987 to ptr
+  %r25989 = call i64 @lvp_box_escape_check(i64 %r25986, ptr %r25988)
   ret i64 0
 }
 define internal i64 @_rl_hash(i64 %p0) {
 entry:
-  %a25958 = alloca i64, align 8
-  %a25961 = alloca i64, align 8
+  %a25990 = alloca i64, align 8
+  %a25993 = alloca i64, align 8
   br label %start
 start:
-  store i64 %p0, ptr %a25958
-  %r25959 = load i64, ptr %a25958
-  %r25960 = mul i64 %r25959, 2654435761
-  store i64 %r25960, ptr %a25961
-  %r25962 = load i64, ptr %a25961
-  %r25963 = load i64, ptr %a25961
-  %r25964 = lshr i64 %r25963, 29
-  %r25965 = xor i64 %r25962, %r25964
-  ret i64 %r25965
-d25966:
+  store i64 %p0, ptr %a25990
+  %r25991 = load i64, ptr %a25990
+  %r25992 = mul i64 %r25991, 2654435761
+  store i64 %r25992, ptr %a25993
+  %r25994 = load i64, ptr %a25993
+  %r25995 = load i64, ptr %a25993
+  %r25996 = lshr i64 %r25995, 29
+  %r25997 = xor i64 %r25994, %r25996
+  ret i64 %r25997
+d25998:
   ret i64 0
 }
 define internal i64 @_rl_hm_find(i64 %p0, i64 %p1) {
 entry:
-  %a25967 = alloca i64, align 8
-  %a25968 = alloca i64, align 8
-  %a25973 = alloca i64, align 8
-  %a25986 = alloca i64, align 8
-  %a25991 = alloca i64, align 8
-  %a25997 = alloca i64, align 8
-  %a26001 = alloca i64, align 8
+  %a25999 = alloca i64, align 8
+  %a26000 = alloca i64, align 8
+  %a26005 = alloca i64, align 8
+  %a26018 = alloca i64, align 8
+  %a26023 = alloca i64, align 8
+  %a26029 = alloca i64, align 8
+  %a26033 = alloca i64, align 8
   br label %start
 start:
-  store i64 %p0, ptr %a25967
-  store i64 %p1, ptr %a25968
-  %r25969 = load i64, ptr %a25967
-  %r25970 = add i64 %r25969, 16
-  %r25972 = inttoptr i64 %r25970 to ptr
-  %r25971 = load i64, ptr %r25972, align 8
-  store i64 %r25971, ptr %a25973
-  %r25977 = load i64, ptr %a25973
-  %r25979 = icmp eq i64 %r25977, 0
-  %r25978 = zext i1 %r25979 to i64
-  %r25980 = icmp ne i64 %r25978, 0
-  br i1 %r25980, label %it25974, label %ix25976
-it25974:
-  ret i64 -1
-d25981:
-  br label %ix25976
-ix25976:
-  %r25982 = load i64, ptr %a25967
-  %r25983 = add i64 %r25982, 0
-  %r25985 = inttoptr i64 %r25983 to ptr
-  %r25984 = load i64, ptr %r25985, align 8
-  store i64 %r25984, ptr %a25986
-  %r25987 = load i64, ptr %a25967
-  %r25988 = add i64 %r25987, 8
-  %r25990 = inttoptr i64 %r25988 to ptr
-  %r25989 = load i64, ptr %r25990, align 8
-  store i64 %r25989, ptr %a25991
-  %r25992 = load i64, ptr %a25968
-  %r25993 = call i64 @_rl_hash(i64 %r25992)
-  %r25994 = load i64, ptr %a25973
-  %r25995 = sub i64 %r25994, 1
-  %r25996 = and i64 %r25993, %r25995
-  store i64 %r25996, ptr %a25997
-  br label %wh25998
-wh25998:
-  %r26004 = load i64, ptr %a25991
-  %r26005 = load i64, ptr %a25997
-  %r26006 = mul i64 %r26005, 8
-  %r26007 = add i64 %r26004, %r26006
-  %r26009 = inttoptr i64 %r26007 to ptr
-  %r26008 = load i64, ptr %r26009, align 8
-  %r26011 = icmp ne i64 %r26008, 0
+  store i64 %p0, ptr %a25999
+  store i64 %p1, ptr %a26000
+  %r26001 = load i64, ptr %a25999
+  %r26002 = add i64 %r26001, 16
+  %r26004 = inttoptr i64 %r26002 to ptr
+  %r26003 = load i64, ptr %r26004, align 8
+  store i64 %r26003, ptr %a26005
+  %r26009 = load i64, ptr %a26005
+  %r26011 = icmp eq i64 %r26009, 0
   %r26010 = zext i1 %r26011 to i64
   %r26012 = icmp ne i64 %r26010, 0
-  %r26013 = zext i1 %r26012 to i64
-  store i64 %r26013, ptr %a26001
-  br i1 %r26012, label %lr26002, label %ld26003
-lr26002:
-  %r26014 = load i64, ptr %a25986
-  %r26015 = load i64, ptr %a25997
-  %r26016 = mul i64 %r26015, 8
-  %r26017 = add i64 %r26014, %r26016
-  %r26019 = inttoptr i64 %r26017 to ptr
-  %r26018 = load i64, ptr %r26019, align 8
-  %r26020 = load i64, ptr %a25968
-  %r26022 = icmp ne i64 %r26018, %r26020
-  %r26021 = zext i1 %r26022 to i64
-  %r26023 = icmp ne i64 %r26021, 0
-  %r26024 = zext i1 %r26023 to i64
-  store i64 %r26024, ptr %a26001
-  br label %ld26003
-ld26003:
-  %r26025 = load i64, ptr %a26001
-  %r26026 = icmp ne i64 %r26025, 0
-  br i1 %r26026, label %wb25999, label %we26000
-wb25999:
-  %r26027 = load i64, ptr %a25997
-  %r26028 = add i64 %r26027, 1
-  %r26029 = load i64, ptr %a25973
-  %r26030 = sub i64 %r26029, 1
-  %r26031 = and i64 %r26028, %r26030
-  store i64 %r26031, ptr %a25997
-  br label %wh25998
-we26000:
-  %r26032 = load i64, ptr %a25997
-  ret i64 %r26032
-d26033:
+  br i1 %r26012, label %it26006, label %ix26008
+it26006:
+  ret i64 -1
+d26013:
+  br label %ix26008
+ix26008:
+  %r26014 = load i64, ptr %a25999
+  %r26015 = add i64 %r26014, 0
+  %r26017 = inttoptr i64 %r26015 to ptr
+  %r26016 = load i64, ptr %r26017, align 8
+  store i64 %r26016, ptr %a26018
+  %r26019 = load i64, ptr %a25999
+  %r26020 = add i64 %r26019, 8
+  %r26022 = inttoptr i64 %r26020 to ptr
+  %r26021 = load i64, ptr %r26022, align 8
+  store i64 %r26021, ptr %a26023
+  %r26024 = load i64, ptr %a26000
+  %r26025 = call i64 @_rl_hash(i64 %r26024)
+  %r26026 = load i64, ptr %a26005
+  %r26027 = sub i64 %r26026, 1
+  %r26028 = and i64 %r26025, %r26027
+  store i64 %r26028, ptr %a26029
+  br label %wh26030
+wh26030:
+  %r26036 = load i64, ptr %a26023
+  %r26037 = load i64, ptr %a26029
+  %r26038 = mul i64 %r26037, 8
+  %r26039 = add i64 %r26036, %r26038
+  %r26041 = inttoptr i64 %r26039 to ptr
+  %r26040 = load i64, ptr %r26041, align 8
+  %r26043 = icmp ne i64 %r26040, 0
+  %r26042 = zext i1 %r26043 to i64
+  %r26044 = icmp ne i64 %r26042, 0
+  %r26045 = zext i1 %r26044 to i64
+  store i64 %r26045, ptr %a26033
+  br i1 %r26044, label %lr26034, label %ld26035
+lr26034:
+  %r26046 = load i64, ptr %a26018
+  %r26047 = load i64, ptr %a26029
+  %r26048 = mul i64 %r26047, 8
+  %r26049 = add i64 %r26046, %r26048
+  %r26051 = inttoptr i64 %r26049 to ptr
+  %r26050 = load i64, ptr %r26051, align 8
+  %r26052 = load i64, ptr %a26000
+  %r26054 = icmp ne i64 %r26050, %r26052
+  %r26053 = zext i1 %r26054 to i64
+  %r26055 = icmp ne i64 %r26053, 0
+  %r26056 = zext i1 %r26055 to i64
+  store i64 %r26056, ptr %a26033
+  br label %ld26035
+ld26035:
+  %r26057 = load i64, ptr %a26033
+  %r26058 = icmp ne i64 %r26057, 0
+  br i1 %r26058, label %wb26031, label %we26032
+wb26031:
+  %r26059 = load i64, ptr %a26029
+  %r26060 = add i64 %r26059, 1
+  %r26061 = load i64, ptr %a26005
+  %r26062 = sub i64 %r26061, 1
+  %r26063 = and i64 %r26060, %r26062
+  store i64 %r26063, ptr %a26029
+  br label %wh26030
+we26032:
+  %r26064 = load i64, ptr %a26029
+  ret i64 %r26064
+d26065:
   ret i64 0
 }
 define internal i64 @_rl_hm_get(i64 %p0, i64 %p1) {
 entry:
-  %a26034 = alloca i64, align 8
-  %a26035 = alloca i64, align 8
-  %a26039 = alloca i64, align 8
-  %a26052 = alloca i64, align 8
+  %a26066 = alloca i64, align 8
+  %a26067 = alloca i64, align 8
+  %a26071 = alloca i64, align 8
+  %a26084 = alloca i64, align 8
   br label %start
 start:
-  store i64 %p0, ptr %a26034
-  store i64 %p1, ptr %a26035
-  %r26036 = load i64, ptr %a26034
-  %r26037 = load i64, ptr %a26035
-  %r26038 = call i64 @_rl_hm_find(i64 %r26036, i64 %r26037)
-  store i64 %r26038, ptr %a26039
-  %r26043 = load i64, ptr %a26039
-  %r26045 = icmp slt i64 %r26043, 0
-  %r26044 = zext i1 %r26045 to i64
-  %r26046 = icmp ne i64 %r26044, 0
-  br i1 %r26046, label %it26040, label %ix26042
-it26040:
+  store i64 %p0, ptr %a26066
+  store i64 %p1, ptr %a26067
+  %r26068 = load i64, ptr %a26066
+  %r26069 = load i64, ptr %a26067
+  %r26070 = call i64 @_rl_hm_find(i64 %r26068, i64 %r26069)
+  store i64 %r26070, ptr %a26071
+  %r26075 = load i64, ptr %a26071
+  %r26077 = icmp slt i64 %r26075, 0
+  %r26076 = zext i1 %r26077 to i64
+  %r26078 = icmp ne i64 %r26076, 0
+  br i1 %r26078, label %it26072, label %ix26074
+it26072:
   ret i64 0
-d26047:
-  br label %ix26042
-ix26042:
-  %r26048 = load i64, ptr %a26034
-  %r26049 = add i64 %r26048, 8
-  %r26051 = inttoptr i64 %r26049 to ptr
-  %r26050 = load i64, ptr %r26051, align 8
-  store i64 %r26050, ptr %a26052
-  %r26053 = load i64, ptr %a26052
-  %r26054 = load i64, ptr %a26039
-  %r26055 = mul i64 %r26054, 8
-  %r26056 = add i64 %r26053, %r26055
-  %r26058 = inttoptr i64 %r26056 to ptr
-  %r26057 = load i64, ptr %r26058, align 8
-  ret i64 %r26057
-d26059:
+d26079:
+  br label %ix26074
+ix26074:
+  %r26080 = load i64, ptr %a26066
+  %r26081 = add i64 %r26080, 8
+  %r26083 = inttoptr i64 %r26081 to ptr
+  %r26082 = load i64, ptr %r26083, align 8
+  store i64 %r26082, ptr %a26084
+  %r26085 = load i64, ptr %a26084
+  %r26086 = load i64, ptr %a26071
+  %r26087 = mul i64 %r26086, 8
+  %r26088 = add i64 %r26085, %r26087
+  %r26090 = inttoptr i64 %r26088 to ptr
+  %r26089 = load i64, ptr %r26090, align 8
+  ret i64 %r26089
+d26091:
   ret i64 0
 }
 define internal i64 @_rl_hm_grow(i64 %p0) {
 entry:
-  %a26060 = alloca i64, align 8
-  %a26065 = alloca i64, align 8
-  %a26070 = alloca i64, align 8
-  %a26075 = alloca i64, align 8
-  %a26076 = alloca i64, align 8
-  %a26109 = alloca i64, align 8
-  %a26114 = alloca i64, align 8
-  %a26115 = alloca i64, align 8
+  %a26092 = alloca i64, align 8
+  %a26097 = alloca i64, align 8
+  %a26102 = alloca i64, align 8
+  %a26107 = alloca i64, align 8
+  %a26108 = alloca i64, align 8
+  %a26141 = alloca i64, align 8
+  %a26146 = alloca i64, align 8
   %a26147 = alloca i64, align 8
+  %a26179 = alloca i64, align 8
   br label %start
 start:
-  store i64 %p0, ptr %a26060
-  %r26061 = load i64, ptr %a26060
-  %r26062 = add i64 %r26061, 16
-  %r26064 = inttoptr i64 %r26062 to ptr
-  %r26063 = load i64, ptr %r26064, align 8
-  store i64 %r26063, ptr %a26065
-  %r26066 = load i64, ptr %a26060
-  %r26067 = add i64 %r26066, 0
-  %r26069 = inttoptr i64 %r26067 to ptr
-  %r26068 = load i64, ptr %r26069, align 8
-  store i64 %r26068, ptr %a26070
-  %r26071 = load i64, ptr %a26060
-  %r26072 = add i64 %r26071, 8
-  %r26074 = inttoptr i64 %r26072 to ptr
-  %r26073 = load i64, ptr %r26074, align 8
-  store i64 %r26073, ptr %a26075
-  store i64 16, ptr %a26076
-  %r26080 = load i64, ptr %a26065
-  %r26082 = icmp ne i64 %r26080, 0
-  %r26081 = zext i1 %r26082 to i64
-  %r26083 = icmp ne i64 %r26081, 0
-  br i1 %r26083, label %it26077, label %ix26079
-it26077:
-  %r26084 = load i64, ptr %a26065
-  %r26085 = mul i64 %r26084, 2
-  store i64 %r26085, ptr %a26076
-  br label %ix26079
-ix26079:
-  %r26086 = load i64, ptr %a26060
-  %r26087 = add i64 %r26086, 16
-  %r26088 = load i64, ptr %a26076
-  %r26090 = inttoptr i64 %r26087 to ptr
-  store i64 %r26088, ptr %r26090, align 8
-  %r26091 = load i64, ptr %a26060
-  %r26092 = add i64 %r26091, 0
-  %r26093 = load i64, ptr %a26076
-  %r26094 = call ptr @calloc(i64 %r26093, i64 8)
-  %r26095 = ptrtoint ptr %r26094 to i64
-  %r26097 = inttoptr i64 %r26092 to ptr
-  store i64 %r26095, ptr %r26097, align 8
-  %r26098 = load i64, ptr %a26060
-  %r26099 = add i64 %r26098, 8
-  %r26100 = load i64, ptr %a26076
-  %r26101 = call ptr @calloc(i64 %r26100, i64 8)
-  %r26102 = ptrtoint ptr %r26101 to i64
-  %r26104 = inttoptr i64 %r26099 to ptr
-  store i64 %r26102, ptr %r26104, align 8
-  %r26105 = load i64, ptr %a26060
-  %r26106 = add i64 %r26105, 0
-  %r26108 = inttoptr i64 %r26106 to ptr
-  %r26107 = load i64, ptr %r26108, align 8
-  store i64 %r26107, ptr %a26109
-  %r26110 = load i64, ptr %a26060
-  %r26111 = add i64 %r26110, 8
-  %r26113 = inttoptr i64 %r26111 to ptr
-  %r26112 = load i64, ptr %r26113, align 8
-  store i64 %r26112, ptr %a26114
-  store i64 0, ptr %a26115
-  br label %fh26116
-fh26116:
-  %r26120 = load i64, ptr %a26115
-  %r26121 = load i64, ptr %a26065
-  %r26123 = icmp slt i64 %r26120, %r26121
-  %r26122 = zext i1 %r26123 to i64
-  %r26124 = icmp ne i64 %r26122, 0
-  br i1 %r26124, label %fb26117, label %fe26119
-fb26117:
-  %r26128 = load i64, ptr %a26075
-  %r26129 = load i64, ptr %a26115
-  %r26130 = mul i64 %r26129, 8
-  %r26131 = add i64 %r26128, %r26130
-  %r26133 = inttoptr i64 %r26131 to ptr
-  %r26132 = load i64, ptr %r26133, align 8
-  %r26135 = icmp ne i64 %r26132, 0
-  %r26134 = zext i1 %r26135 to i64
-  %r26136 = icmp ne i64 %r26134, 0
-  br i1 %r26136, label %it26125, label %ix26127
-it26125:
-  %r26137 = load i64, ptr %a26070
-  %r26138 = load i64, ptr %a26115
-  %r26139 = mul i64 %r26138, 8
-  %r26140 = add i64 %r26137, %r26139
-  %r26142 = inttoptr i64 %r26140 to ptr
-  %r26141 = load i64, ptr %r26142, align 8
-  %r26143 = call i64 @_rl_hash(i64 %r26141)
-  %r26144 = load i64, ptr %a26076
-  %r26145 = sub i64 %r26144, 1
-  %r26146 = and i64 %r26143, %r26145
-  store i64 %r26146, ptr %a26147
-  br label %wh26148
-wh26148:
-  %r26151 = load i64, ptr %a26114
+  store i64 %p0, ptr %a26092
+  %r26093 = load i64, ptr %a26092
+  %r26094 = add i64 %r26093, 16
+  %r26096 = inttoptr i64 %r26094 to ptr
+  %r26095 = load i64, ptr %r26096, align 8
+  store i64 %r26095, ptr %a26097
+  %r26098 = load i64, ptr %a26092
+  %r26099 = add i64 %r26098, 0
+  %r26101 = inttoptr i64 %r26099 to ptr
+  %r26100 = load i64, ptr %r26101, align 8
+  store i64 %r26100, ptr %a26102
+  %r26103 = load i64, ptr %a26092
+  %r26104 = add i64 %r26103, 8
+  %r26106 = inttoptr i64 %r26104 to ptr
+  %r26105 = load i64, ptr %r26106, align 8
+  store i64 %r26105, ptr %a26107
+  store i64 16, ptr %a26108
+  %r26112 = load i64, ptr %a26097
+  %r26114 = icmp ne i64 %r26112, 0
+  %r26113 = zext i1 %r26114 to i64
+  %r26115 = icmp ne i64 %r26113, 0
+  br i1 %r26115, label %it26109, label %ix26111
+it26109:
+  %r26116 = load i64, ptr %a26097
+  %r26117 = mul i64 %r26116, 2
+  store i64 %r26117, ptr %a26108
+  br label %ix26111
+ix26111:
+  %r26118 = load i64, ptr %a26092
+  %r26119 = add i64 %r26118, 16
+  %r26120 = load i64, ptr %a26108
+  %r26122 = inttoptr i64 %r26119 to ptr
+  store i64 %r26120, ptr %r26122, align 8
+  %r26123 = load i64, ptr %a26092
+  %r26124 = add i64 %r26123, 0
+  %r26125 = load i64, ptr %a26108
+  %r26126 = call ptr @calloc(i64 %r26125, i64 8)
+  %r26127 = ptrtoint ptr %r26126 to i64
+  %r26129 = inttoptr i64 %r26124 to ptr
+  store i64 %r26127, ptr %r26129, align 8
+  %r26130 = load i64, ptr %a26092
+  %r26131 = add i64 %r26130, 8
+  %r26132 = load i64, ptr %a26108
+  %r26133 = call ptr @calloc(i64 %r26132, i64 8)
+  %r26134 = ptrtoint ptr %r26133 to i64
+  %r26136 = inttoptr i64 %r26131 to ptr
+  store i64 %r26134, ptr %r26136, align 8
+  %r26137 = load i64, ptr %a26092
+  %r26138 = add i64 %r26137, 0
+  %r26140 = inttoptr i64 %r26138 to ptr
+  %r26139 = load i64, ptr %r26140, align 8
+  store i64 %r26139, ptr %a26141
+  %r26142 = load i64, ptr %a26092
+  %r26143 = add i64 %r26142, 8
+  %r26145 = inttoptr i64 %r26143 to ptr
+  %r26144 = load i64, ptr %r26145, align 8
+  store i64 %r26144, ptr %a26146
+  store i64 0, ptr %a26147
+  br label %fh26148
+fh26148:
   %r26152 = load i64, ptr %a26147
-  %r26153 = mul i64 %r26152, 8
-  %r26154 = add i64 %r26151, %r26153
-  %r26156 = inttoptr i64 %r26154 to ptr
-  %r26155 = load i64, ptr %r26156, align 8
-  %r26158 = icmp ne i64 %r26155, 0
-  %r26157 = zext i1 %r26158 to i64
-  %r26159 = icmp ne i64 %r26157, 0
-  br i1 %r26159, label %wb26149, label %we26150
-wb26149:
-  %r26160 = load i64, ptr %a26147
-  %r26161 = add i64 %r26160, 1
-  %r26162 = load i64, ptr %a26076
-  %r26163 = sub i64 %r26162, 1
-  %r26164 = and i64 %r26161, %r26163
-  store i64 %r26164, ptr %a26147
-  br label %wh26148
-we26150:
-  %r26165 = load i64, ptr %a26109
-  %r26166 = load i64, ptr %a26147
-  %r26167 = mul i64 %r26166, 8
-  %r26168 = add i64 %r26165, %r26167
-  %r26169 = inttoptr i64 %r26168 to ptr
-  %r26170 = load i64, ptr %a26070
-  %r26171 = load i64, ptr %a26115
-  %r26172 = mul i64 %r26171, 8
-  %r26173 = add i64 %r26170, %r26172
-  %r26175 = inttoptr i64 %r26173 to ptr
-  %r26174 = load i64, ptr %r26175, align 8
-  store i64 %r26174, ptr %r26169, align 8
-  %r26176 = load i64, ptr %a26114
-  %r26177 = load i64, ptr %a26147
-  %r26178 = mul i64 %r26177, 8
-  %r26179 = add i64 %r26176, %r26178
-  %r26180 = inttoptr i64 %r26179 to ptr
-  %r26181 = load i64, ptr %a26075
-  %r26182 = load i64, ptr %a26115
-  %r26183 = mul i64 %r26182, 8
-  %r26184 = add i64 %r26181, %r26183
-  %r26186 = inttoptr i64 %r26184 to ptr
-  %r26185 = load i64, ptr %r26186, align 8
-  store i64 %r26185, ptr %r26180, align 8
-  br label %ix26127
-ix26127:
-  br label %fs26118
-fs26118:
-  %r26187 = load i64, ptr %a26115
-  %r26188 = add i64 %r26187, 1
-  store i64 %r26188, ptr %a26115
-  br label %fh26116
-fe26119:
-  %r26192 = load i64, ptr %a26065
-  %r26194 = icmp ne i64 %r26192, 0
-  %r26193 = zext i1 %r26194 to i64
-  %r26195 = icmp ne i64 %r26193, 0
-  br i1 %r26195, label %it26189, label %ix26191
-it26189:
-  %r26196 = load i64, ptr %a26070
-  %r26197 = inttoptr i64 %r26196 to ptr
-  call void @free(ptr %r26197)
-  %r26198 = load i64, ptr %a26075
-  %r26199 = inttoptr i64 %r26198 to ptr
-  call void @free(ptr %r26199)
-  br label %ix26191
-ix26191:
+  %r26153 = load i64, ptr %a26097
+  %r26155 = icmp slt i64 %r26152, %r26153
+  %r26154 = zext i1 %r26155 to i64
+  %r26156 = icmp ne i64 %r26154, 0
+  br i1 %r26156, label %fb26149, label %fe26151
+fb26149:
+  %r26160 = load i64, ptr %a26107
+  %r26161 = load i64, ptr %a26147
+  %r26162 = mul i64 %r26161, 8
+  %r26163 = add i64 %r26160, %r26162
+  %r26165 = inttoptr i64 %r26163 to ptr
+  %r26164 = load i64, ptr %r26165, align 8
+  %r26167 = icmp ne i64 %r26164, 0
+  %r26166 = zext i1 %r26167 to i64
+  %r26168 = icmp ne i64 %r26166, 0
+  br i1 %r26168, label %it26157, label %ix26159
+it26157:
+  %r26169 = load i64, ptr %a26102
+  %r26170 = load i64, ptr %a26147
+  %r26171 = mul i64 %r26170, 8
+  %r26172 = add i64 %r26169, %r26171
+  %r26174 = inttoptr i64 %r26172 to ptr
+  %r26173 = load i64, ptr %r26174, align 8
+  %r26175 = call i64 @_rl_hash(i64 %r26173)
+  %r26176 = load i64, ptr %a26108
+  %r26177 = sub i64 %r26176, 1
+  %r26178 = and i64 %r26175, %r26177
+  store i64 %r26178, ptr %a26179
+  br label %wh26180
+wh26180:
+  %r26183 = load i64, ptr %a26146
+  %r26184 = load i64, ptr %a26179
+  %r26185 = mul i64 %r26184, 8
+  %r26186 = add i64 %r26183, %r26185
+  %r26188 = inttoptr i64 %r26186 to ptr
+  %r26187 = load i64, ptr %r26188, align 8
+  %r26190 = icmp ne i64 %r26187, 0
+  %r26189 = zext i1 %r26190 to i64
+  %r26191 = icmp ne i64 %r26189, 0
+  br i1 %r26191, label %wb26181, label %we26182
+wb26181:
+  %r26192 = load i64, ptr %a26179
+  %r26193 = add i64 %r26192, 1
+  %r26194 = load i64, ptr %a26108
+  %r26195 = sub i64 %r26194, 1
+  %r26196 = and i64 %r26193, %r26195
+  store i64 %r26196, ptr %a26179
+  br label %wh26180
+we26182:
+  %r26197 = load i64, ptr %a26141
+  %r26198 = load i64, ptr %a26179
+  %r26199 = mul i64 %r26198, 8
+  %r26200 = add i64 %r26197, %r26199
+  %r26201 = inttoptr i64 %r26200 to ptr
+  %r26202 = load i64, ptr %a26102
+  %r26203 = load i64, ptr %a26147
+  %r26204 = mul i64 %r26203, 8
+  %r26205 = add i64 %r26202, %r26204
+  %r26207 = inttoptr i64 %r26205 to ptr
+  %r26206 = load i64, ptr %r26207, align 8
+  store i64 %r26206, ptr %r26201, align 8
+  %r26208 = load i64, ptr %a26146
+  %r26209 = load i64, ptr %a26179
+  %r26210 = mul i64 %r26209, 8
+  %r26211 = add i64 %r26208, %r26210
+  %r26212 = inttoptr i64 %r26211 to ptr
+  %r26213 = load i64, ptr %a26107
+  %r26214 = load i64, ptr %a26147
+  %r26215 = mul i64 %r26214, 8
+  %r26216 = add i64 %r26213, %r26215
+  %r26218 = inttoptr i64 %r26216 to ptr
+  %r26217 = load i64, ptr %r26218, align 8
+  store i64 %r26217, ptr %r26212, align 8
+  br label %ix26159
+ix26159:
+  br label %fs26150
+fs26150:
+  %r26219 = load i64, ptr %a26147
+  %r26220 = add i64 %r26219, 1
+  store i64 %r26220, ptr %a26147
+  br label %fh26148
+fe26151:
+  %r26224 = load i64, ptr %a26097
+  %r26226 = icmp ne i64 %r26224, 0
+  %r26225 = zext i1 %r26226 to i64
+  %r26227 = icmp ne i64 %r26225, 0
+  br i1 %r26227, label %it26221, label %ix26223
+it26221:
+  %r26228 = load i64, ptr %a26102
+  %r26229 = inttoptr i64 %r26228 to ptr
+  call void @free(ptr %r26229)
+  %r26230 = load i64, ptr %a26107
+  %r26231 = inttoptr i64 %r26230 to ptr
+  call void @free(ptr %r26231)
+  br label %ix26223
+ix26223:
   ret i64 0
 }
 define internal i64 @_rl_hm_put(i64 %p0, i64 %p1, i64 %p2) {
 entry:
-  %a26200 = alloca i64, align 8
-  %a26201 = alloca i64, align 8
-  %a26202 = alloca i64, align 8
-  %a26224 = alloca i64, align 8
-  %a26229 = alloca i64, align 8
+  %a26232 = alloca i64, align 8
+  %a26233 = alloca i64, align 8
   %a26234 = alloca i64, align 8
+  %a26256 = alloca i64, align 8
+  %a26261 = alloca i64, align 8
+  %a26266 = alloca i64, align 8
   br label %start
 start:
-  store i64 %p0, ptr %a26200
-  store i64 %p1, ptr %a26201
-  store i64 %p2, ptr %a26202
-  %r26206 = load i64, ptr %a26200
-  %r26207 = add i64 %r26206, 24
-  %r26209 = inttoptr i64 %r26207 to ptr
-  %r26208 = load i64, ptr %r26209, align 8
-  %r26210 = add i64 %r26208, 1
-  %r26211 = mul i64 %r26210, 2
-  %r26212 = load i64, ptr %a26200
-  %r26213 = add i64 %r26212, 16
-  %r26215 = inttoptr i64 %r26213 to ptr
-  %r26214 = load i64, ptr %r26215, align 8
-  %r26217 = icmp sgt i64 %r26211, %r26214
-  %r26216 = zext i1 %r26217 to i64
-  %r26218 = icmp ne i64 %r26216, 0
-  br i1 %r26218, label %it26203, label %ix26205
-it26203:
-  %r26219 = load i64, ptr %a26200
-  %r26220 = call i64 @_rl_hm_grow(i64 %r26219)
-  br label %ix26205
-ix26205:
-  %r26221 = load i64, ptr %a26200
-  %r26222 = load i64, ptr %a26201
-  %r26223 = call i64 @_rl_hm_find(i64 %r26221, i64 %r26222)
-  store i64 %r26223, ptr %a26224
-  %r26225 = load i64, ptr %a26200
-  %r26226 = add i64 %r26225, 0
-  %r26228 = inttoptr i64 %r26226 to ptr
-  %r26227 = load i64, ptr %r26228, align 8
-  store i64 %r26227, ptr %a26229
-  %r26230 = load i64, ptr %a26200
-  %r26231 = add i64 %r26230, 8
-  %r26233 = inttoptr i64 %r26231 to ptr
-  %r26232 = load i64, ptr %r26233, align 8
-  store i64 %r26232, ptr %a26234
-  %r26238 = load i64, ptr %a26234
-  %r26239 = load i64, ptr %a26224
-  %r26240 = mul i64 %r26239, 8
-  %r26241 = add i64 %r26238, %r26240
-  %r26243 = inttoptr i64 %r26241 to ptr
-  %r26242 = load i64, ptr %r26243, align 8
-  %r26245 = icmp eq i64 %r26242, 0
-  %r26244 = zext i1 %r26245 to i64
-  %r26246 = icmp ne i64 %r26244, 0
-  br i1 %r26246, label %it26235, label %ix26237
+  store i64 %p0, ptr %a26232
+  store i64 %p1, ptr %a26233
+  store i64 %p2, ptr %a26234
+  %r26238 = load i64, ptr %a26232
+  %r26239 = add i64 %r26238, 24
+  %r26241 = inttoptr i64 %r26239 to ptr
+  %r26240 = load i64, ptr %r26241, align 8
+  %r26242 = add i64 %r26240, 1
+  %r26243 = mul i64 %r26242, 2
+  %r26244 = load i64, ptr %a26232
+  %r26245 = add i64 %r26244, 16
+  %r26247 = inttoptr i64 %r26245 to ptr
+  %r26246 = load i64, ptr %r26247, align 8
+  %r26249 = icmp sgt i64 %r26243, %r26246
+  %r26248 = zext i1 %r26249 to i64
+  %r26250 = icmp ne i64 %r26248, 0
+  br i1 %r26250, label %it26235, label %ix26237
 it26235:
-  %r26247 = load i64, ptr %a26229
-  %r26248 = load i64, ptr %a26224
-  %r26249 = mul i64 %r26248, 8
-  %r26250 = add i64 %r26247, %r26249
-  %r26251 = inttoptr i64 %r26250 to ptr
-  %r26252 = load i64, ptr %a26201
-  store i64 %r26252, ptr %r26251, align 8
-  %r26253 = load i64, ptr %a26200
-  %r26254 = add i64 %r26253, 24
-  %r26255 = load i64, ptr %a26200
-  %r26256 = add i64 %r26255, 24
-  %r26258 = inttoptr i64 %r26256 to ptr
-  %r26257 = load i64, ptr %r26258, align 8
-  %r26259 = add i64 %r26257, 1
-  %r26261 = inttoptr i64 %r26254 to ptr
-  store i64 %r26259, ptr %r26261, align 8
+  %r26251 = load i64, ptr %a26232
+  %r26252 = call i64 @_rl_hm_grow(i64 %r26251)
   br label %ix26237
 ix26237:
-  %r26262 = load i64, ptr %a26234
-  %r26263 = load i64, ptr %a26224
-  %r26264 = mul i64 %r26263, 8
-  %r26265 = add i64 %r26262, %r26264
-  %r26266 = inttoptr i64 %r26265 to ptr
-  %r26267 = load i64, ptr %a26202
-  store i64 %r26267, ptr %r26266, align 8
+  %r26253 = load i64, ptr %a26232
+  %r26254 = load i64, ptr %a26233
+  %r26255 = call i64 @_rl_hm_find(i64 %r26253, i64 %r26254)
+  store i64 %r26255, ptr %a26256
+  %r26257 = load i64, ptr %a26232
+  %r26258 = add i64 %r26257, 0
+  %r26260 = inttoptr i64 %r26258 to ptr
+  %r26259 = load i64, ptr %r26260, align 8
+  store i64 %r26259, ptr %a26261
+  %r26262 = load i64, ptr %a26232
+  %r26263 = add i64 %r26262, 8
+  %r26265 = inttoptr i64 %r26263 to ptr
+  %r26264 = load i64, ptr %r26265, align 8
+  store i64 %r26264, ptr %a26266
+  %r26270 = load i64, ptr %a26266
+  %r26271 = load i64, ptr %a26256
+  %r26272 = mul i64 %r26271, 8
+  %r26273 = add i64 %r26270, %r26272
+  %r26275 = inttoptr i64 %r26273 to ptr
+  %r26274 = load i64, ptr %r26275, align 8
+  %r26277 = icmp eq i64 %r26274, 0
+  %r26276 = zext i1 %r26277 to i64
+  %r26278 = icmp ne i64 %r26276, 0
+  br i1 %r26278, label %it26267, label %ix26269
+it26267:
+  %r26279 = load i64, ptr %a26261
+  %r26280 = load i64, ptr %a26256
+  %r26281 = mul i64 %r26280, 8
+  %r26282 = add i64 %r26279, %r26281
+  %r26283 = inttoptr i64 %r26282 to ptr
+  %r26284 = load i64, ptr %a26233
+  store i64 %r26284, ptr %r26283, align 8
+  %r26285 = load i64, ptr %a26232
+  %r26286 = add i64 %r26285, 24
+  %r26287 = load i64, ptr %a26232
+  %r26288 = add i64 %r26287, 24
+  %r26290 = inttoptr i64 %r26288 to ptr
+  %r26289 = load i64, ptr %r26290, align 8
+  %r26291 = add i64 %r26289, 1
+  %r26293 = inttoptr i64 %r26286 to ptr
+  store i64 %r26291, ptr %r26293, align 8
+  br label %ix26269
+ix26269:
+  %r26294 = load i64, ptr %a26266
+  %r26295 = load i64, ptr %a26256
+  %r26296 = mul i64 %r26295, 8
+  %r26297 = add i64 %r26294, %r26296
+  %r26298 = inttoptr i64 %r26297 to ptr
+  %r26299 = load i64, ptr %a26234
+  store i64 %r26299, ptr %r26298, align 8
   ret i64 0
 }
 define internal i64 @_rl_hm_clear(i64 %p0) {
 entry:
-  %a26268 = alloca i64, align 8
+  %a26300 = alloca i64, align 8
   br label %start
 start:
-  store i64 %p0, ptr %a26268
-  %r26272 = load i64, ptr %a26268
-  %r26273 = add i64 %r26272, 16
-  %r26275 = inttoptr i64 %r26273 to ptr
-  %r26274 = load i64, ptr %r26275, align 8
-  %r26277 = icmp ne i64 %r26274, 0
-  %r26276 = zext i1 %r26277 to i64
-  %r26278 = icmp ne i64 %r26276, 0
-  br i1 %r26278, label %it26269, label %ix26271
-it26269:
-  %r26279 = load i64, ptr %a26268
-  %r26280 = add i64 %r26279, 0
-  %r26282 = inttoptr i64 %r26280 to ptr
-  %r26281 = load i64, ptr %r26282, align 8
-  %r26283 = inttoptr i64 %r26281 to ptr
-  call void @free(ptr %r26283)
-  %r26284 = load i64, ptr %a26268
-  %r26285 = add i64 %r26284, 8
-  %r26287 = inttoptr i64 %r26285 to ptr
-  %r26286 = load i64, ptr %r26287, align 8
-  %r26288 = inttoptr i64 %r26286 to ptr
-  call void @free(ptr %r26288)
-  br label %ix26271
-ix26271:
-  %r26289 = load i64, ptr %a26268
-  %r26290 = add i64 %r26289, 0
-  %r26292 = inttoptr i64 %r26290 to ptr
-  store i64 0, ptr %r26292, align 8
-  %r26293 = load i64, ptr %a26268
-  %r26294 = add i64 %r26293, 8
-  %r26296 = inttoptr i64 %r26294 to ptr
-  store i64 0, ptr %r26296, align 8
-  %r26297 = load i64, ptr %a26268
-  %r26298 = add i64 %r26297, 16
-  %r26300 = inttoptr i64 %r26298 to ptr
-  store i64 0, ptr %r26300, align 8
-  %r26301 = load i64, ptr %a26268
-  %r26302 = add i64 %r26301, 24
-  %r26304 = inttoptr i64 %r26302 to ptr
-  store i64 0, ptr %r26304, align 8
+  store i64 %p0, ptr %a26300
+  %r26304 = load i64, ptr %a26300
+  %r26305 = add i64 %r26304, 16
+  %r26307 = inttoptr i64 %r26305 to ptr
+  %r26306 = load i64, ptr %r26307, align 8
+  %r26309 = icmp ne i64 %r26306, 0
+  %r26308 = zext i1 %r26309 to i64
+  %r26310 = icmp ne i64 %r26308, 0
+  br i1 %r26310, label %it26301, label %ix26303
+it26301:
+  %r26311 = load i64, ptr %a26300
+  %r26312 = add i64 %r26311, 0
+  %r26314 = inttoptr i64 %r26312 to ptr
+  %r26313 = load i64, ptr %r26314, align 8
+  %r26315 = inttoptr i64 %r26313 to ptr
+  call void @free(ptr %r26315)
+  %r26316 = load i64, ptr %a26300
+  %r26317 = add i64 %r26316, 8
+  %r26319 = inttoptr i64 %r26317 to ptr
+  %r26318 = load i64, ptr %r26319, align 8
+  %r26320 = inttoptr i64 %r26318 to ptr
+  call void @free(ptr %r26320)
+  br label %ix26303
+ix26303:
+  %r26321 = load i64, ptr %a26300
+  %r26322 = add i64 %r26321, 0
+  %r26324 = inttoptr i64 %r26322 to ptr
+  store i64 0, ptr %r26324, align 8
+  %r26325 = load i64, ptr %a26300
+  %r26326 = add i64 %r26325, 8
+  %r26328 = inttoptr i64 %r26326 to ptr
+  store i64 0, ptr %r26328, align 8
+  %r26329 = load i64, ptr %a26300
+  %r26330 = add i64 %r26329, 16
+  %r26332 = inttoptr i64 %r26330 to ptr
+  store i64 0, ptr %r26332, align 8
+  %r26333 = load i64, ptr %a26300
+  %r26334 = add i64 %r26333, 24
+  %r26336 = inttoptr i64 %r26334 to ptr
+  store i64 0, ptr %r26336, align 8
   ret i64 0
 }
 define internal i64 @_rl_copy_message(i64 %p0, i64 %p1, i64 %p2) {
 entry:
-  %a26305 = alloca i64, align 8
-  %a26306 = alloca i64, align 8
-  %a26307 = alloca i64, align 8
-  %a26311 = alloca i64, align 8
-  %a26330 = alloca i64, align 8
+  %a26337 = alloca i64, align 8
+  %a26338 = alloca i64, align 8
+  %a26339 = alloca i64, align 8
+  %a26343 = alloca i64, align 8
+  %a26362 = alloca i64, align 8
   br label %start
 start:
-  store i64 %p0, ptr %a26305
-  store i64 %p1, ptr %a26306
-  store i64 %p2, ptr %a26307
-  %r26314 = load i64, ptr %a26306
-  %r26316 = icmp eq i64 %r26314, 0
-  %r26315 = zext i1 %r26316 to i64
-  %r26317 = icmp ne i64 %r26315, 0
-  %r26318 = zext i1 %r26317 to i64
-  store i64 %r26318, ptr %a26311
-  br i1 %r26317, label %ld26313, label %lr26312
-lr26312:
-  %r26319 = load i64, ptr %a26307
-  %r26321 = icmp eq i64 %r26319, 0
-  %r26320 = zext i1 %r26321 to i64
-  %r26322 = icmp ne i64 %r26320, 0
-  %r26323 = zext i1 %r26322 to i64
-  store i64 %r26323, ptr %a26311
-  br label %ld26313
-ld26313:
-  %r26324 = load i64, ptr %a26311
-  %r26325 = icmp ne i64 %r26324, 0
-  br i1 %r26325, label %it26308, label %ix26310
-it26308:
+  store i64 %p0, ptr %a26337
+  store i64 %p1, ptr %a26338
+  store i64 %p2, ptr %a26339
+  %r26346 = load i64, ptr %a26338
+  %r26348 = icmp eq i64 %r26346, 0
+  %r26347 = zext i1 %r26348 to i64
+  %r26349 = icmp ne i64 %r26347, 0
+  %r26350 = zext i1 %r26349 to i64
+  store i64 %r26350, ptr %a26343
+  br i1 %r26349, label %ld26345, label %lr26344
+lr26344:
+  %r26351 = load i64, ptr %a26339
+  %r26353 = icmp eq i64 %r26351, 0
+  %r26352 = zext i1 %r26353 to i64
+  %r26354 = icmp ne i64 %r26352, 0
+  %r26355 = zext i1 %r26354 to i64
+  store i64 %r26355, ptr %a26343
+  br label %ld26345
+ld26345:
+  %r26356 = load i64, ptr %a26343
+  %r26357 = icmp ne i64 %r26356, 0
+  br i1 %r26357, label %it26340, label %ix26342
+it26340:
   ret i64 0
-d26326:
-  br label %ix26310
-ix26310:
-  %r26327 = load i64, ptr %a26305
-  %r26328 = inttoptr i64 %r26327 to ptr
-  %r26329 = call i64 @strlen(ptr %r26328)
-  store i64 %r26329, ptr %a26330
-  %r26334 = load i64, ptr %a26307
-  %r26335 = sub i64 %r26334, 1
-  %r26336 = load i64, ptr %a26330
-  %r26338 = icmp ult i64 %r26335, %r26336
-  %r26337 = zext i1 %r26338 to i64
-  %r26339 = icmp ne i64 %r26337, 0
-  br i1 %r26339, label %it26331, label %ix26333
-it26331:
-  %r26340 = load i64, ptr %a26307
-  %r26341 = sub i64 %r26340, 1
-  store i64 %r26341, ptr %a26330
-  br label %ix26333
-ix26333:
-  %r26345 = load i64, ptr %a26330
-  %r26347 = icmp sgt i64 %r26345, 0
-  %r26346 = zext i1 %r26347 to i64
-  %r26348 = icmp ne i64 %r26346, 0
-  br i1 %r26348, label %it26342, label %ix26344
-it26342:
-  %r26349 = load i64, ptr %a26306
-  %r26350 = inttoptr i64 %r26349 to ptr
-  %r26351 = load i64, ptr %a26305
-  %r26352 = inttoptr i64 %r26351 to ptr
-  %r26353 = load i64, ptr %a26330
-  %r26354 = call ptr @memcpy(ptr %r26350, ptr %r26352, i64 %r26353)
-  %r26355 = ptrtoint ptr %r26354 to i64
-  br label %ix26344
-ix26344:
-  %r26356 = load i64, ptr %a26306
-  %r26357 = load i64, ptr %a26330
-  %r26358 = add i64 %r26356, %r26357
-  %r26360 = inttoptr i64 %r26358 to ptr
-  %r26361 = trunc i64 0 to i8
-  store i8 %r26361, ptr %r26360, align 1
+d26358:
+  br label %ix26342
+ix26342:
+  %r26359 = load i64, ptr %a26337
+  %r26360 = inttoptr i64 %r26359 to ptr
+  %r26361 = call i64 @strlen(ptr %r26360)
+  store i64 %r26361, ptr %a26362
+  %r26366 = load i64, ptr %a26339
+  %r26367 = sub i64 %r26366, 1
+  %r26368 = load i64, ptr %a26362
+  %r26370 = icmp ult i64 %r26367, %r26368
+  %r26369 = zext i1 %r26370 to i64
+  %r26371 = icmp ne i64 %r26369, 0
+  br i1 %r26371, label %it26363, label %ix26365
+it26363:
+  %r26372 = load i64, ptr %a26339
+  %r26373 = sub i64 %r26372, 1
+  store i64 %r26373, ptr %a26362
+  br label %ix26365
+ix26365:
+  %r26377 = load i64, ptr %a26362
+  %r26379 = icmp sgt i64 %r26377, 0
+  %r26378 = zext i1 %r26379 to i64
+  %r26380 = icmp ne i64 %r26378, 0
+  br i1 %r26380, label %it26374, label %ix26376
+it26374:
+  %r26381 = load i64, ptr %a26338
+  %r26382 = inttoptr i64 %r26381 to ptr
+  %r26383 = load i64, ptr %a26337
+  %r26384 = inttoptr i64 %r26383 to ptr
+  %r26385 = load i64, ptr %a26362
+  %r26386 = call ptr @memcpy(ptr %r26382, ptr %r26384, i64 %r26385)
+  %r26387 = ptrtoint ptr %r26386 to i64
+  br label %ix26376
+ix26376:
+  %r26388 = load i64, ptr %a26338
+  %r26389 = load i64, ptr %a26362
+  %r26390 = add i64 %r26388, %r26389
+  %r26392 = inttoptr i64 %r26390 to ptr
+  %r26393 = trunc i64 0 to i8
+  store i8 %r26393, ptr %r26392, align 1
   ret i64 0
 }
 define internal i64 @_rl_dup(i64 %p0) {
 entry:
-  %a26362 = alloca i64, align 8
-  %a26366 = alloca i64, align 8
-  %a26371 = alloca i64, align 8
+  %a26394 = alloca i64, align 8
+  %a26398 = alloca i64, align 8
+  %a26403 = alloca i64, align 8
   br label %start
 start:
-  store i64 %p0, ptr %a26362
-  %r26363 = load i64, ptr %a26362
-  %r26364 = inttoptr i64 %r26363 to ptr
-  %r26365 = call i64 @strlen(ptr %r26364)
-  store i64 %r26365, ptr %a26366
-  %r26367 = load i64, ptr %a26366
-  %r26368 = add i64 %r26367, 1
-  %r26369 = call ptr @calloc(i64 %r26368, i64 1)
-  %r26370 = ptrtoint ptr %r26369 to i64
-  store i64 %r26370, ptr %a26371
-  %r26372 = load i64, ptr %a26371
-  %r26373 = inttoptr i64 %r26372 to ptr
-  %r26374 = load i64, ptr %a26362
-  %r26375 = inttoptr i64 %r26374 to ptr
-  %r26376 = load i64, ptr %a26366
-  %r26377 = call ptr @memcpy(ptr %r26373, ptr %r26375, i64 %r26376)
-  %r26378 = ptrtoint ptr %r26377 to i64
-  %r26379 = load i64, ptr %a26371
-  ret i64 %r26379
-d26380:
+  store i64 %p0, ptr %a26394
+  %r26395 = load i64, ptr %a26394
+  %r26396 = inttoptr i64 %r26395 to ptr
+  %r26397 = call i64 @strlen(ptr %r26396)
+  store i64 %r26397, ptr %a26398
+  %r26399 = load i64, ptr %a26398
+  %r26400 = add i64 %r26399, 1
+  %r26401 = call ptr @calloc(i64 %r26400, i64 1)
+  %r26402 = ptrtoint ptr %r26401 to i64
+  store i64 %r26402, ptr %a26403
+  %r26404 = load i64, ptr %a26403
+  %r26405 = inttoptr i64 %r26404 to ptr
+  %r26406 = load i64, ptr %a26394
+  %r26407 = inttoptr i64 %r26406 to ptr
+  %r26408 = load i64, ptr %a26398
+  %r26409 = call ptr @memcpy(ptr %r26405, ptr %r26407, i64 %r26408)
+  %r26410 = ptrtoint ptr %r26409 to i64
+  %r26411 = load i64, ptr %a26403
+  ret i64 %r26411
+d26412:
   ret i64 0
 }
 define internal i64 @_rl_cp_len(i64 %p0) {
 entry:
-  %a26381 = alloca i64, align 8
-  %a26386 = alloca i64, align 8
-  %a26400 = alloca i64, align 8
-  %a26404 = alloca i64, align 8
-  %a26422 = alloca i64, align 8
-  %a26442 = alloca i64, align 8
-  %a26457 = alloca i64, align 8
-  %a26458 = alloca i64, align 8
-  %a26476 = alloca i64, align 8
-  %a26479 = alloca i64, align 8
-  %a26482 = alloca i64, align 8
-  %a26528 = alloca i64, align 8
-  %a26543 = alloca i64, align 8
-  %a26544 = alloca i64, align 8
-  %a26562 = alloca i64, align 8
-  %a26565 = alloca i64, align 8
-  %a26568 = alloca i64, align 8
-  %a26571 = alloca i64, align 8
-  %a26574 = alloca i64, align 8
+  %a26413 = alloca i64, align 8
+  %a26418 = alloca i64, align 8
+  %a26432 = alloca i64, align 8
+  %a26436 = alloca i64, align 8
+  %a26454 = alloca i64, align 8
+  %a26474 = alloca i64, align 8
+  %a26489 = alloca i64, align 8
+  %a26490 = alloca i64, align 8
+  %a26508 = alloca i64, align 8
+  %a26511 = alloca i64, align 8
+  %a26514 = alloca i64, align 8
+  %a26560 = alloca i64, align 8
+  %a26575 = alloca i64, align 8
+  %a26576 = alloca i64, align 8
+  %a26594 = alloca i64, align 8
+  %a26597 = alloca i64, align 8
+  %a26600 = alloca i64, align 8
+  %a26603 = alloca i64, align 8
+  %a26606 = alloca i64, align 8
   br label %start
 start:
-  store i64 %p0, ptr %a26381
-  %r26382 = load i64, ptr %a26381
-  %r26384 = inttoptr i64 %r26382 to ptr
-  %r26385 = load i8, ptr %r26384, align 1
-  %r26383 = zext i8 %r26385 to i64
-  store i64 %r26383, ptr %a26386
-  %r26390 = load i64, ptr %a26386
-  %r26392 = icmp slt i64 %r26390, 128
-  %r26391 = zext i1 %r26392 to i64
-  %r26393 = icmp ne i64 %r26391, 0
-  br i1 %r26393, label %it26387, label %ix26389
-it26387:
-  ret i64 1
-d26394:
-  br label %ix26389
-ix26389:
-  %r26395 = load i64, ptr %a26381
-  %r26396 = add i64 %r26395, 1
-  %r26398 = inttoptr i64 %r26396 to ptr
-  %r26399 = load i8, ptr %r26398, align 1
-  %r26397 = zext i8 %r26399 to i64
-  store i64 %r26397, ptr %a26400
-  %r26407 = load i64, ptr %a26386
-  %r26409 = icmp sge i64 %r26407, 194
-  %r26408 = zext i1 %r26409 to i64
-  %r26410 = icmp ne i64 %r26408, 0
-  %r26411 = zext i1 %r26410 to i64
-  store i64 %r26411, ptr %a26404
-  br i1 %r26410, label %lr26405, label %ld26406
-lr26405:
-  %r26412 = load i64, ptr %a26386
-  %r26414 = icmp sle i64 %r26412, 223
-  %r26413 = zext i1 %r26414 to i64
-  %r26415 = icmp ne i64 %r26413, 0
-  %r26416 = zext i1 %r26415 to i64
-  store i64 %r26416, ptr %a26404
-  br label %ld26406
-ld26406:
-  %r26417 = load i64, ptr %a26404
-  %r26418 = icmp ne i64 %r26417, 0
-  br i1 %r26418, label %it26401, label %ix26403
-it26401:
-  %r26425 = load i64, ptr %a26400
-  %r26427 = icmp sge i64 %r26425, 128
-  %r26426 = zext i1 %r26427 to i64
-  %r26428 = icmp ne i64 %r26426, 0
-  %r26429 = zext i1 %r26428 to i64
-  store i64 %r26429, ptr %a26422
-  br i1 %r26428, label %lr26423, label %ld26424
-lr26423:
-  %r26430 = load i64, ptr %a26400
-  %r26432 = icmp sle i64 %r26430, 191
-  %r26431 = zext i1 %r26432 to i64
-  %r26433 = icmp ne i64 %r26431, 0
-  %r26434 = zext i1 %r26433 to i64
-  store i64 %r26434, ptr %a26422
-  br label %ld26424
-ld26424:
-  %r26435 = load i64, ptr %a26422
-  %r26436 = icmp ne i64 %r26435, 0
-  br i1 %r26436, label %it26419, label %ix26421
+  store i64 %p0, ptr %a26413
+  %r26414 = load i64, ptr %a26413
+  %r26416 = inttoptr i64 %r26414 to ptr
+  %r26417 = load i8, ptr %r26416, align 1
+  %r26415 = zext i8 %r26417 to i64
+  store i64 %r26415, ptr %a26418
+  %r26422 = load i64, ptr %a26418
+  %r26424 = icmp slt i64 %r26422, 128
+  %r26423 = zext i1 %r26424 to i64
+  %r26425 = icmp ne i64 %r26423, 0
+  br i1 %r26425, label %it26419, label %ix26421
 it26419:
-  ret i64 2
-d26437:
+  ret i64 1
+d26426:
   br label %ix26421
 ix26421:
-  ret i64 0
-d26438:
-  br label %ix26403
-ix26403:
-  %r26445 = load i64, ptr %a26386
-  %r26447 = icmp sge i64 %r26445, 224
-  %r26446 = zext i1 %r26447 to i64
-  %r26448 = icmp ne i64 %r26446, 0
-  %r26449 = zext i1 %r26448 to i64
-  store i64 %r26449, ptr %a26442
-  br i1 %r26448, label %lr26443, label %ld26444
-lr26443:
-  %r26450 = load i64, ptr %a26386
-  %r26452 = icmp sle i64 %r26450, 239
-  %r26451 = zext i1 %r26452 to i64
-  %r26453 = icmp ne i64 %r26451, 0
-  %r26454 = zext i1 %r26453 to i64
-  store i64 %r26454, ptr %a26442
-  br label %ld26444
-ld26444:
-  %r26455 = load i64, ptr %a26442
-  %r26456 = icmp ne i64 %r26455, 0
-  br i1 %r26456, label %it26439, label %ix26441
-it26439:
-  store i64 128, ptr %a26457
-  store i64 191, ptr %a26458
-  %r26462 = load i64, ptr %a26386
-  %r26464 = icmp eq i64 %r26462, 224
+  %r26427 = load i64, ptr %a26413
+  %r26428 = add i64 %r26427, 1
+  %r26430 = inttoptr i64 %r26428 to ptr
+  %r26431 = load i8, ptr %r26430, align 1
+  %r26429 = zext i8 %r26431 to i64
+  store i64 %r26429, ptr %a26432
+  %r26439 = load i64, ptr %a26418
+  %r26441 = icmp sge i64 %r26439, 194
+  %r26440 = zext i1 %r26441 to i64
+  %r26442 = icmp ne i64 %r26440, 0
+  %r26443 = zext i1 %r26442 to i64
+  store i64 %r26443, ptr %a26436
+  br i1 %r26442, label %lr26437, label %ld26438
+lr26437:
+  %r26444 = load i64, ptr %a26418
+  %r26446 = icmp sle i64 %r26444, 223
+  %r26445 = zext i1 %r26446 to i64
+  %r26447 = icmp ne i64 %r26445, 0
+  %r26448 = zext i1 %r26447 to i64
+  store i64 %r26448, ptr %a26436
+  br label %ld26438
+ld26438:
+  %r26449 = load i64, ptr %a26436
+  %r26450 = icmp ne i64 %r26449, 0
+  br i1 %r26450, label %it26433, label %ix26435
+it26433:
+  %r26457 = load i64, ptr %a26432
+  %r26459 = icmp sge i64 %r26457, 128
+  %r26458 = zext i1 %r26459 to i64
+  %r26460 = icmp ne i64 %r26458, 0
+  %r26461 = zext i1 %r26460 to i64
+  store i64 %r26461, ptr %a26454
+  br i1 %r26460, label %lr26455, label %ld26456
+lr26455:
+  %r26462 = load i64, ptr %a26432
+  %r26464 = icmp sle i64 %r26462, 191
   %r26463 = zext i1 %r26464 to i64
   %r26465 = icmp ne i64 %r26463, 0
-  br i1 %r26465, label %it26459, label %ix26461
-it26459:
-  store i64 160, ptr %a26457
-  br label %ix26461
-ix26461:
-  %r26469 = load i64, ptr %a26386
-  %r26471 = icmp eq i64 %r26469, 237
-  %r26470 = zext i1 %r26471 to i64
-  %r26472 = icmp ne i64 %r26470, 0
-  br i1 %r26472, label %it26466, label %ix26468
-it26466:
-  store i64 159, ptr %a26458
-  br label %ix26468
-ix26468:
-  %r26485 = load i64, ptr %a26400
-  %r26486 = load i64, ptr %a26457
-  %r26488 = icmp sge i64 %r26485, %r26486
-  %r26487 = zext i1 %r26488 to i64
-  %r26489 = icmp ne i64 %r26487, 0
-  %r26490 = zext i1 %r26489 to i64
-  store i64 %r26490, ptr %a26482
-  br i1 %r26489, label %lr26483, label %ld26484
-lr26483:
-  %r26491 = load i64, ptr %a26400
-  %r26492 = load i64, ptr %a26458
-  %r26494 = icmp sle i64 %r26491, %r26492
-  %r26493 = zext i1 %r26494 to i64
-  %r26495 = icmp ne i64 %r26493, 0
-  %r26496 = zext i1 %r26495 to i64
-  store i64 %r26496, ptr %a26482
-  br label %ld26484
-ld26484:
-  %r26497 = load i64, ptr %a26482
-  %r26498 = icmp ne i64 %r26497, 0
-  %r26499 = zext i1 %r26498 to i64
-  store i64 %r26499, ptr %a26479
-  br i1 %r26498, label %lr26480, label %ld26481
-lr26480:
-  %r26500 = load i64, ptr %a26381
-  %r26501 = add i64 %r26500, 2
-  %r26503 = inttoptr i64 %r26501 to ptr
-  %r26504 = load i8, ptr %r26503, align 1
-  %r26502 = zext i8 %r26504 to i64
-  %r26506 = icmp sge i64 %r26502, 128
-  %r26505 = zext i1 %r26506 to i64
-  %r26507 = icmp ne i64 %r26505, 0
-  %r26508 = zext i1 %r26507 to i64
-  store i64 %r26508, ptr %a26479
-  br label %ld26481
-ld26481:
-  %r26509 = load i64, ptr %a26479
-  %r26510 = icmp ne i64 %r26509, 0
-  %r26511 = zext i1 %r26510 to i64
-  store i64 %r26511, ptr %a26476
-  br i1 %r26510, label %lr26477, label %ld26478
-lr26477:
-  %r26512 = load i64, ptr %a26381
-  %r26513 = add i64 %r26512, 2
-  %r26515 = inttoptr i64 %r26513 to ptr
-  %r26516 = load i8, ptr %r26515, align 1
-  %r26514 = zext i8 %r26516 to i64
-  %r26518 = icmp sle i64 %r26514, 191
-  %r26517 = zext i1 %r26518 to i64
-  %r26519 = icmp ne i64 %r26517, 0
-  %r26520 = zext i1 %r26519 to i64
-  store i64 %r26520, ptr %a26476
-  br label %ld26478
-ld26478:
-  %r26521 = load i64, ptr %a26476
-  %r26522 = icmp ne i64 %r26521, 0
-  br i1 %r26522, label %it26473, label %ix26475
-it26473:
-  ret i64 3
-d26523:
-  br label %ix26475
-ix26475:
+  %r26466 = zext i1 %r26465 to i64
+  store i64 %r26466, ptr %a26454
+  br label %ld26456
+ld26456:
+  %r26467 = load i64, ptr %a26454
+  %r26468 = icmp ne i64 %r26467, 0
+  br i1 %r26468, label %it26451, label %ix26453
+it26451:
+  ret i64 2
+d26469:
+  br label %ix26453
+ix26453:
   ret i64 0
-d26524:
-  br label %ix26441
-ix26441:
-  %r26531 = load i64, ptr %a26386
-  %r26533 = icmp sge i64 %r26531, 240
-  %r26532 = zext i1 %r26533 to i64
-  %r26534 = icmp ne i64 %r26532, 0
-  %r26535 = zext i1 %r26534 to i64
-  store i64 %r26535, ptr %a26528
-  br i1 %r26534, label %lr26529, label %ld26530
-lr26529:
-  %r26536 = load i64, ptr %a26386
-  %r26538 = icmp sle i64 %r26536, 244
+d26470:
+  br label %ix26435
+ix26435:
+  %r26477 = load i64, ptr %a26418
+  %r26479 = icmp sge i64 %r26477, 224
+  %r26478 = zext i1 %r26479 to i64
+  %r26480 = icmp ne i64 %r26478, 0
+  %r26481 = zext i1 %r26480 to i64
+  store i64 %r26481, ptr %a26474
+  br i1 %r26480, label %lr26475, label %ld26476
+lr26475:
+  %r26482 = load i64, ptr %a26418
+  %r26484 = icmp sle i64 %r26482, 239
+  %r26483 = zext i1 %r26484 to i64
+  %r26485 = icmp ne i64 %r26483, 0
+  %r26486 = zext i1 %r26485 to i64
+  store i64 %r26486, ptr %a26474
+  br label %ld26476
+ld26476:
+  %r26487 = load i64, ptr %a26474
+  %r26488 = icmp ne i64 %r26487, 0
+  br i1 %r26488, label %it26471, label %ix26473
+it26471:
+  store i64 128, ptr %a26489
+  store i64 191, ptr %a26490
+  %r26494 = load i64, ptr %a26418
+  %r26496 = icmp eq i64 %r26494, 224
+  %r26495 = zext i1 %r26496 to i64
+  %r26497 = icmp ne i64 %r26495, 0
+  br i1 %r26497, label %it26491, label %ix26493
+it26491:
+  store i64 160, ptr %a26489
+  br label %ix26493
+ix26493:
+  %r26501 = load i64, ptr %a26418
+  %r26503 = icmp eq i64 %r26501, 237
+  %r26502 = zext i1 %r26503 to i64
+  %r26504 = icmp ne i64 %r26502, 0
+  br i1 %r26504, label %it26498, label %ix26500
+it26498:
+  store i64 159, ptr %a26490
+  br label %ix26500
+ix26500:
+  %r26517 = load i64, ptr %a26432
+  %r26518 = load i64, ptr %a26489
+  %r26520 = icmp sge i64 %r26517, %r26518
+  %r26519 = zext i1 %r26520 to i64
+  %r26521 = icmp ne i64 %r26519, 0
+  %r26522 = zext i1 %r26521 to i64
+  store i64 %r26522, ptr %a26514
+  br i1 %r26521, label %lr26515, label %ld26516
+lr26515:
+  %r26523 = load i64, ptr %a26432
+  %r26524 = load i64, ptr %a26490
+  %r26526 = icmp sle i64 %r26523, %r26524
+  %r26525 = zext i1 %r26526 to i64
+  %r26527 = icmp ne i64 %r26525, 0
+  %r26528 = zext i1 %r26527 to i64
+  store i64 %r26528, ptr %a26514
+  br label %ld26516
+ld26516:
+  %r26529 = load i64, ptr %a26514
+  %r26530 = icmp ne i64 %r26529, 0
+  %r26531 = zext i1 %r26530 to i64
+  store i64 %r26531, ptr %a26511
+  br i1 %r26530, label %lr26512, label %ld26513
+lr26512:
+  %r26532 = load i64, ptr %a26413
+  %r26533 = add i64 %r26532, 2
+  %r26535 = inttoptr i64 %r26533 to ptr
+  %r26536 = load i8, ptr %r26535, align 1
+  %r26534 = zext i8 %r26536 to i64
+  %r26538 = icmp sge i64 %r26534, 128
   %r26537 = zext i1 %r26538 to i64
   %r26539 = icmp ne i64 %r26537, 0
   %r26540 = zext i1 %r26539 to i64
-  store i64 %r26540, ptr %a26528
-  br label %ld26530
-ld26530:
-  %r26541 = load i64, ptr %a26528
+  store i64 %r26540, ptr %a26511
+  br label %ld26513
+ld26513:
+  %r26541 = load i64, ptr %a26511
   %r26542 = icmp ne i64 %r26541, 0
-  br i1 %r26542, label %it26525, label %ix26527
-it26525:
-  store i64 128, ptr %a26543
-  store i64 191, ptr %a26544
-  %r26548 = load i64, ptr %a26386
-  %r26550 = icmp eq i64 %r26548, 240
+  %r26543 = zext i1 %r26542 to i64
+  store i64 %r26543, ptr %a26508
+  br i1 %r26542, label %lr26509, label %ld26510
+lr26509:
+  %r26544 = load i64, ptr %a26413
+  %r26545 = add i64 %r26544, 2
+  %r26547 = inttoptr i64 %r26545 to ptr
+  %r26548 = load i8, ptr %r26547, align 1
+  %r26546 = zext i8 %r26548 to i64
+  %r26550 = icmp sle i64 %r26546, 191
   %r26549 = zext i1 %r26550 to i64
   %r26551 = icmp ne i64 %r26549, 0
-  br i1 %r26551, label %it26545, label %ix26547
-it26545:
-  store i64 144, ptr %a26543
-  br label %ix26547
-ix26547:
-  %r26555 = load i64, ptr %a26386
-  %r26557 = icmp eq i64 %r26555, 244
-  %r26556 = zext i1 %r26557 to i64
-  %r26558 = icmp ne i64 %r26556, 0
-  br i1 %r26558, label %it26552, label %ix26554
-it26552:
-  store i64 143, ptr %a26544
-  br label %ix26554
-ix26554:
-  %r26577 = load i64, ptr %a26400
-  %r26578 = load i64, ptr %a26543
-  %r26580 = icmp sge i64 %r26577, %r26578
-  %r26579 = zext i1 %r26580 to i64
-  %r26581 = icmp ne i64 %r26579, 0
-  %r26582 = zext i1 %r26581 to i64
-  store i64 %r26582, ptr %a26574
-  br i1 %r26581, label %lr26575, label %ld26576
-lr26575:
-  %r26583 = load i64, ptr %a26400
-  %r26584 = load i64, ptr %a26544
-  %r26586 = icmp sle i64 %r26583, %r26584
-  %r26585 = zext i1 %r26586 to i64
-  %r26587 = icmp ne i64 %r26585, 0
-  %r26588 = zext i1 %r26587 to i64
-  store i64 %r26588, ptr %a26574
-  br label %ld26576
-ld26576:
-  %r26589 = load i64, ptr %a26574
-  %r26590 = icmp ne i64 %r26589, 0
-  %r26591 = zext i1 %r26590 to i64
-  store i64 %r26591, ptr %a26571
-  br i1 %r26590, label %lr26572, label %ld26573
-lr26572:
-  %r26592 = load i64, ptr %a26381
-  %r26593 = add i64 %r26592, 2
-  %r26595 = inttoptr i64 %r26593 to ptr
-  %r26596 = load i8, ptr %r26595, align 1
-  %r26594 = zext i8 %r26596 to i64
-  %r26598 = icmp sge i64 %r26594, 128
-  %r26597 = zext i1 %r26598 to i64
-  %r26599 = icmp ne i64 %r26597, 0
-  %r26600 = zext i1 %r26599 to i64
-  store i64 %r26600, ptr %a26571
-  br label %ld26573
-ld26573:
-  %r26601 = load i64, ptr %a26571
-  %r26602 = icmp ne i64 %r26601, 0
-  %r26603 = zext i1 %r26602 to i64
-  store i64 %r26603, ptr %a26568
-  br i1 %r26602, label %lr26569, label %ld26570
-lr26569:
-  %r26604 = load i64, ptr %a26381
-  %r26605 = add i64 %r26604, 2
-  %r26607 = inttoptr i64 %r26605 to ptr
-  %r26608 = load i8, ptr %r26607, align 1
-  %r26606 = zext i8 %r26608 to i64
-  %r26610 = icmp sle i64 %r26606, 191
-  %r26609 = zext i1 %r26610 to i64
-  %r26611 = icmp ne i64 %r26609, 0
-  %r26612 = zext i1 %r26611 to i64
-  store i64 %r26612, ptr %a26568
-  br label %ld26570
-ld26570:
-  %r26613 = load i64, ptr %a26568
-  %r26614 = icmp ne i64 %r26613, 0
-  %r26615 = zext i1 %r26614 to i64
-  store i64 %r26615, ptr %a26565
-  br i1 %r26614, label %lr26566, label %ld26567
-lr26566:
-  %r26616 = load i64, ptr %a26381
-  %r26617 = add i64 %r26616, 3
-  %r26619 = inttoptr i64 %r26617 to ptr
-  %r26620 = load i8, ptr %r26619, align 1
-  %r26618 = zext i8 %r26620 to i64
-  %r26622 = icmp sge i64 %r26618, 128
-  %r26621 = zext i1 %r26622 to i64
-  %r26623 = icmp ne i64 %r26621, 0
-  %r26624 = zext i1 %r26623 to i64
-  store i64 %r26624, ptr %a26565
-  br label %ld26567
-ld26567:
-  %r26625 = load i64, ptr %a26565
-  %r26626 = icmp ne i64 %r26625, 0
-  %r26627 = zext i1 %r26626 to i64
-  store i64 %r26627, ptr %a26562
-  br i1 %r26626, label %lr26563, label %ld26564
-lr26563:
-  %r26628 = load i64, ptr %a26381
-  %r26629 = add i64 %r26628, 3
-  %r26631 = inttoptr i64 %r26629 to ptr
-  %r26632 = load i8, ptr %r26631, align 1
-  %r26630 = zext i8 %r26632 to i64
-  %r26634 = icmp sle i64 %r26630, 191
-  %r26633 = zext i1 %r26634 to i64
-  %r26635 = icmp ne i64 %r26633, 0
-  %r26636 = zext i1 %r26635 to i64
-  store i64 %r26636, ptr %a26562
-  br label %ld26564
-ld26564:
-  %r26637 = load i64, ptr %a26562
-  %r26638 = icmp ne i64 %r26637, 0
-  br i1 %r26638, label %it26559, label %ix26561
-it26559:
+  %r26552 = zext i1 %r26551 to i64
+  store i64 %r26552, ptr %a26508
+  br label %ld26510
+ld26510:
+  %r26553 = load i64, ptr %a26508
+  %r26554 = icmp ne i64 %r26553, 0
+  br i1 %r26554, label %it26505, label %ix26507
+it26505:
+  ret i64 3
+d26555:
+  br label %ix26507
+ix26507:
+  ret i64 0
+d26556:
+  br label %ix26473
+ix26473:
+  %r26563 = load i64, ptr %a26418
+  %r26565 = icmp sge i64 %r26563, 240
+  %r26564 = zext i1 %r26565 to i64
+  %r26566 = icmp ne i64 %r26564, 0
+  %r26567 = zext i1 %r26566 to i64
+  store i64 %r26567, ptr %a26560
+  br i1 %r26566, label %lr26561, label %ld26562
+lr26561:
+  %r26568 = load i64, ptr %a26418
+  %r26570 = icmp sle i64 %r26568, 244
+  %r26569 = zext i1 %r26570 to i64
+  %r26571 = icmp ne i64 %r26569, 0
+  %r26572 = zext i1 %r26571 to i64
+  store i64 %r26572, ptr %a26560
+  br label %ld26562
+ld26562:
+  %r26573 = load i64, ptr %a26560
+  %r26574 = icmp ne i64 %r26573, 0
+  br i1 %r26574, label %it26557, label %ix26559
+it26557:
+  store i64 128, ptr %a26575
+  store i64 191, ptr %a26576
+  %r26580 = load i64, ptr %a26418
+  %r26582 = icmp eq i64 %r26580, 240
+  %r26581 = zext i1 %r26582 to i64
+  %r26583 = icmp ne i64 %r26581, 0
+  br i1 %r26583, label %it26577, label %ix26579
+it26577:
+  store i64 144, ptr %a26575
+  br label %ix26579
+ix26579:
+  %r26587 = load i64, ptr %a26418
+  %r26589 = icmp eq i64 %r26587, 244
+  %r26588 = zext i1 %r26589 to i64
+  %r26590 = icmp ne i64 %r26588, 0
+  br i1 %r26590, label %it26584, label %ix26586
+it26584:
+  store i64 143, ptr %a26576
+  br label %ix26586
+ix26586:
+  %r26609 = load i64, ptr %a26432
+  %r26610 = load i64, ptr %a26575
+  %r26612 = icmp sge i64 %r26609, %r26610
+  %r26611 = zext i1 %r26612 to i64
+  %r26613 = icmp ne i64 %r26611, 0
+  %r26614 = zext i1 %r26613 to i64
+  store i64 %r26614, ptr %a26606
+  br i1 %r26613, label %lr26607, label %ld26608
+lr26607:
+  %r26615 = load i64, ptr %a26432
+  %r26616 = load i64, ptr %a26576
+  %r26618 = icmp sle i64 %r26615, %r26616
+  %r26617 = zext i1 %r26618 to i64
+  %r26619 = icmp ne i64 %r26617, 0
+  %r26620 = zext i1 %r26619 to i64
+  store i64 %r26620, ptr %a26606
+  br label %ld26608
+ld26608:
+  %r26621 = load i64, ptr %a26606
+  %r26622 = icmp ne i64 %r26621, 0
+  %r26623 = zext i1 %r26622 to i64
+  store i64 %r26623, ptr %a26603
+  br i1 %r26622, label %lr26604, label %ld26605
+lr26604:
+  %r26624 = load i64, ptr %a26413
+  %r26625 = add i64 %r26624, 2
+  %r26627 = inttoptr i64 %r26625 to ptr
+  %r26628 = load i8, ptr %r26627, align 1
+  %r26626 = zext i8 %r26628 to i64
+  %r26630 = icmp sge i64 %r26626, 128
+  %r26629 = zext i1 %r26630 to i64
+  %r26631 = icmp ne i64 %r26629, 0
+  %r26632 = zext i1 %r26631 to i64
+  store i64 %r26632, ptr %a26603
+  br label %ld26605
+ld26605:
+  %r26633 = load i64, ptr %a26603
+  %r26634 = icmp ne i64 %r26633, 0
+  %r26635 = zext i1 %r26634 to i64
+  store i64 %r26635, ptr %a26600
+  br i1 %r26634, label %lr26601, label %ld26602
+lr26601:
+  %r26636 = load i64, ptr %a26413
+  %r26637 = add i64 %r26636, 2
+  %r26639 = inttoptr i64 %r26637 to ptr
+  %r26640 = load i8, ptr %r26639, align 1
+  %r26638 = zext i8 %r26640 to i64
+  %r26642 = icmp sle i64 %r26638, 191
+  %r26641 = zext i1 %r26642 to i64
+  %r26643 = icmp ne i64 %r26641, 0
+  %r26644 = zext i1 %r26643 to i64
+  store i64 %r26644, ptr %a26600
+  br label %ld26602
+ld26602:
+  %r26645 = load i64, ptr %a26600
+  %r26646 = icmp ne i64 %r26645, 0
+  %r26647 = zext i1 %r26646 to i64
+  store i64 %r26647, ptr %a26597
+  br i1 %r26646, label %lr26598, label %ld26599
+lr26598:
+  %r26648 = load i64, ptr %a26413
+  %r26649 = add i64 %r26648, 3
+  %r26651 = inttoptr i64 %r26649 to ptr
+  %r26652 = load i8, ptr %r26651, align 1
+  %r26650 = zext i8 %r26652 to i64
+  %r26654 = icmp sge i64 %r26650, 128
+  %r26653 = zext i1 %r26654 to i64
+  %r26655 = icmp ne i64 %r26653, 0
+  %r26656 = zext i1 %r26655 to i64
+  store i64 %r26656, ptr %a26597
+  br label %ld26599
+ld26599:
+  %r26657 = load i64, ptr %a26597
+  %r26658 = icmp ne i64 %r26657, 0
+  %r26659 = zext i1 %r26658 to i64
+  store i64 %r26659, ptr %a26594
+  br i1 %r26658, label %lr26595, label %ld26596
+lr26595:
+  %r26660 = load i64, ptr %a26413
+  %r26661 = add i64 %r26660, 3
+  %r26663 = inttoptr i64 %r26661 to ptr
+  %r26664 = load i8, ptr %r26663, align 1
+  %r26662 = zext i8 %r26664 to i64
+  %r26666 = icmp sle i64 %r26662, 191
+  %r26665 = zext i1 %r26666 to i64
+  %r26667 = icmp ne i64 %r26665, 0
+  %r26668 = zext i1 %r26667 to i64
+  store i64 %r26668, ptr %a26594
+  br label %ld26596
+ld26596:
+  %r26669 = load i64, ptr %a26594
+  %r26670 = icmp ne i64 %r26669, 0
+  br i1 %r26670, label %it26591, label %ix26593
+it26591:
   ret i64 4
-d26639:
-  br label %ix26561
-ix26561:
+d26671:
+  br label %ix26593
+ix26593:
   ret i64 0
-d26640:
-  br label %ix26527
-ix26527:
+d26672:
+  br label %ix26559
+ix26559:
   ret i64 0
-d26641:
+d26673:
   ret i64 0
 }
 define internal i64 @_rl_cp(i64 %p0, i64 %p1) {
 entry:
-  %a26642 = alloca i64, align 8
-  %a26643 = alloca i64, align 8
-  %a26648 = alloca i64, align 8
+  %a26674 = alloca i64, align 8
+  %a26675 = alloca i64, align 8
+  %a26680 = alloca i64, align 8
   br label %start
 start:
-  store i64 %p0, ptr %a26642
-  store i64 %p1, ptr %a26643
-  %r26644 = load i64, ptr %a26642
-  %r26646 = inttoptr i64 %r26644 to ptr
-  %r26647 = load i8, ptr %r26646, align 1
-  %r26645 = zext i8 %r26647 to i64
-  store i64 %r26645, ptr %a26648
-  %r26652 = load i64, ptr %a26643
-  %r26654 = icmp eq i64 %r26652, 1
-  %r26653 = zext i1 %r26654 to i64
-  %r26655 = icmp ne i64 %r26653, 0
-  br i1 %r26655, label %it26649, label %ix26651
-it26649:
-  %r26656 = load i64, ptr %a26648
-  ret i64 %r26656
-d26657:
-  br label %ix26651
-ix26651:
-  %r26661 = load i64, ptr %a26643
-  %r26663 = icmp eq i64 %r26661, 2
-  %r26662 = zext i1 %r26663 to i64
-  %r26664 = icmp ne i64 %r26662, 0
-  br i1 %r26664, label %it26658, label %ix26660
-it26658:
-  %r26665 = load i64, ptr %a26648
-  %r26666 = and i64 %r26665, 31
-  %r26667 = shl i64 %r26666, 6
-  %r26668 = load i64, ptr %a26642
-  %r26669 = add i64 %r26668, 1
-  %r26671 = inttoptr i64 %r26669 to ptr
-  %r26672 = load i8, ptr %r26671, align 1
-  %r26670 = zext i8 %r26672 to i64
-  %r26673 = and i64 %r26670, 63
-  %r26674 = add i64 %r26667, %r26673
-  ret i64 %r26674
-d26675:
-  br label %ix26660
-ix26660:
-  %r26679 = load i64, ptr %a26643
-  %r26681 = icmp eq i64 %r26679, 3
-  %r26680 = zext i1 %r26681 to i64
-  %r26682 = icmp ne i64 %r26680, 0
-  br i1 %r26682, label %it26676, label %ix26678
-it26676:
-  %r26683 = load i64, ptr %a26648
-  %r26684 = and i64 %r26683, 15
-  %r26685 = shl i64 %r26684, 12
-  %r26686 = load i64, ptr %a26642
-  %r26687 = add i64 %r26686, 1
-  %r26689 = inttoptr i64 %r26687 to ptr
-  %r26690 = load i8, ptr %r26689, align 1
-  %r26688 = zext i8 %r26690 to i64
-  %r26691 = and i64 %r26688, 63
-  %r26692 = shl i64 %r26691, 6
-  %r26693 = add i64 %r26685, %r26692
-  %r26694 = load i64, ptr %a26642
-  %r26695 = add i64 %r26694, 2
-  %r26697 = inttoptr i64 %r26695 to ptr
-  %r26698 = load i8, ptr %r26697, align 1
-  %r26696 = zext i8 %r26698 to i64
-  %r26699 = and i64 %r26696, 63
-  %r26700 = add i64 %r26693, %r26699
-  ret i64 %r26700
-d26701:
-  br label %ix26678
-ix26678:
-  %r26702 = load i64, ptr %a26648
-  %r26703 = and i64 %r26702, 7
-  %r26704 = shl i64 %r26703, 18
-  %r26705 = load i64, ptr %a26642
-  %r26706 = add i64 %r26705, 1
-  %r26708 = inttoptr i64 %r26706 to ptr
-  %r26709 = load i8, ptr %r26708, align 1
-  %r26707 = zext i8 %r26709 to i64
-  %r26710 = and i64 %r26707, 63
-  %r26711 = shl i64 %r26710, 12
-  %r26712 = add i64 %r26704, %r26711
-  %r26713 = load i64, ptr %a26642
-  %r26714 = add i64 %r26713, 2
-  %r26716 = inttoptr i64 %r26714 to ptr
-  %r26717 = load i8, ptr %r26716, align 1
-  %r26715 = zext i8 %r26717 to i64
-  %r26718 = and i64 %r26715, 63
-  %r26719 = shl i64 %r26718, 6
-  %r26720 = add i64 %r26712, %r26719
-  %r26721 = load i64, ptr %a26642
-  %r26722 = add i64 %r26721, 3
-  %r26724 = inttoptr i64 %r26722 to ptr
-  %r26725 = load i8, ptr %r26724, align 1
-  %r26723 = zext i8 %r26725 to i64
-  %r26726 = and i64 %r26723, 63
-  %r26727 = add i64 %r26720, %r26726
-  ret i64 %r26727
-d26728:
+  store i64 %p0, ptr %a26674
+  store i64 %p1, ptr %a26675
+  %r26676 = load i64, ptr %a26674
+  %r26678 = inttoptr i64 %r26676 to ptr
+  %r26679 = load i8, ptr %r26678, align 1
+  %r26677 = zext i8 %r26679 to i64
+  store i64 %r26677, ptr %a26680
+  %r26684 = load i64, ptr %a26675
+  %r26686 = icmp eq i64 %r26684, 1
+  %r26685 = zext i1 %r26686 to i64
+  %r26687 = icmp ne i64 %r26685, 0
+  br i1 %r26687, label %it26681, label %ix26683
+it26681:
+  %r26688 = load i64, ptr %a26680
+  ret i64 %r26688
+d26689:
+  br label %ix26683
+ix26683:
+  %r26693 = load i64, ptr %a26675
+  %r26695 = icmp eq i64 %r26693, 2
+  %r26694 = zext i1 %r26695 to i64
+  %r26696 = icmp ne i64 %r26694, 0
+  br i1 %r26696, label %it26690, label %ix26692
+it26690:
+  %r26697 = load i64, ptr %a26680
+  %r26698 = and i64 %r26697, 31
+  %r26699 = shl i64 %r26698, 6
+  %r26700 = load i64, ptr %a26674
+  %r26701 = add i64 %r26700, 1
+  %r26703 = inttoptr i64 %r26701 to ptr
+  %r26704 = load i8, ptr %r26703, align 1
+  %r26702 = zext i8 %r26704 to i64
+  %r26705 = and i64 %r26702, 63
+  %r26706 = add i64 %r26699, %r26705
+  ret i64 %r26706
+d26707:
+  br label %ix26692
+ix26692:
+  %r26711 = load i64, ptr %a26675
+  %r26713 = icmp eq i64 %r26711, 3
+  %r26712 = zext i1 %r26713 to i64
+  %r26714 = icmp ne i64 %r26712, 0
+  br i1 %r26714, label %it26708, label %ix26710
+it26708:
+  %r26715 = load i64, ptr %a26680
+  %r26716 = and i64 %r26715, 15
+  %r26717 = shl i64 %r26716, 12
+  %r26718 = load i64, ptr %a26674
+  %r26719 = add i64 %r26718, 1
+  %r26721 = inttoptr i64 %r26719 to ptr
+  %r26722 = load i8, ptr %r26721, align 1
+  %r26720 = zext i8 %r26722 to i64
+  %r26723 = and i64 %r26720, 63
+  %r26724 = shl i64 %r26723, 6
+  %r26725 = add i64 %r26717, %r26724
+  %r26726 = load i64, ptr %a26674
+  %r26727 = add i64 %r26726, 2
+  %r26729 = inttoptr i64 %r26727 to ptr
+  %r26730 = load i8, ptr %r26729, align 1
+  %r26728 = zext i8 %r26730 to i64
+  %r26731 = and i64 %r26728, 63
+  %r26732 = add i64 %r26725, %r26731
+  ret i64 %r26732
+d26733:
+  br label %ix26710
+ix26710:
+  %r26734 = load i64, ptr %a26680
+  %r26735 = and i64 %r26734, 7
+  %r26736 = shl i64 %r26735, 18
+  %r26737 = load i64, ptr %a26674
+  %r26738 = add i64 %r26737, 1
+  %r26740 = inttoptr i64 %r26738 to ptr
+  %r26741 = load i8, ptr %r26740, align 1
+  %r26739 = zext i8 %r26741 to i64
+  %r26742 = and i64 %r26739, 63
+  %r26743 = shl i64 %r26742, 12
+  %r26744 = add i64 %r26736, %r26743
+  %r26745 = load i64, ptr %a26674
+  %r26746 = add i64 %r26745, 2
+  %r26748 = inttoptr i64 %r26746 to ptr
+  %r26749 = load i8, ptr %r26748, align 1
+  %r26747 = zext i8 %r26749 to i64
+  %r26750 = and i64 %r26747, 63
+  %r26751 = shl i64 %r26750, 6
+  %r26752 = add i64 %r26744, %r26751
+  %r26753 = load i64, ptr %a26674
+  %r26754 = add i64 %r26753, 3
+  %r26756 = inttoptr i64 %r26754 to ptr
+  %r26757 = load i8, ptr %r26756, align 1
+  %r26755 = zext i8 %r26757 to i64
+  %r26758 = and i64 %r26755, 63
+  %r26759 = add i64 %r26752, %r26758
+  ret i64 %r26759
+d26760:
   ret i64 0
 }
 define internal i64 @_rl_is_space(i64 %p0) {
 entry:
-  %a26729 = alloca i64, align 8
-  %a26733 = alloca i64, align 8
-  %a26736 = alloca i64, align 8
-  %a26739 = alloca i64, align 8
-  %a26742 = alloca i64, align 8
-  %a26750 = alloca i64, align 8
-  %a26796 = alloca i64, align 8
-  %a26799 = alloca i64, align 8
-  %a26802 = alloca i64, align 8
-  %a26805 = alloca i64, align 8
-  %a26808 = alloca i64, align 8
-  %a26811 = alloca i64, align 8
+  %a26761 = alloca i64, align 8
+  %a26765 = alloca i64, align 8
+  %a26768 = alloca i64, align 8
+  %a26771 = alloca i64, align 8
+  %a26774 = alloca i64, align 8
+  %a26782 = alloca i64, align 8
+  %a26828 = alloca i64, align 8
+  %a26831 = alloca i64, align 8
+  %a26834 = alloca i64, align 8
+  %a26837 = alloca i64, align 8
+  %a26840 = alloca i64, align 8
+  %a26843 = alloca i64, align 8
   br label %start
 start:
-  store i64 %p0, ptr %a26729
-  %r26745 = load i64, ptr %a26729
-  %r26747 = icmp eq i64 %r26745, 32
-  %r26746 = zext i1 %r26747 to i64
-  %r26748 = icmp ne i64 %r26746, 0
-  %r26749 = zext i1 %r26748 to i64
-  store i64 %r26749, ptr %a26742
-  br i1 %r26748, label %ld26744, label %lr26743
-lr26743:
-  %r26753 = load i64, ptr %a26729
-  %r26755 = icmp sge i64 %r26753, 9
-  %r26754 = zext i1 %r26755 to i64
-  %r26756 = icmp ne i64 %r26754, 0
-  %r26757 = zext i1 %r26756 to i64
-  store i64 %r26757, ptr %a26750
-  br i1 %r26756, label %lr26751, label %ld26752
-lr26751:
-  %r26758 = load i64, ptr %a26729
-  %r26760 = icmp sle i64 %r26758, 13
-  %r26759 = zext i1 %r26760 to i64
-  %r26761 = icmp ne i64 %r26759, 0
-  %r26762 = zext i1 %r26761 to i64
-  store i64 %r26762, ptr %a26750
-  br label %ld26752
-ld26752:
-  %r26763 = load i64, ptr %a26750
-  %r26764 = icmp ne i64 %r26763, 0
-  %r26765 = zext i1 %r26764 to i64
-  store i64 %r26765, ptr %a26742
-  br label %ld26744
-ld26744:
-  %r26766 = load i64, ptr %a26742
-  %r26767 = icmp ne i64 %r26766, 0
-  %r26768 = zext i1 %r26767 to i64
-  store i64 %r26768, ptr %a26739
-  br i1 %r26767, label %ld26741, label %lr26740
-lr26740:
-  %r26769 = load i64, ptr %a26729
-  %r26771 = icmp eq i64 %r26769, 133
-  %r26770 = zext i1 %r26771 to i64
-  %r26772 = icmp ne i64 %r26770, 0
-  %r26773 = zext i1 %r26772 to i64
-  store i64 %r26773, ptr %a26739
-  br label %ld26741
-ld26741:
-  %r26774 = load i64, ptr %a26739
-  %r26775 = icmp ne i64 %r26774, 0
-  %r26776 = zext i1 %r26775 to i64
-  store i64 %r26776, ptr %a26736
-  br i1 %r26775, label %ld26738, label %lr26737
-lr26737:
-  %r26777 = load i64, ptr %a26729
-  %r26779 = icmp eq i64 %r26777, 160
+  store i64 %p0, ptr %a26761
+  %r26777 = load i64, ptr %a26761
+  %r26779 = icmp eq i64 %r26777, 32
   %r26778 = zext i1 %r26779 to i64
   %r26780 = icmp ne i64 %r26778, 0
   %r26781 = zext i1 %r26780 to i64
-  store i64 %r26781, ptr %a26736
-  br label %ld26738
-ld26738:
-  %r26782 = load i64, ptr %a26736
-  %r26783 = icmp ne i64 %r26782, 0
-  %r26784 = zext i1 %r26783 to i64
-  store i64 %r26784, ptr %a26733
-  br i1 %r26783, label %ld26735, label %lr26734
-lr26734:
-  %r26785 = load i64, ptr %a26729
-  %r26787 = icmp eq i64 %r26785, 5760
+  store i64 %r26781, ptr %a26774
+  br i1 %r26780, label %ld26776, label %lr26775
+lr26775:
+  %r26785 = load i64, ptr %a26761
+  %r26787 = icmp sge i64 %r26785, 9
   %r26786 = zext i1 %r26787 to i64
   %r26788 = icmp ne i64 %r26786, 0
   %r26789 = zext i1 %r26788 to i64
-  store i64 %r26789, ptr %a26733
-  br label %ld26735
-ld26735:
-  %r26790 = load i64, ptr %a26733
-  %r26791 = icmp ne i64 %r26790, 0
-  br i1 %r26791, label %it26730, label %ix26732
-it26730:
+  store i64 %r26789, ptr %a26782
+  br i1 %r26788, label %lr26783, label %ld26784
+lr26783:
+  %r26790 = load i64, ptr %a26761
+  %r26792 = icmp sle i64 %r26790, 13
+  %r26791 = zext i1 %r26792 to i64
+  %r26793 = icmp ne i64 %r26791, 0
+  %r26794 = zext i1 %r26793 to i64
+  store i64 %r26794, ptr %a26782
+  br label %ld26784
+ld26784:
+  %r26795 = load i64, ptr %a26782
+  %r26796 = icmp ne i64 %r26795, 0
+  %r26797 = zext i1 %r26796 to i64
+  store i64 %r26797, ptr %a26774
+  br label %ld26776
+ld26776:
+  %r26798 = load i64, ptr %a26774
+  %r26799 = icmp ne i64 %r26798, 0
+  %r26800 = zext i1 %r26799 to i64
+  store i64 %r26800, ptr %a26771
+  br i1 %r26799, label %ld26773, label %lr26772
+lr26772:
+  %r26801 = load i64, ptr %a26761
+  %r26803 = icmp eq i64 %r26801, 133
+  %r26802 = zext i1 %r26803 to i64
+  %r26804 = icmp ne i64 %r26802, 0
+  %r26805 = zext i1 %r26804 to i64
+  store i64 %r26805, ptr %a26771
+  br label %ld26773
+ld26773:
+  %r26806 = load i64, ptr %a26771
+  %r26807 = icmp ne i64 %r26806, 0
+  %r26808 = zext i1 %r26807 to i64
+  store i64 %r26808, ptr %a26768
+  br i1 %r26807, label %ld26770, label %lr26769
+lr26769:
+  %r26809 = load i64, ptr %a26761
+  %r26811 = icmp eq i64 %r26809, 160
+  %r26810 = zext i1 %r26811 to i64
+  %r26812 = icmp ne i64 %r26810, 0
+  %r26813 = zext i1 %r26812 to i64
+  store i64 %r26813, ptr %a26768
+  br label %ld26770
+ld26770:
+  %r26814 = load i64, ptr %a26768
+  %r26815 = icmp ne i64 %r26814, 0
+  %r26816 = zext i1 %r26815 to i64
+  store i64 %r26816, ptr %a26765
+  br i1 %r26815, label %ld26767, label %lr26766
+lr26766:
+  %r26817 = load i64, ptr %a26761
+  %r26819 = icmp eq i64 %r26817, 5760
+  %r26818 = zext i1 %r26819 to i64
+  %r26820 = icmp ne i64 %r26818, 0
+  %r26821 = zext i1 %r26820 to i64
+  store i64 %r26821, ptr %a26765
+  br label %ld26767
+ld26767:
+  %r26822 = load i64, ptr %a26765
+  %r26823 = icmp ne i64 %r26822, 0
+  br i1 %r26823, label %it26762, label %ix26764
+it26762:
   ret i64 1
-d26792:
-  br label %ix26732
-ix26732:
-  %r26814 = load i64, ptr %a26729
-  %r26816 = icmp sge i64 %r26814, 8192
-  %r26815 = zext i1 %r26816 to i64
-  %r26817 = icmp ne i64 %r26815, 0
-  %r26818 = zext i1 %r26817 to i64
-  store i64 %r26818, ptr %a26811
-  br i1 %r26817, label %lr26812, label %ld26813
-lr26812:
-  %r26819 = load i64, ptr %a26729
-  %r26821 = icmp sle i64 %r26819, 8202
-  %r26820 = zext i1 %r26821 to i64
-  %r26822 = icmp ne i64 %r26820, 0
-  %r26823 = zext i1 %r26822 to i64
-  store i64 %r26823, ptr %a26811
-  br label %ld26813
-ld26813:
-  %r26824 = load i64, ptr %a26811
-  %r26825 = icmp ne i64 %r26824, 0
-  %r26826 = zext i1 %r26825 to i64
-  store i64 %r26826, ptr %a26808
-  br i1 %r26825, label %ld26810, label %lr26809
-lr26809:
-  %r26827 = load i64, ptr %a26729
-  %r26829 = icmp eq i64 %r26827, 8232
-  %r26828 = zext i1 %r26829 to i64
-  %r26830 = icmp ne i64 %r26828, 0
-  %r26831 = zext i1 %r26830 to i64
-  store i64 %r26831, ptr %a26808
-  br label %ld26810
-ld26810:
-  %r26832 = load i64, ptr %a26808
-  %r26833 = icmp ne i64 %r26832, 0
-  %r26834 = zext i1 %r26833 to i64
-  store i64 %r26834, ptr %a26805
-  br i1 %r26833, label %ld26807, label %lr26806
-lr26806:
-  %r26835 = load i64, ptr %a26729
-  %r26837 = icmp eq i64 %r26835, 8233
-  %r26836 = zext i1 %r26837 to i64
-  %r26838 = icmp ne i64 %r26836, 0
-  %r26839 = zext i1 %r26838 to i64
-  store i64 %r26839, ptr %a26805
-  br label %ld26807
-ld26807:
-  %r26840 = load i64, ptr %a26805
-  %r26841 = icmp ne i64 %r26840, 0
-  %r26842 = zext i1 %r26841 to i64
-  store i64 %r26842, ptr %a26802
-  br i1 %r26841, label %ld26804, label %lr26803
-lr26803:
-  %r26843 = load i64, ptr %a26729
-  %r26845 = icmp eq i64 %r26843, 8239
-  %r26844 = zext i1 %r26845 to i64
-  %r26846 = icmp ne i64 %r26844, 0
-  %r26847 = zext i1 %r26846 to i64
-  store i64 %r26847, ptr %a26802
-  br label %ld26804
-ld26804:
-  %r26848 = load i64, ptr %a26802
-  %r26849 = icmp ne i64 %r26848, 0
+d26824:
+  br label %ix26764
+ix26764:
+  %r26846 = load i64, ptr %a26761
+  %r26848 = icmp sge i64 %r26846, 8192
+  %r26847 = zext i1 %r26848 to i64
+  %r26849 = icmp ne i64 %r26847, 0
   %r26850 = zext i1 %r26849 to i64
-  store i64 %r26850, ptr %a26799
-  br i1 %r26849, label %ld26801, label %lr26800
-lr26800:
-  %r26851 = load i64, ptr %a26729
-  %r26853 = icmp eq i64 %r26851, 8287
+  store i64 %r26850, ptr %a26843
+  br i1 %r26849, label %lr26844, label %ld26845
+lr26844:
+  %r26851 = load i64, ptr %a26761
+  %r26853 = icmp sle i64 %r26851, 8202
   %r26852 = zext i1 %r26853 to i64
   %r26854 = icmp ne i64 %r26852, 0
   %r26855 = zext i1 %r26854 to i64
-  store i64 %r26855, ptr %a26799
-  br label %ld26801
-ld26801:
-  %r26856 = load i64, ptr %a26799
+  store i64 %r26855, ptr %a26843
+  br label %ld26845
+ld26845:
+  %r26856 = load i64, ptr %a26843
   %r26857 = icmp ne i64 %r26856, 0
   %r26858 = zext i1 %r26857 to i64
-  store i64 %r26858, ptr %a26796
-  br i1 %r26857, label %ld26798, label %lr26797
-lr26797:
-  %r26859 = load i64, ptr %a26729
-  %r26861 = icmp eq i64 %r26859, 12288
+  store i64 %r26858, ptr %a26840
+  br i1 %r26857, label %ld26842, label %lr26841
+lr26841:
+  %r26859 = load i64, ptr %a26761
+  %r26861 = icmp eq i64 %r26859, 8232
   %r26860 = zext i1 %r26861 to i64
   %r26862 = icmp ne i64 %r26860, 0
   %r26863 = zext i1 %r26862 to i64
-  store i64 %r26863, ptr %a26796
-  br label %ld26798
-ld26798:
-  %r26864 = load i64, ptr %a26796
+  store i64 %r26863, ptr %a26840
+  br label %ld26842
+ld26842:
+  %r26864 = load i64, ptr %a26840
   %r26865 = icmp ne i64 %r26864, 0
-  br i1 %r26865, label %it26793, label %ix26795
-it26793:
+  %r26866 = zext i1 %r26865 to i64
+  store i64 %r26866, ptr %a26837
+  br i1 %r26865, label %ld26839, label %lr26838
+lr26838:
+  %r26867 = load i64, ptr %a26761
+  %r26869 = icmp eq i64 %r26867, 8233
+  %r26868 = zext i1 %r26869 to i64
+  %r26870 = icmp ne i64 %r26868, 0
+  %r26871 = zext i1 %r26870 to i64
+  store i64 %r26871, ptr %a26837
+  br label %ld26839
+ld26839:
+  %r26872 = load i64, ptr %a26837
+  %r26873 = icmp ne i64 %r26872, 0
+  %r26874 = zext i1 %r26873 to i64
+  store i64 %r26874, ptr %a26834
+  br i1 %r26873, label %ld26836, label %lr26835
+lr26835:
+  %r26875 = load i64, ptr %a26761
+  %r26877 = icmp eq i64 %r26875, 8239
+  %r26876 = zext i1 %r26877 to i64
+  %r26878 = icmp ne i64 %r26876, 0
+  %r26879 = zext i1 %r26878 to i64
+  store i64 %r26879, ptr %a26834
+  br label %ld26836
+ld26836:
+  %r26880 = load i64, ptr %a26834
+  %r26881 = icmp ne i64 %r26880, 0
+  %r26882 = zext i1 %r26881 to i64
+  store i64 %r26882, ptr %a26831
+  br i1 %r26881, label %ld26833, label %lr26832
+lr26832:
+  %r26883 = load i64, ptr %a26761
+  %r26885 = icmp eq i64 %r26883, 8287
+  %r26884 = zext i1 %r26885 to i64
+  %r26886 = icmp ne i64 %r26884, 0
+  %r26887 = zext i1 %r26886 to i64
+  store i64 %r26887, ptr %a26831
+  br label %ld26833
+ld26833:
+  %r26888 = load i64, ptr %a26831
+  %r26889 = icmp ne i64 %r26888, 0
+  %r26890 = zext i1 %r26889 to i64
+  store i64 %r26890, ptr %a26828
+  br i1 %r26889, label %ld26830, label %lr26829
+lr26829:
+  %r26891 = load i64, ptr %a26761
+  %r26893 = icmp eq i64 %r26891, 12288
+  %r26892 = zext i1 %r26893 to i64
+  %r26894 = icmp ne i64 %r26892, 0
+  %r26895 = zext i1 %r26894 to i64
+  store i64 %r26895, ptr %a26828
+  br label %ld26830
+ld26830:
+  %r26896 = load i64, ptr %a26828
+  %r26897 = icmp ne i64 %r26896, 0
+  br i1 %r26897, label %it26825, label %ix26827
+it26825:
   ret i64 1
-d26866:
-  br label %ix26795
-ix26795:
+d26898:
+  br label %ix26827
+ix26827:
   ret i64 0
-d26867:
+d26899:
   ret i64 0
 }
 define internal i64 @_rl_utf8_ok(i64 %p0) {
 entry:
-  %a26868 = alloca i64, align 8
-  %a26878 = alloca i64, align 8
-  %a26891 = alloca i64, align 8
+  %a26900 = alloca i64, align 8
+  %a26910 = alloca i64, align 8
+  %a26923 = alloca i64, align 8
   br label %start
 start:
-  store i64 %p0, ptr %a26868
-  %r26872 = load i64, ptr %a26868
-  %r26874 = icmp eq i64 %r26872, 0
-  %r26873 = zext i1 %r26874 to i64
-  %r26875 = icmp ne i64 %r26873, 0
-  br i1 %r26875, label %it26869, label %ix26871
-it26869:
+  store i64 %p0, ptr %a26900
+  %r26904 = load i64, ptr %a26900
+  %r26906 = icmp eq i64 %r26904, 0
+  %r26905 = zext i1 %r26906 to i64
+  %r26907 = icmp ne i64 %r26905, 0
+  br i1 %r26907, label %it26901, label %ix26903
+it26901:
   ret i64 0
-d26876:
-  br label %ix26871
-ix26871:
-  %r26877 = load i64, ptr %a26868
-  store i64 %r26877, ptr %a26878
-  br label %wh26879
-wh26879:
-  %r26882 = load i64, ptr %a26878
-  %r26884 = inttoptr i64 %r26882 to ptr
-  %r26885 = load i8, ptr %r26884, align 1
-  %r26883 = zext i8 %r26885 to i64
-  %r26887 = icmp ne i64 %r26883, 0
-  %r26886 = zext i1 %r26887 to i64
-  %r26888 = icmp ne i64 %r26886, 0
-  br i1 %r26888, label %wb26880, label %we26881
-wb26880:
-  %r26889 = load i64, ptr %a26878
-  %r26890 = call i64 @_rl_cp_len(i64 %r26889)
-  store i64 %r26890, ptr %a26891
-  %r26895 = load i64, ptr %a26891
-  %r26897 = icmp eq i64 %r26895, 0
-  %r26896 = zext i1 %r26897 to i64
-  %r26898 = icmp ne i64 %r26896, 0
-  br i1 %r26898, label %it26892, label %ix26894
-it26892:
+d26908:
+  br label %ix26903
+ix26903:
+  %r26909 = load i64, ptr %a26900
+  store i64 %r26909, ptr %a26910
+  br label %wh26911
+wh26911:
+  %r26914 = load i64, ptr %a26910
+  %r26916 = inttoptr i64 %r26914 to ptr
+  %r26917 = load i8, ptr %r26916, align 1
+  %r26915 = zext i8 %r26917 to i64
+  %r26919 = icmp ne i64 %r26915, 0
+  %r26918 = zext i1 %r26919 to i64
+  %r26920 = icmp ne i64 %r26918, 0
+  br i1 %r26920, label %wb26912, label %we26913
+wb26912:
+  %r26921 = load i64, ptr %a26910
+  %r26922 = call i64 @_rl_cp_len(i64 %r26921)
+  store i64 %r26922, ptr %a26923
+  %r26927 = load i64, ptr %a26923
+  %r26929 = icmp eq i64 %r26927, 0
+  %r26928 = zext i1 %r26929 to i64
+  %r26930 = icmp ne i64 %r26928, 0
+  br i1 %r26930, label %it26924, label %ix26926
+it26924:
   ret i64 0
-d26899:
-  br label %ix26894
-ix26894:
-  %r26900 = load i64, ptr %a26878
-  %r26901 = load i64, ptr %a26891
-  %r26902 = add i64 %r26900, %r26901
-  store i64 %r26902, ptr %a26878
-  br label %wh26879
-we26881:
+d26931:
+  br label %ix26926
+ix26926:
+  %r26932 = load i64, ptr %a26910
+  %r26933 = load i64, ptr %a26923
+  %r26934 = add i64 %r26932, %r26933
+  store i64 %r26934, ptr %a26910
+  br label %wh26911
+we26913:
   ret i64 1
-d26903:
+d26935:
   ret i64 0
 }
 define internal i64 @_rl_blank(i64 %p0) {
 entry:
-  %a26904 = alloca i64, align 8
-  %a26906 = alloca i64, align 8
-  %a26919 = alloca i64, align 8
+  %a26936 = alloca i64, align 8
+  %a26938 = alloca i64, align 8
+  %a26951 = alloca i64, align 8
   br label %start
 start:
-  store i64 %p0, ptr %a26904
-  %r26905 = load i64, ptr %a26904
-  store i64 %r26905, ptr %a26906
-  br label %wh26907
-wh26907:
-  %r26910 = load i64, ptr %a26906
-  %r26912 = inttoptr i64 %r26910 to ptr
-  %r26913 = load i8, ptr %r26912, align 1
-  %r26911 = zext i8 %r26913 to i64
-  %r26915 = icmp ne i64 %r26911, 0
-  %r26914 = zext i1 %r26915 to i64
-  %r26916 = icmp ne i64 %r26914, 0
-  br i1 %r26916, label %wb26908, label %we26909
-wb26908:
-  %r26917 = load i64, ptr %a26906
-  %r26918 = call i64 @_rl_cp_len(i64 %r26917)
-  store i64 %r26918, ptr %a26919
-  %r26923 = load i64, ptr %a26906
-  %r26924 = load i64, ptr %a26919
-  %r26925 = call i64 @_rl_cp(i64 %r26923, i64 %r26924)
-  %r26926 = call i64 @_rl_is_space(i64 %r26925)
-  %r26928 = icmp eq i64 %r26926, 0
-  %r26927 = zext i1 %r26928 to i64
-  %r26929 = icmp ne i64 %r26927, 0
-  br i1 %r26929, label %it26920, label %ix26922
-it26920:
+  store i64 %p0, ptr %a26936
+  %r26937 = load i64, ptr %a26936
+  store i64 %r26937, ptr %a26938
+  br label %wh26939
+wh26939:
+  %r26942 = load i64, ptr %a26938
+  %r26944 = inttoptr i64 %r26942 to ptr
+  %r26945 = load i8, ptr %r26944, align 1
+  %r26943 = zext i8 %r26945 to i64
+  %r26947 = icmp ne i64 %r26943, 0
+  %r26946 = zext i1 %r26947 to i64
+  %r26948 = icmp ne i64 %r26946, 0
+  br i1 %r26948, label %wb26940, label %we26941
+wb26940:
+  %r26949 = load i64, ptr %a26938
+  %r26950 = call i64 @_rl_cp_len(i64 %r26949)
+  store i64 %r26950, ptr %a26951
+  %r26955 = load i64, ptr %a26938
+  %r26956 = load i64, ptr %a26951
+  %r26957 = call i64 @_rl_cp(i64 %r26955, i64 %r26956)
+  %r26958 = call i64 @_rl_is_space(i64 %r26957)
+  %r26960 = icmp eq i64 %r26958, 0
+  %r26959 = zext i1 %r26960 to i64
+  %r26961 = icmp ne i64 %r26959, 0
+  br i1 %r26961, label %it26952, label %ix26954
+it26952:
   ret i64 0
-d26930:
-  br label %ix26922
-ix26922:
-  %r26931 = load i64, ptr %a26906
-  %r26932 = load i64, ptr %a26919
-  %r26933 = add i64 %r26931, %r26932
-  store i64 %r26933, ptr %a26906
-  br label %wh26907
-we26909:
+d26962:
+  br label %ix26954
+ix26954:
+  %r26963 = load i64, ptr %a26938
+  %r26964 = load i64, ptr %a26951
+  %r26965 = add i64 %r26963, %r26964
+  store i64 %r26965, ptr %a26938
+  br label %wh26939
+we26941:
   ret i64 1
-d26934:
+d26966:
   ret i64 0
 }
 define internal i64 @_rl_name_ok(i64 %p0) {
 entry:
-  %a26935 = alloca i64, align 8
-  %a26936 = alloca i64, align 8
+  %a26967 = alloca i64, align 8
+  %a26968 = alloca i64, align 8
   br label %start
 start:
-  store i64 %p0, ptr %a26935
-  %r26939 = load i64, ptr %a26935
-  %r26940 = call i64 @_rl_utf8_ok(i64 %r26939)
-  %r26942 = icmp ne i64 %r26940, 0
-  %r26941 = zext i1 %r26942 to i64
-  %r26943 = icmp ne i64 %r26941, 0
-  %r26944 = zext i1 %r26943 to i64
-  store i64 %r26944, ptr %a26936
-  br i1 %r26943, label %lr26937, label %ld26938
-lr26937:
-  %r26945 = load i64, ptr %a26935
-  %r26946 = call i64 @_rl_blank(i64 %r26945)
-  %r26948 = icmp eq i64 %r26946, 0
-  %r26947 = zext i1 %r26948 to i64
-  %r26949 = icmp ne i64 %r26947, 0
-  %r26950 = zext i1 %r26949 to i64
-  store i64 %r26950, ptr %a26936
-  br label %ld26938
-ld26938:
-  %r26951 = load i64, ptr %a26936
-  ret i64 %r26951
-d26952:
+  store i64 %p0, ptr %a26967
+  %r26971 = load i64, ptr %a26967
+  %r26972 = call i64 @_rl_utf8_ok(i64 %r26971)
+  %r26974 = icmp ne i64 %r26972, 0
+  %r26973 = zext i1 %r26974 to i64
+  %r26975 = icmp ne i64 %r26973, 0
+  %r26976 = zext i1 %r26975 to i64
+  store i64 %r26976, ptr %a26968
+  br i1 %r26975, label %lr26969, label %ld26970
+lr26969:
+  %r26977 = load i64, ptr %a26967
+  %r26978 = call i64 @_rl_blank(i64 %r26977)
+  %r26980 = icmp eq i64 %r26978, 0
+  %r26979 = zext i1 %r26980 to i64
+  %r26981 = icmp ne i64 %r26979, 0
+  %r26982 = zext i1 %r26981 to i64
+  store i64 %r26982, ptr %a26968
+  br label %ld26970
+ld26970:
+  %r26983 = load i64, ptr %a26968
+  ret i64 %r26983
+d26984:
   ret i64 0
 }
 define internal i64 @_rl_collect_fields(i64 %p0, i64 %p1) {
 entry:
-  %a26953 = alloca i64, align 8
-  %a26954 = alloca i64, align 8
-  %a26958 = alloca i64, align 8
-  %a26980 = alloca i64, align 8
-  %a26981 = alloca i64, align 8
-  %a26982 = alloca i64, align 8
-  %a26998 = alloca i64, align 8
+  %a26985 = alloca i64, align 8
+  %a26986 = alloca i64, align 8
+  %a26990 = alloca i64, align 8
+  %a27012 = alloca i64, align 8
+  %a27013 = alloca i64, align 8
+  %a27014 = alloca i64, align 8
+  %a27030 = alloca i64, align 8
   br label %start
 start:
-  store i64 %p0, ptr %a26953
-  store i64 %p1, ptr %a26954
-  %r26961 = load i64, ptr %a26953
-  %r26963 = icmp eq i64 %r26961, 0
-  %r26962 = zext i1 %r26963 to i64
-  %r26964 = icmp ne i64 %r26962, 0
-  %r26965 = zext i1 %r26964 to i64
-  store i64 %r26965, ptr %a26958
-  br i1 %r26964, label %ld26960, label %lr26959
-lr26959:
-  %r26966 = load i64, ptr %a26954
-  %r26968 = icmp sle i64 %r26966, 0
-  %r26967 = zext i1 %r26968 to i64
-  %r26969 = icmp ne i64 %r26967, 0
-  %r26970 = zext i1 %r26969 to i64
-  store i64 %r26970, ptr %a26958
-  br label %ld26960
-ld26960:
-  %r26971 = load i64, ptr %a26958
-  %r26972 = icmp ne i64 %r26971, 0
-  br i1 %r26972, label %it26955, label %ix26957
-it26955:
-  %r26973 = call ptr @calloc(i64 1, i64 8)
-  %r26974 = ptrtoint ptr %r26973 to i64
-  ret i64 %r26974
-d26975:
-  br label %ix26957
-ix26957:
-  %r26976 = load i64, ptr %a26954
-  %r26977 = add i64 %r26976, 1
-  %r26978 = call ptr @calloc(i64 %r26977, i64 8)
-  %r26979 = ptrtoint ptr %r26978 to i64
-  store i64 %r26979, ptr %a26980
-  store i64 0, ptr %a26981
-  store i64 0, ptr %a26982
-  br label %fh26983
-fh26983:
-  %r26987 = load i64, ptr %a26982
-  %r26988 = load i64, ptr %a26954
-  %r26990 = icmp slt i64 %r26987, %r26988
-  %r26989 = zext i1 %r26990 to i64
-  %r26991 = icmp ne i64 %r26989, 0
-  br i1 %r26991, label %fb26984, label %fe26986
-fb26984:
-  %r26992 = load i64, ptr %a26953
-  %r26993 = load i64, ptr %a26982
-  %r26994 = mul i64 %r26993, 8
-  %r26995 = add i64 %r26992, %r26994
-  %r26997 = inttoptr i64 %r26995 to ptr
-  %r26996 = load i64, ptr %r26997, align 8
-  store i64 %r26996, ptr %a26998
-  %r27002 = load i64, ptr %a26998
-  %r27003 = call i64 @_rl_utf8_ok(i64 %r27002)
-  %r27005 = icmp ne i64 %r27003, 0
-  %r27004 = zext i1 %r27005 to i64
-  %r27006 = icmp ne i64 %r27004, 0
-  br i1 %r27006, label %it26999, label %ix27001
-it26999:
-  %r27007 = load i64, ptr %a26981
-  %r27008 = add i64 %r27007, 1
-  store i64 %r27008, ptr %a26981
-  %r27009 = load i64, ptr %a26980
-  %r27010 = load i64, ptr %a26981
-  %r27011 = mul i64 %r27010, 8
-  %r27012 = add i64 %r27009, %r27011
-  %r27013 = inttoptr i64 %r27012 to ptr
-  %r27014 = load i64, ptr %a26998
-  store i64 %r27014, ptr %r27013, align 8
-  br label %ix27001
-ix27001:
-  br label %fs26985
-fs26985:
-  %r27015 = load i64, ptr %a26982
-  %r27016 = add i64 %r27015, 1
-  store i64 %r27016, ptr %a26982
-  br label %fh26983
-fe26986:
-  %r27017 = load i64, ptr %a26980
-  %r27018 = mul i64 0, 8
-  %r27019 = add i64 %r27017, %r27018
-  %r27020 = inttoptr i64 %r27019 to ptr
-  %r27021 = load i64, ptr %a26981
-  store i64 %r27021, ptr %r27020, align 8
-  %r27022 = load i64, ptr %a26980
-  ret i64 %r27022
-d27023:
+  store i64 %p0, ptr %a26985
+  store i64 %p1, ptr %a26986
+  %r26993 = load i64, ptr %a26985
+  %r26995 = icmp eq i64 %r26993, 0
+  %r26994 = zext i1 %r26995 to i64
+  %r26996 = icmp ne i64 %r26994, 0
+  %r26997 = zext i1 %r26996 to i64
+  store i64 %r26997, ptr %a26990
+  br i1 %r26996, label %ld26992, label %lr26991
+lr26991:
+  %r26998 = load i64, ptr %a26986
+  %r27000 = icmp sle i64 %r26998, 0
+  %r26999 = zext i1 %r27000 to i64
+  %r27001 = icmp ne i64 %r26999, 0
+  %r27002 = zext i1 %r27001 to i64
+  store i64 %r27002, ptr %a26990
+  br label %ld26992
+ld26992:
+  %r27003 = load i64, ptr %a26990
+  %r27004 = icmp ne i64 %r27003, 0
+  br i1 %r27004, label %it26987, label %ix26989
+it26987:
+  %r27005 = call ptr @calloc(i64 1, i64 8)
+  %r27006 = ptrtoint ptr %r27005 to i64
+  ret i64 %r27006
+d27007:
+  br label %ix26989
+ix26989:
+  %r27008 = load i64, ptr %a26986
+  %r27009 = add i64 %r27008, 1
+  %r27010 = call ptr @calloc(i64 %r27009, i64 8)
+  %r27011 = ptrtoint ptr %r27010 to i64
+  store i64 %r27011, ptr %a27012
+  store i64 0, ptr %a27013
+  store i64 0, ptr %a27014
+  br label %fh27015
+fh27015:
+  %r27019 = load i64, ptr %a27014
+  %r27020 = load i64, ptr %a26986
+  %r27022 = icmp slt i64 %r27019, %r27020
+  %r27021 = zext i1 %r27022 to i64
+  %r27023 = icmp ne i64 %r27021, 0
+  br i1 %r27023, label %fb27016, label %fe27018
+fb27016:
+  %r27024 = load i64, ptr %a26985
+  %r27025 = load i64, ptr %a27014
+  %r27026 = mul i64 %r27025, 8
+  %r27027 = add i64 %r27024, %r27026
+  %r27029 = inttoptr i64 %r27027 to ptr
+  %r27028 = load i64, ptr %r27029, align 8
+  store i64 %r27028, ptr %a27030
+  %r27034 = load i64, ptr %a27030
+  %r27035 = call i64 @_rl_utf8_ok(i64 %r27034)
+  %r27037 = icmp ne i64 %r27035, 0
+  %r27036 = zext i1 %r27037 to i64
+  %r27038 = icmp ne i64 %r27036, 0
+  br i1 %r27038, label %it27031, label %ix27033
+it27031:
+  %r27039 = load i64, ptr %a27013
+  %r27040 = add i64 %r27039, 1
+  store i64 %r27040, ptr %a27013
+  %r27041 = load i64, ptr %a27012
+  %r27042 = load i64, ptr %a27013
+  %r27043 = mul i64 %r27042, 8
+  %r27044 = add i64 %r27041, %r27043
+  %r27045 = inttoptr i64 %r27044 to ptr
+  %r27046 = load i64, ptr %a27030
+  store i64 %r27046, ptr %r27045, align 8
+  br label %ix27033
+ix27033:
+  br label %fs27017
+fs27017:
+  %r27047 = load i64, ptr %a27014
+  %r27048 = add i64 %r27047, 1
+  store i64 %r27048, ptr %a27014
+  br label %fh27015
+fe27018:
+  %r27049 = load i64, ptr %a27012
+  %r27050 = mul i64 0, 8
+  %r27051 = add i64 %r27049, %r27050
+  %r27052 = inttoptr i64 %r27051 to ptr
+  %r27053 = load i64, ptr %a27013
+  store i64 %r27053, ptr %r27052, align 8
+  %r27054 = load i64, ptr %a27012
+  ret i64 %r27054
+d27055:
   ret i64 0
 }
 define internal i64 @_rl_duplicate_field(i64 %p0) {
 entry:
-  %a27024 = alloca i64, align 8
-  %a27030 = alloca i64, align 8
-  %a27031 = alloca i64, align 8
-  %a27041 = alloca i64, align 8
+  %a27056 = alloca i64, align 8
+  %a27062 = alloca i64, align 8
+  %a27063 = alloca i64, align 8
+  %a27073 = alloca i64, align 8
   br label %start
 start:
-  store i64 %p0, ptr %a27024
-  %r27025 = load i64, ptr %a27024
-  %r27026 = mul i64 0, 8
-  %r27027 = add i64 %r27025, %r27026
-  %r27029 = inttoptr i64 %r27027 to ptr
-  %r27028 = load i64, ptr %r27029, align 8
-  store i64 %r27028, ptr %a27030
-  store i64 2, ptr %a27031
-  br label %fh27032
-fh27032:
-  %r27036 = load i64, ptr %a27031
-  %r27037 = load i64, ptr %a27030
-  %r27039 = icmp sle i64 %r27036, %r27037
-  %r27038 = zext i1 %r27039 to i64
-  %r27040 = icmp ne i64 %r27038, 0
-  br i1 %r27040, label %fb27033, label %fe27035
-fb27033:
-  store i64 1, ptr %a27041
-  br label %fh27042
-fh27042:
-  %r27046 = load i64, ptr %a27041
-  %r27047 = load i64, ptr %a27031
-  %r27049 = icmp slt i64 %r27046, %r27047
-  %r27048 = zext i1 %r27049 to i64
-  %r27050 = icmp ne i64 %r27048, 0
-  br i1 %r27050, label %fb27043, label %fe27045
-fb27043:
-  %r27054 = load i64, ptr %a27024
-  %r27055 = load i64, ptr %a27031
-  %r27056 = mul i64 %r27055, 8
-  %r27057 = add i64 %r27054, %r27056
-  %r27059 = inttoptr i64 %r27057 to ptr
-  %r27058 = load i64, ptr %r27059, align 8
-  %r27060 = inttoptr i64 %r27058 to ptr
-  %r27061 = load i64, ptr %a27024
-  %r27062 = load i64, ptr %a27041
-  %r27063 = mul i64 %r27062, 8
-  %r27064 = add i64 %r27061, %r27063
-  %r27066 = inttoptr i64 %r27064 to ptr
-  %r27065 = load i64, ptr %r27066, align 8
-  %r27067 = inttoptr i64 %r27065 to ptr
-  %r27068 = call i32 @strcmp(ptr %r27060, ptr %r27067)
-  %r27069 = sext i32 %r27068 to i64
-  %r27071 = icmp eq i64 %r27069, 0
+  store i64 %p0, ptr %a27056
+  %r27057 = load i64, ptr %a27056
+  %r27058 = mul i64 0, 8
+  %r27059 = add i64 %r27057, %r27058
+  %r27061 = inttoptr i64 %r27059 to ptr
+  %r27060 = load i64, ptr %r27061, align 8
+  store i64 %r27060, ptr %a27062
+  store i64 2, ptr %a27063
+  br label %fh27064
+fh27064:
+  %r27068 = load i64, ptr %a27063
+  %r27069 = load i64, ptr %a27062
+  %r27071 = icmp sle i64 %r27068, %r27069
   %r27070 = zext i1 %r27071 to i64
   %r27072 = icmp ne i64 %r27070, 0
-  br i1 %r27072, label %it27051, label %ix27053
-it27051:
-  %r27073 = load i64, ptr %a27031
-  ret i64 %r27073
-d27074:
-  br label %ix27053
-ix27053:
-  br label %fs27044
-fs27044:
-  %r27075 = load i64, ptr %a27041
-  %r27076 = add i64 %r27075, 1
-  store i64 %r27076, ptr %a27041
-  br label %fh27042
-fe27045:
-  br label %fs27034
-fs27034:
-  %r27077 = load i64, ptr %a27031
-  %r27078 = add i64 %r27077, 1
-  store i64 %r27078, ptr %a27031
-  br label %fh27032
-fe27035:
+  br i1 %r27072, label %fb27065, label %fe27067
+fb27065:
+  store i64 1, ptr %a27073
+  br label %fh27074
+fh27074:
+  %r27078 = load i64, ptr %a27073
+  %r27079 = load i64, ptr %a27063
+  %r27081 = icmp slt i64 %r27078, %r27079
+  %r27080 = zext i1 %r27081 to i64
+  %r27082 = icmp ne i64 %r27080, 0
+  br i1 %r27082, label %fb27075, label %fe27077
+fb27075:
+  %r27086 = load i64, ptr %a27056
+  %r27087 = load i64, ptr %a27063
+  %r27088 = mul i64 %r27087, 8
+  %r27089 = add i64 %r27086, %r27088
+  %r27091 = inttoptr i64 %r27089 to ptr
+  %r27090 = load i64, ptr %r27091, align 8
+  %r27092 = inttoptr i64 %r27090 to ptr
+  %r27093 = load i64, ptr %a27056
+  %r27094 = load i64, ptr %a27073
+  %r27095 = mul i64 %r27094, 8
+  %r27096 = add i64 %r27093, %r27095
+  %r27098 = inttoptr i64 %r27096 to ptr
+  %r27097 = load i64, ptr %r27098, align 8
+  %r27099 = inttoptr i64 %r27097 to ptr
+  %r27100 = call i32 @strcmp(ptr %r27092, ptr %r27099)
+  %r27101 = sext i32 %r27100 to i64
+  %r27103 = icmp eq i64 %r27101, 0
+  %r27102 = zext i1 %r27103 to i64
+  %r27104 = icmp ne i64 %r27102, 0
+  br i1 %r27104, label %it27083, label %ix27085
+it27083:
+  %r27105 = load i64, ptr %a27063
+  ret i64 %r27105
+d27106:
+  br label %ix27085
+ix27085:
+  br label %fs27076
+fs27076:
+  %r27107 = load i64, ptr %a27073
+  %r27108 = add i64 %r27107, 1
+  store i64 %r27108, ptr %a27073
+  br label %fh27074
+fe27077:
+  br label %fs27066
+fs27066:
+  %r27109 = load i64, ptr %a27063
+  %r27110 = add i64 %r27109, 1
+  store i64 %r27110, ptr %a27063
+  br label %fh27064
+fe27067:
   ret i64 0
-d27079:
+d27111:
   ret i64 0
 }
 define internal i64 @_rl_data_message(i64 %p0) {
 entry:
-  %a27080 = alloca i64, align 8
+  %a27112 = alloca i64, align 8
   br label %start
 start:
-  store i64 %p0, ptr %a27080
-  %r27084 = load i64, ptr %a27080
-  %r27086 = icmp eq i64 %r27084, 0
-  %r27085 = zext i1 %r27086 to i64
-  %r27087 = icmp ne i64 %r27085, 0
-  br i1 %r27087, label %it27081, label %ix27083
-it27081:
-  ret i64 ptrtoint (ptr @.n329 to i64)
-d27088:
-  br label %ix27083
-ix27083:
-  %r27092 = load i64, ptr %a27080
-  %r27094 = icmp eq i64 %r27092, 1
-  %r27093 = zext i1 %r27094 to i64
-  %r27095 = icmp ne i64 %r27093, 0
-  br i1 %r27095, label %it27089, label %ix27091
-it27089:
-  ret i64 ptrtoint (ptr @.n330 to i64)
-d27096:
-  br label %ix27091
-ix27091:
-  %r27100 = load i64, ptr %a27080
-  %r27102 = icmp eq i64 %r27100, 2
-  %r27101 = zext i1 %r27102 to i64
-  %r27103 = icmp ne i64 %r27101, 0
-  br i1 %r27103, label %it27097, label %ix27099
-it27097:
-  ret i64 ptrtoint (ptr @.n331 to i64)
-d27104:
-  br label %ix27099
-ix27099:
-  %r27108 = load i64, ptr %a27080
-  %r27110 = icmp eq i64 %r27108, 3
-  %r27109 = zext i1 %r27110 to i64
-  %r27111 = icmp ne i64 %r27109, 0
-  br i1 %r27111, label %it27105, label %ix27107
-it27105:
-  ret i64 ptrtoint (ptr @.n332 to i64)
-d27112:
-  br label %ix27107
-ix27107:
-  %r27116 = load i64, ptr %a27080
-  %r27118 = icmp eq i64 %r27116, 4
+  store i64 %p0, ptr %a27112
+  %r27116 = load i64, ptr %a27112
+  %r27118 = icmp eq i64 %r27116, 0
   %r27117 = zext i1 %r27118 to i64
   %r27119 = icmp ne i64 %r27117, 0
   br i1 %r27119, label %it27113, label %ix27115
 it27113:
-  ret i64 ptrtoint (ptr @.n95 to i64)
+  ret i64 ptrtoint (ptr @.n334 to i64)
 d27120:
   br label %ix27115
 ix27115:
-  %r27124 = load i64, ptr %a27080
-  %r27126 = icmp eq i64 %r27124, 5
+  %r27124 = load i64, ptr %a27112
+  %r27126 = icmp eq i64 %r27124, 1
   %r27125 = zext i1 %r27126 to i64
   %r27127 = icmp ne i64 %r27125, 0
   br i1 %r27127, label %it27121, label %ix27123
 it27121:
-  ret i64 ptrtoint (ptr @.n98 to i64)
+  ret i64 ptrtoint (ptr @.n335 to i64)
 d27128:
   br label %ix27123
 ix27123:
-  %r27132 = load i64, ptr %a27080
-  %r27134 = icmp eq i64 %r27132, 6
+  %r27132 = load i64, ptr %a27112
+  %r27134 = icmp eq i64 %r27132, 2
   %r27133 = zext i1 %r27134 to i64
   %r27135 = icmp ne i64 %r27133, 0
   br i1 %r27135, label %it27129, label %ix27131
 it27129:
-  ret i64 ptrtoint (ptr @.n333 to i64)
+  ret i64 ptrtoint (ptr @.n336 to i64)
 d27136:
   br label %ix27131
 ix27131:
-  %r27140 = load i64, ptr %a27080
-  %r27142 = icmp eq i64 %r27140, 7
+  %r27140 = load i64, ptr %a27112
+  %r27142 = icmp eq i64 %r27140, 3
   %r27141 = zext i1 %r27142 to i64
   %r27143 = icmp ne i64 %r27141, 0
   br i1 %r27143, label %it27137, label %ix27139
 it27137:
-  ret i64 ptrtoint (ptr @.n334 to i64)
+  ret i64 ptrtoint (ptr @.n337 to i64)
 d27144:
   br label %ix27139
 ix27139:
-  %r27148 = load i64, ptr %a27080
-  %r27150 = icmp eq i64 %r27148, 8
+  %r27148 = load i64, ptr %a27112
+  %r27150 = icmp eq i64 %r27148, 4
   %r27149 = zext i1 %r27150 to i64
   %r27151 = icmp ne i64 %r27149, 0
   br i1 %r27151, label %it27145, label %ix27147
 it27145:
-  ret i64 ptrtoint (ptr @.n335 to i64)
+  ret i64 ptrtoint (ptr @.n95 to i64)
 d27152:
   br label %ix27147
 ix27147:
-  %r27156 = load i64, ptr %a27080
-  %r27158 = icmp eq i64 %r27156, 9
+  %r27156 = load i64, ptr %a27112
+  %r27158 = icmp eq i64 %r27156, 5
   %r27157 = zext i1 %r27158 to i64
   %r27159 = icmp ne i64 %r27157, 0
   br i1 %r27159, label %it27153, label %ix27155
 it27153:
-  ret i64 ptrtoint (ptr @.n336 to i64)
+  ret i64 ptrtoint (ptr @.n98 to i64)
 d27160:
   br label %ix27155
 ix27155:
-  %r27164 = load i64, ptr %a27080
-  %r27166 = icmp eq i64 %r27164, 10
+  %r27164 = load i64, ptr %a27112
+  %r27166 = icmp eq i64 %r27164, 6
   %r27165 = zext i1 %r27166 to i64
   %r27167 = icmp ne i64 %r27165, 0
   br i1 %r27167, label %it27161, label %ix27163
 it27161:
-  ret i64 ptrtoint (ptr @.n337 to i64)
+  ret i64 ptrtoint (ptr @.n338 to i64)
 d27168:
   br label %ix27163
 ix27163:
-  %r27172 = load i64, ptr %a27080
-  %r27174 = icmp eq i64 %r27172, 11
+  %r27172 = load i64, ptr %a27112
+  %r27174 = icmp eq i64 %r27172, 7
   %r27173 = zext i1 %r27174 to i64
   %r27175 = icmp ne i64 %r27173, 0
   br i1 %r27175, label %it27169, label %ix27171
 it27169:
-  ret i64 ptrtoint (ptr @.n338 to i64)
+  ret i64 ptrtoint (ptr @.n339 to i64)
 d27176:
   br label %ix27171
 ix27171:
-  %r27180 = load i64, ptr %a27080
-  %r27182 = icmp eq i64 %r27180, 12
+  %r27180 = load i64, ptr %a27112
+  %r27182 = icmp eq i64 %r27180, 8
   %r27181 = zext i1 %r27182 to i64
   %r27183 = icmp ne i64 %r27181, 0
   br i1 %r27183, label %it27177, label %ix27179
 it27177:
-  ret i64 ptrtoint (ptr @.n339 to i64)
+  ret i64 ptrtoint (ptr @.n340 to i64)
 d27184:
   br label %ix27179
 ix27179:
-  ret i64 ptrtoint (ptr @.n340 to i64)
-d27185:
+  %r27188 = load i64, ptr %a27112
+  %r27190 = icmp eq i64 %r27188, 9
+  %r27189 = zext i1 %r27190 to i64
+  %r27191 = icmp ne i64 %r27189, 0
+  br i1 %r27191, label %it27185, label %ix27187
+it27185:
+  ret i64 ptrtoint (ptr @.n341 to i64)
+d27192:
+  br label %ix27187
+ix27187:
+  %r27196 = load i64, ptr %a27112
+  %r27198 = icmp eq i64 %r27196, 10
+  %r27197 = zext i1 %r27198 to i64
+  %r27199 = icmp ne i64 %r27197, 0
+  br i1 %r27199, label %it27193, label %ix27195
+it27193:
+  ret i64 ptrtoint (ptr @.n342 to i64)
+d27200:
+  br label %ix27195
+ix27195:
+  %r27204 = load i64, ptr %a27112
+  %r27206 = icmp eq i64 %r27204, 11
+  %r27205 = zext i1 %r27206 to i64
+  %r27207 = icmp ne i64 %r27205, 0
+  br i1 %r27207, label %it27201, label %ix27203
+it27201:
+  ret i64 ptrtoint (ptr @.n343 to i64)
+d27208:
+  br label %ix27203
+ix27203:
+  %r27212 = load i64, ptr %a27112
+  %r27214 = icmp eq i64 %r27212, 12
+  %r27213 = zext i1 %r27214 to i64
+  %r27215 = icmp ne i64 %r27213, 0
+  br i1 %r27215, label %it27209, label %ix27211
+it27209:
+  ret i64 ptrtoint (ptr @.n344 to i64)
+d27216:
+  br label %ix27211
+ix27211:
+  ret i64 ptrtoint (ptr @.n345 to i64)
+d27217:
   ret i64 0
 }
 define i64 @luna_data_error_message(i64 %p0, i64 %p1, i64 %p2) {
 entry:
-  %a27186 = alloca i64, align 8
-  %a27187 = alloca i64, align 8
-  %a27188 = alloca i64, align 8
+  %a27218 = alloca i64, align 8
+  %a27219 = alloca i64, align 8
+  %a27220 = alloca i64, align 8
   br label %start
 start:
-  store i64 %p0, ptr %a27186
-  store i64 %p1, ptr %a27187
-  store i64 %p2, ptr %a27188
-  %r27189 = load i64, ptr %a27186
-  %r27190 = call i64 @_rl_data_message(i64 %r27189)
-  %r27191 = load i64, ptr %a27187
-  %r27192 = load i64, ptr %a27188
-  %r27193 = call i64 @_rl_copy_message(i64 %r27190, i64 %r27191, i64 %r27192)
+  store i64 %p0, ptr %a27218
+  store i64 %p1, ptr %a27219
+  store i64 %p2, ptr %a27220
+  %r27221 = load i64, ptr %a27218
+  %r27222 = call i64 @_rl_data_message(i64 %r27221)
+  %r27223 = load i64, ptr %a27219
+  %r27224 = load i64, ptr %a27220
+  %r27225 = call i64 @_rl_copy_message(i64 %r27222, i64 %r27223, i64 %r27224)
   ret i64 0
 }
 define i64 @luna_data_init() {
 entry:
-  %a27196 = alloca i64, align 8
-  %a27208 = alloca i64, align 8
-  %a27213 = alloca i64, align 8
-  %a27214 = alloca i64, align 8
+  %a27228 = alloca i64, align 8
+  %a27240 = alloca i64, align 8
+  %a27245 = alloca i64, align 8
+  %a27246 = alloca i64, align 8
   br label %start
 start:
-  %r27194 = call i64 @_rl_hm_clear(i64 ptrtoint (ptr @rl_box_map to i64))
-  %r27195 = load i64, ptr @rl_schemas
-  store i64 %r27195, ptr %a27196
-  br label %wh27197
-wh27197:
-  %r27200 = load i64, ptr %a27196
-  %r27202 = icmp ne i64 %r27200, 0
-  %r27201 = zext i1 %r27202 to i64
-  %r27203 = icmp ne i64 %r27201, 0
-  br i1 %r27203, label %wb27198, label %we27199
-wb27198:
-  %r27204 = load i64, ptr %a27196
-  %r27205 = add i64 %r27204, 0
-  %r27207 = inttoptr i64 %r27205 to ptr
-  %r27206 = load i64, ptr %r27207, align 8
-  store i64 %r27206, ptr %a27208
-  %r27209 = load i64, ptr %a27196
-  %r27210 = add i64 %r27209, 16
-  %r27212 = inttoptr i64 %r27210 to ptr
-  %r27211 = load i64, ptr %r27212, align 8
-  store i64 %r27211, ptr %a27213
-  store i64 0, ptr %a27214
-  br label %fh27215
-fh27215:
-  %r27219 = load i64, ptr %a27214
-  %r27220 = load i64, ptr %a27213
-  %r27222 = icmp slt i64 %r27219, %r27220
-  %r27221 = zext i1 %r27222 to i64
-  %r27223 = icmp ne i64 %r27221, 0
-  br i1 %r27223, label %fb27216, label %fe27218
-fb27216:
-  %r27224 = load i64, ptr %a27196
-  %r27225 = add i64 %r27224, 24
-  %r27227 = inttoptr i64 %r27225 to ptr
-  %r27226 = load i64, ptr %r27227, align 8
-  %r27228 = load i64, ptr %a27214
-  %r27229 = mul i64 %r27228, 8
-  %r27230 = add i64 %r27226, %r27229
-  %r27232 = inttoptr i64 %r27230 to ptr
-  %r27231 = load i64, ptr %r27232, align 8
-  %r27233 = inttoptr i64 %r27231 to ptr
-  call void @free(ptr %r27233)
-  br label %fs27217
-fs27217:
-  %r27234 = load i64, ptr %a27214
-  %r27235 = add i64 %r27234, 1
-  store i64 %r27235, ptr %a27214
-  br label %fh27215
-fe27218:
-  %r27236 = load i64, ptr %a27196
-  %r27237 = add i64 %r27236, 24
+  %r27226 = call i64 @_rl_hm_clear(i64 ptrtoint (ptr @rl_box_map to i64))
+  %r27227 = load i64, ptr @rl_schemas
+  store i64 %r27227, ptr %a27228
+  br label %wh27229
+wh27229:
+  %r27232 = load i64, ptr %a27228
+  %r27234 = icmp ne i64 %r27232, 0
+  %r27233 = zext i1 %r27234 to i64
+  %r27235 = icmp ne i64 %r27233, 0
+  br i1 %r27235, label %wb27230, label %we27231
+wb27230:
+  %r27236 = load i64, ptr %a27228
+  %r27237 = add i64 %r27236, 0
   %r27239 = inttoptr i64 %r27237 to ptr
   %r27238 = load i64, ptr %r27239, align 8
-  %r27240 = inttoptr i64 %r27238 to ptr
-  call void @free(ptr %r27240)
-  %r27241 = load i64, ptr %a27196
-  %r27242 = add i64 %r27241, 8
+  store i64 %r27238, ptr %a27240
+  %r27241 = load i64, ptr %a27228
+  %r27242 = add i64 %r27241, 16
   %r27244 = inttoptr i64 %r27242 to ptr
   %r27243 = load i64, ptr %r27244, align 8
-  %r27245 = inttoptr i64 %r27243 to ptr
-  call void @free(ptr %r27245)
-  %r27246 = load i64, ptr %a27196
-  %r27247 = inttoptr i64 %r27246 to ptr
-  call void @free(ptr %r27247)
-  %r27248 = load i64, ptr %a27208
-  store i64 %r27248, ptr %a27196
-  br label %wh27197
-we27199:
+  store i64 %r27243, ptr %a27245
+  store i64 0, ptr %a27246
+  br label %fh27247
+fh27247:
+  %r27251 = load i64, ptr %a27246
+  %r27252 = load i64, ptr %a27245
+  %r27254 = icmp slt i64 %r27251, %r27252
+  %r27253 = zext i1 %r27254 to i64
+  %r27255 = icmp ne i64 %r27253, 0
+  br i1 %r27255, label %fb27248, label %fe27250
+fb27248:
+  %r27256 = load i64, ptr %a27228
+  %r27257 = add i64 %r27256, 24
+  %r27259 = inttoptr i64 %r27257 to ptr
+  %r27258 = load i64, ptr %r27259, align 8
+  %r27260 = load i64, ptr %a27246
+  %r27261 = mul i64 %r27260, 8
+  %r27262 = add i64 %r27258, %r27261
+  %r27264 = inttoptr i64 %r27262 to ptr
+  %r27263 = load i64, ptr %r27264, align 8
+  %r27265 = inttoptr i64 %r27263 to ptr
+  call void @free(ptr %r27265)
+  br label %fs27249
+fs27249:
+  %r27266 = load i64, ptr %a27246
+  %r27267 = add i64 %r27266, 1
+  store i64 %r27267, ptr %a27246
+  br label %fh27247
+fe27250:
+  %r27268 = load i64, ptr %a27228
+  %r27269 = add i64 %r27268, 24
+  %r27271 = inttoptr i64 %r27269 to ptr
+  %r27270 = load i64, ptr %r27271, align 8
+  %r27272 = inttoptr i64 %r27270 to ptr
+  call void @free(ptr %r27272)
+  %r27273 = load i64, ptr %a27228
+  %r27274 = add i64 %r27273, 8
+  %r27276 = inttoptr i64 %r27274 to ptr
+  %r27275 = load i64, ptr %r27276, align 8
+  %r27277 = inttoptr i64 %r27275 to ptr
+  call void @free(ptr %r27277)
+  %r27278 = load i64, ptr %a27228
+  %r27279 = inttoptr i64 %r27278 to ptr
+  call void @free(ptr %r27279)
+  %r27280 = load i64, ptr %a27240
+  store i64 %r27280, ptr %a27228
+  br label %wh27229
+we27231:
   store i64 0, ptr @rl_schemas
   ret i64 0
 }
 define internal i64 @_rl_schema_find(i64 %p0) {
 entry:
-  %a27249 = alloca i64, align 8
-  %a27251 = alloca i64, align 8
+  %a27281 = alloca i64, align 8
+  %a27283 = alloca i64, align 8
   br label %start
 start:
-  store i64 %p0, ptr %a27249
-  %r27250 = load i64, ptr @rl_schemas
-  store i64 %r27250, ptr %a27251
-  br label %wh27252
-wh27252:
-  %r27255 = load i64, ptr %a27251
-  %r27257 = icmp ne i64 %r27255, 0
-  %r27256 = zext i1 %r27257 to i64
-  %r27258 = icmp ne i64 %r27256, 0
-  br i1 %r27258, label %wb27253, label %we27254
-wb27253:
-  %r27262 = load i64, ptr %a27251
-  %r27263 = add i64 %r27262, 8
-  %r27265 = inttoptr i64 %r27263 to ptr
-  %r27264 = load i64, ptr %r27265, align 8
-  %r27266 = inttoptr i64 %r27264 to ptr
-  %r27267 = load i64, ptr %a27249
-  %r27268 = inttoptr i64 %r27267 to ptr
-  %r27269 = call i32 @strcmp(ptr %r27266, ptr %r27268)
-  %r27270 = sext i32 %r27269 to i64
-  %r27272 = icmp eq i64 %r27270, 0
-  %r27271 = zext i1 %r27272 to i64
-  %r27273 = icmp ne i64 %r27271, 0
-  br i1 %r27273, label %it27259, label %ix27261
-it27259:
-  %r27274 = load i64, ptr %a27251
-  ret i64 %r27274
-d27275:
-  br label %ix27261
-ix27261:
-  %r27276 = load i64, ptr %a27251
-  %r27277 = add i64 %r27276, 0
-  %r27279 = inttoptr i64 %r27277 to ptr
-  %r27278 = load i64, ptr %r27279, align 8
-  store i64 %r27278, ptr %a27251
-  br label %wh27252
-we27254:
+  store i64 %p0, ptr %a27281
+  %r27282 = load i64, ptr @rl_schemas
+  store i64 %r27282, ptr %a27283
+  br label %wh27284
+wh27284:
+  %r27287 = load i64, ptr %a27283
+  %r27289 = icmp ne i64 %r27287, 0
+  %r27288 = zext i1 %r27289 to i64
+  %r27290 = icmp ne i64 %r27288, 0
+  br i1 %r27290, label %wb27285, label %we27286
+wb27285:
+  %r27294 = load i64, ptr %a27283
+  %r27295 = add i64 %r27294, 8
+  %r27297 = inttoptr i64 %r27295 to ptr
+  %r27296 = load i64, ptr %r27297, align 8
+  %r27298 = inttoptr i64 %r27296 to ptr
+  %r27299 = load i64, ptr %a27281
+  %r27300 = inttoptr i64 %r27299 to ptr
+  %r27301 = call i32 @strcmp(ptr %r27298, ptr %r27300)
+  %r27302 = sext i32 %r27301 to i64
+  %r27304 = icmp eq i64 %r27302, 0
+  %r27303 = zext i1 %r27304 to i64
+  %r27305 = icmp ne i64 %r27303, 0
+  br i1 %r27305, label %it27291, label %ix27293
+it27291:
+  %r27306 = load i64, ptr %a27283
+  ret i64 %r27306
+d27307:
+  br label %ix27293
+ix27293:
+  %r27308 = load i64, ptr %a27283
+  %r27309 = add i64 %r27308, 0
+  %r27311 = inttoptr i64 %r27309 to ptr
+  %r27310 = load i64, ptr %r27311, align 8
+  store i64 %r27310, ptr %a27283
+  br label %wh27284
+we27286:
   ret i64 0
-d27280:
+d27312:
   ret i64 0
 }
 define i64 @luna_data_bloc_validate(i64 %p0, i64 %p1, i64 %p2) {
 entry:
-  %a27281 = alloca i64, align 8
-  %a27282 = alloca i64, align 8
-  %a27283 = alloca i64, align 8
-  %a27296 = alloca i64, align 8
-  %a27302 = alloca i64, align 8
-  %a27303 = alloca i64, align 8
-  %a27304 = alloca i64, align 8
+  %a27313 = alloca i64, align 8
   %a27314 = alloca i64, align 8
+  %a27315 = alloca i64, align 8
+  %a27328 = alloca i64, align 8
+  %a27334 = alloca i64, align 8
+  %a27335 = alloca i64, align 8
+  %a27336 = alloca i64, align 8
+  %a27346 = alloca i64, align 8
   br label %start
 start:
-  store i64 %p0, ptr %a27281
-  store i64 %p1, ptr %a27282
-  store i64 %p2, ptr %a27283
-  %r27287 = load i64, ptr %a27281
-  %r27288 = call i64 @_rl_name_ok(i64 %r27287)
-  %r27290 = icmp eq i64 %r27288, 0
-  %r27289 = zext i1 %r27290 to i64
-  %r27291 = icmp ne i64 %r27289, 0
-  br i1 %r27291, label %it27284, label %ix27286
-it27284:
-  ret i64 1
-d27292:
-  br label %ix27286
-ix27286:
-  %r27293 = load i64, ptr %a27282
-  %r27294 = load i64, ptr %a27283
-  %r27295 = call i64 @_rl_collect_fields(i64 %r27293, i64 %r27294)
-  store i64 %r27295, ptr %a27296
-  %r27297 = load i64, ptr %a27296
-  %r27298 = mul i64 0, 8
-  %r27299 = add i64 %r27297, %r27298
-  %r27301 = inttoptr i64 %r27299 to ptr
-  %r27300 = load i64, ptr %r27301, align 8
-  store i64 %r27300, ptr %a27302
-  store i64 0, ptr %a27303
-  store i64 1, ptr %a27304
-  br label %fh27305
-fh27305:
-  %r27309 = load i64, ptr %a27304
-  %r27310 = load i64, ptr %a27302
-  %r27312 = icmp sle i64 %r27309, %r27310
-  %r27311 = zext i1 %r27312 to i64
-  %r27313 = icmp ne i64 %r27311, 0
-  br i1 %r27313, label %fb27306, label %fe27308
-fb27306:
-  store i64 1, ptr %a27314
-  br label %fh27315
-fh27315:
-  %r27319 = load i64, ptr %a27314
-  %r27320 = load i64, ptr %a27304
-  %r27322 = icmp slt i64 %r27319, %r27320
+  store i64 %p0, ptr %a27313
+  store i64 %p1, ptr %a27314
+  store i64 %p2, ptr %a27315
+  %r27319 = load i64, ptr %a27313
+  %r27320 = call i64 @_rl_name_ok(i64 %r27319)
+  %r27322 = icmp eq i64 %r27320, 0
   %r27321 = zext i1 %r27322 to i64
   %r27323 = icmp ne i64 %r27321, 0
-  br i1 %r27323, label %fb27316, label %fe27318
-fb27316:
-  %r27327 = load i64, ptr %a27296
-  %r27328 = load i64, ptr %a27304
-  %r27329 = mul i64 %r27328, 8
-  %r27330 = add i64 %r27327, %r27329
-  %r27332 = inttoptr i64 %r27330 to ptr
-  %r27331 = load i64, ptr %r27332, align 8
+  br i1 %r27323, label %it27316, label %ix27318
+it27316:
+  ret i64 1
+d27324:
+  br label %ix27318
+ix27318:
+  %r27325 = load i64, ptr %a27314
+  %r27326 = load i64, ptr %a27315
+  %r27327 = call i64 @_rl_collect_fields(i64 %r27325, i64 %r27326)
+  store i64 %r27327, ptr %a27328
+  %r27329 = load i64, ptr %a27328
+  %r27330 = mul i64 0, 8
+  %r27331 = add i64 %r27329, %r27330
   %r27333 = inttoptr i64 %r27331 to ptr
-  %r27334 = load i64, ptr %a27296
-  %r27335 = load i64, ptr %a27314
-  %r27336 = mul i64 %r27335, 8
-  %r27337 = add i64 %r27334, %r27336
-  %r27339 = inttoptr i64 %r27337 to ptr
-  %r27338 = load i64, ptr %r27339, align 8
-  %r27340 = inttoptr i64 %r27338 to ptr
-  %r27341 = call i32 @strcmp(ptr %r27333, ptr %r27340)
-  %r27342 = sext i32 %r27341 to i64
-  %r27344 = icmp eq i64 %r27342, 0
+  %r27332 = load i64, ptr %r27333, align 8
+  store i64 %r27332, ptr %a27334
+  store i64 0, ptr %a27335
+  store i64 1, ptr %a27336
+  br label %fh27337
+fh27337:
+  %r27341 = load i64, ptr %a27336
+  %r27342 = load i64, ptr %a27334
+  %r27344 = icmp sle i64 %r27341, %r27342
   %r27343 = zext i1 %r27344 to i64
   %r27345 = icmp ne i64 %r27343, 0
-  br i1 %r27345, label %it27324, label %ix27326
-it27324:
-  %r27346 = load i64, ptr %a27296
-  %r27347 = inttoptr i64 %r27346 to ptr
-  call void @free(ptr %r27347)
+  br i1 %r27345, label %fb27338, label %fe27340
+fb27338:
+  store i64 1, ptr %a27346
+  br label %fh27347
+fh27347:
+  %r27351 = load i64, ptr %a27346
+  %r27352 = load i64, ptr %a27336
+  %r27354 = icmp slt i64 %r27351, %r27352
+  %r27353 = zext i1 %r27354 to i64
+  %r27355 = icmp ne i64 %r27353, 0
+  br i1 %r27355, label %fb27348, label %fe27350
+fb27348:
+  %r27359 = load i64, ptr %a27328
+  %r27360 = load i64, ptr %a27336
+  %r27361 = mul i64 %r27360, 8
+  %r27362 = add i64 %r27359, %r27361
+  %r27364 = inttoptr i64 %r27362 to ptr
+  %r27363 = load i64, ptr %r27364, align 8
+  %r27365 = inttoptr i64 %r27363 to ptr
+  %r27366 = load i64, ptr %a27328
+  %r27367 = load i64, ptr %a27346
+  %r27368 = mul i64 %r27367, 8
+  %r27369 = add i64 %r27366, %r27368
+  %r27371 = inttoptr i64 %r27369 to ptr
+  %r27370 = load i64, ptr %r27371, align 8
+  %r27372 = inttoptr i64 %r27370 to ptr
+  %r27373 = call i32 @strcmp(ptr %r27365, ptr %r27372)
+  %r27374 = sext i32 %r27373 to i64
+  %r27376 = icmp eq i64 %r27374, 0
+  %r27375 = zext i1 %r27376 to i64
+  %r27377 = icmp ne i64 %r27375, 0
+  br i1 %r27377, label %it27356, label %ix27358
+it27356:
+  %r27378 = load i64, ptr %a27328
+  %r27379 = inttoptr i64 %r27378 to ptr
+  call void @free(ptr %r27379)
   ret i64 2
-d27348:
-  br label %ix27326
-ix27326:
-  br label %fs27317
-fs27317:
-  %r27349 = load i64, ptr %a27314
-  %r27350 = add i64 %r27349, 1
-  store i64 %r27350, ptr %a27314
-  br label %fh27315
-fe27318:
-  %r27351 = load i64, ptr %a27303
-  %r27352 = add i64 %r27351, 8
-  store i64 %r27352, ptr %a27303
-  %r27356 = load i64, ptr %a27303
-  %r27358 = icmp sgt i64 %r27356, 64
-  %r27357 = zext i1 %r27358 to i64
-  %r27359 = icmp ne i64 %r27357, 0
-  br i1 %r27359, label %it27353, label %ix27355
-it27353:
-  %r27360 = load i64, ptr %a27296
-  %r27361 = inttoptr i64 %r27360 to ptr
-  call void @free(ptr %r27361)
+d27380:
+  br label %ix27358
+ix27358:
+  br label %fs27349
+fs27349:
+  %r27381 = load i64, ptr %a27346
+  %r27382 = add i64 %r27381, 1
+  store i64 %r27382, ptr %a27346
+  br label %fh27347
+fe27350:
+  %r27383 = load i64, ptr %a27335
+  %r27384 = add i64 %r27383, 8
+  store i64 %r27384, ptr %a27335
+  %r27388 = load i64, ptr %a27335
+  %r27390 = icmp sgt i64 %r27388, 64
+  %r27389 = zext i1 %r27390 to i64
+  %r27391 = icmp ne i64 %r27389, 0
+  br i1 %r27391, label %it27385, label %ix27387
+it27385:
+  %r27392 = load i64, ptr %a27328
+  %r27393 = inttoptr i64 %r27392 to ptr
+  call void @free(ptr %r27393)
   ret i64 3
-d27362:
-  br label %ix27355
-ix27355:
-  br label %fs27307
-fs27307:
-  %r27363 = load i64, ptr %a27304
-  %r27364 = add i64 %r27363, 1
-  store i64 %r27364, ptr %a27304
-  br label %fh27305
-fe27308:
-  %r27365 = load i64, ptr %a27296
-  %r27366 = inttoptr i64 %r27365 to ptr
-  call void @free(ptr %r27366)
+d27394:
+  br label %ix27387
+ix27387:
+  br label %fs27339
+fs27339:
+  %r27395 = load i64, ptr %a27336
+  %r27396 = add i64 %r27395, 1
+  store i64 %r27396, ptr %a27336
+  br label %fh27337
+fe27340:
+  %r27397 = load i64, ptr %a27328
+  %r27398 = inttoptr i64 %r27397 to ptr
+  call void @free(ptr %r27398)
   ret i64 0
-d27367:
+d27399:
   ret i64 0
 }
 define i64 @luna_data_box_size_ok(i64 %p0) {
 entry:
-  %a27368 = alloca i64, align 8
-  %a27372 = alloca i64, align 8
+  %a27400 = alloca i64, align 8
+  %a27404 = alloca i64, align 8
   br label %start
 start:
-  store i64 %p0, ptr %a27368
-  %r27375 = load i64, ptr %a27368
-  %r27377 = icmp eq i64 %r27375, 0
-  %r27376 = zext i1 %r27377 to i64
-  %r27378 = icmp ne i64 %r27376, 0
-  %r27379 = zext i1 %r27378 to i64
-  store i64 %r27379, ptr %a27372
-  br i1 %r27378, label %ld27374, label %lr27373
-lr27373:
-  %r27380 = load i64, ptr %a27368
-  %r27382 = icmp ugt i64 %r27380, 16777216
-  %r27381 = zext i1 %r27382 to i64
-  %r27383 = icmp ne i64 %r27381, 0
-  %r27384 = zext i1 %r27383 to i64
-  store i64 %r27384, ptr %a27372
-  br label %ld27374
-ld27374:
-  %r27385 = load i64, ptr %a27372
-  %r27386 = icmp ne i64 %r27385, 0
-  br i1 %r27386, label %it27369, label %ix27371
-it27369:
+  store i64 %p0, ptr %a27400
+  %r27407 = load i64, ptr %a27400
+  %r27409 = icmp eq i64 %r27407, 0
+  %r27408 = zext i1 %r27409 to i64
+  %r27410 = icmp ne i64 %r27408, 0
+  %r27411 = zext i1 %r27410 to i64
+  store i64 %r27411, ptr %a27404
+  br i1 %r27410, label %ld27406, label %lr27405
+lr27405:
+  %r27412 = load i64, ptr %a27400
+  %r27414 = icmp ugt i64 %r27412, 16777216
+  %r27413 = zext i1 %r27414 to i64
+  %r27415 = icmp ne i64 %r27413, 0
+  %r27416 = zext i1 %r27415 to i64
+  store i64 %r27416, ptr %a27404
+  br label %ld27406
+ld27406:
+  %r27417 = load i64, ptr %a27404
+  %r27418 = icmp ne i64 %r27417, 0
+  br i1 %r27418, label %it27401, label %ix27403
+it27401:
   ret i64 4
-d27387:
-  br label %ix27371
-ix27371:
+d27419:
+  br label %ix27403
+ix27403:
   ret i64 0
-d27388:
+d27420:
   ret i64 0
 }
 define i64 @luna_data_box_track(i64 %p0) {
 entry:
-  %a27389 = alloca i64, align 8
+  %a27421 = alloca i64, align 8
   br label %start
 start:
-  store i64 %p0, ptr %a27389
-  %r27390 = load i64, ptr %a27389
-  %r27391 = call i64 @_rl_hm_put(i64 ptrtoint (ptr @rl_box_map to i64), i64 %r27390, i64 1)
+  store i64 %p0, ptr %a27421
+  %r27422 = load i64, ptr %a27421
+  %r27423 = call i64 @_rl_hm_put(i64 ptrtoint (ptr @rl_box_map to i64), i64 %r27422, i64 1)
   ret i64 0
 }
 define i64 @luna_data_box_access_ok(i64 %p0) {
 entry:
-  %a27392 = alloca i64, align 8
-  %a27395 = alloca i64, align 8
+  %a27424 = alloca i64, align 8
+  %a27427 = alloca i64, align 8
   br label %start
 start:
-  store i64 %p0, ptr %a27392
-  %r27393 = load i64, ptr %a27392
-  %r27394 = call i64 @_rl_hm_get(i64 ptrtoint (ptr @rl_box_map to i64), i64 %r27393)
-  store i64 %r27394, ptr %a27395
-  %r27399 = load i64, ptr %a27395
-  %r27401 = icmp eq i64 %r27399, 1
-  %r27400 = zext i1 %r27401 to i64
-  %r27402 = icmp ne i64 %r27400, 0
-  br i1 %r27402, label %it27396, label %ix27398
-it27396:
+  store i64 %p0, ptr %a27424
+  %r27425 = load i64, ptr %a27424
+  %r27426 = call i64 @_rl_hm_get(i64 ptrtoint (ptr @rl_box_map to i64), i64 %r27425)
+  store i64 %r27426, ptr %a27427
+  %r27431 = load i64, ptr %a27427
+  %r27433 = icmp eq i64 %r27431, 1
+  %r27432 = zext i1 %r27433 to i64
+  %r27434 = icmp ne i64 %r27432, 0
+  br i1 %r27434, label %it27428, label %ix27430
+it27428:
   ret i64 0
-d27403:
-  br label %ix27398
-ix27398:
-  %r27407 = load i64, ptr %a27395
-  %r27409 = icmp eq i64 %r27407, 2
-  %r27408 = zext i1 %r27409 to i64
-  %r27410 = icmp ne i64 %r27408, 0
-  br i1 %r27410, label %it27404, label %ix27406
-it27404:
+d27435:
+  br label %ix27430
+ix27430:
+  %r27439 = load i64, ptr %a27427
+  %r27441 = icmp eq i64 %r27439, 2
+  %r27440 = zext i1 %r27441 to i64
+  %r27442 = icmp ne i64 %r27440, 0
+  br i1 %r27442, label %it27436, label %ix27438
+it27436:
   ret i64 5
-d27411:
-  br label %ix27406
-ix27406:
+d27443:
+  br label %ix27438
+ix27438:
   ret i64 6
-d27412:
+d27444:
   ret i64 0
 }
 define i64 @luna_data_box_free_ok(i64 %p0) {
 entry:
-  %a27413 = alloca i64, align 8
-  %a27414 = alloca i64, align 8
-  %a27418 = alloca i64, align 8
+  %a27445 = alloca i64, align 8
+  %a27446 = alloca i64, align 8
+  %a27450 = alloca i64, align 8
   br label %start
 start:
-  store i64 %p0, ptr %a27413
-  store i64 ptrtoint (ptr @rl_box_map to i64), ptr %a27414
-  %r27415 = load i64, ptr %a27414
-  %r27416 = load i64, ptr %a27413
-  %r27417 = call i64 @_rl_hm_get(i64 %r27415, i64 %r27416)
-  store i64 %r27417, ptr %a27418
-  %r27422 = load i64, ptr %a27418
-  %r27424 = icmp eq i64 %r27422, 1
-  %r27423 = zext i1 %r27424 to i64
-  %r27425 = icmp ne i64 %r27423, 0
-  br i1 %r27425, label %it27419, label %ix27421
-it27419:
-  %r27426 = load i64, ptr %a27414
-  %r27427 = load i64, ptr %a27413
-  %r27428 = call i64 @_rl_hm_put(i64 %r27426, i64 %r27427, i64 2)
+  store i64 %p0, ptr %a27445
+  store i64 ptrtoint (ptr @rl_box_map to i64), ptr %a27446
+  %r27447 = load i64, ptr %a27446
+  %r27448 = load i64, ptr %a27445
+  %r27449 = call i64 @_rl_hm_get(i64 %r27447, i64 %r27448)
+  store i64 %r27449, ptr %a27450
+  %r27454 = load i64, ptr %a27450
+  %r27456 = icmp eq i64 %r27454, 1
+  %r27455 = zext i1 %r27456 to i64
+  %r27457 = icmp ne i64 %r27455, 0
+  br i1 %r27457, label %it27451, label %ix27453
+it27451:
+  %r27458 = load i64, ptr %a27446
+  %r27459 = load i64, ptr %a27445
+  %r27460 = call i64 @_rl_hm_put(i64 %r27458, i64 %r27459, i64 2)
   ret i64 0
-d27429:
-  br label %ix27421
-ix27421:
-  %r27433 = load i64, ptr %a27418
-  %r27435 = icmp eq i64 %r27433, 2
-  %r27434 = zext i1 %r27435 to i64
-  %r27436 = icmp ne i64 %r27434, 0
-  br i1 %r27436, label %it27430, label %ix27432
-it27430:
+d27461:
+  br label %ix27453
+ix27453:
+  %r27465 = load i64, ptr %a27450
+  %r27467 = icmp eq i64 %r27465, 2
+  %r27466 = zext i1 %r27467 to i64
+  %r27468 = icmp ne i64 %r27466, 0
+  br i1 %r27468, label %it27462, label %ix27464
+it27462:
   ret i64 5
-d27437:
-  br label %ix27432
-ix27432:
+d27469:
+  br label %ix27464
+ix27464:
   ret i64 6
-d27438:
+d27470:
   ret i64 0
 }
 define i64 @luna_data_template_register(i64 %p0, i64 %p1, i64 %p2) {
 entry:
-  %a27439 = alloca i64, align 8
-  %a27440 = alloca i64, align 8
-  %a27441 = alloca i64, align 8
-  %a27454 = alloca i64, align 8
-  %a27479 = alloca i64, align 8
-  %a27482 = alloca i64, align 8
-  %a27502 = alloca i64, align 8
+  %a27471 = alloca i64, align 8
+  %a27472 = alloca i64, align 8
+  %a27473 = alloca i64, align 8
+  %a27486 = alloca i64, align 8
+  %a27511 = alloca i64, align 8
+  %a27514 = alloca i64, align 8
+  %a27534 = alloca i64, align 8
   br label %start
 start:
-  store i64 %p0, ptr %a27439
-  store i64 %p1, ptr %a27440
-  store i64 %p2, ptr %a27441
-  %r27445 = load i64, ptr %a27439
-  %r27446 = call i64 @_rl_name_ok(i64 %r27445)
-  %r27448 = icmp eq i64 %r27446, 0
-  %r27447 = zext i1 %r27448 to i64
-  %r27449 = icmp ne i64 %r27447, 0
-  br i1 %r27449, label %it27442, label %ix27444
-it27442:
+  store i64 %p0, ptr %a27471
+  store i64 %p1, ptr %a27472
+  store i64 %p2, ptr %a27473
+  %r27477 = load i64, ptr %a27471
+  %r27478 = call i64 @_rl_name_ok(i64 %r27477)
+  %r27480 = icmp eq i64 %r27478, 0
+  %r27479 = zext i1 %r27480 to i64
+  %r27481 = icmp ne i64 %r27479, 0
+  br i1 %r27481, label %it27474, label %ix27476
+it27474:
   ret i64 7
-d27450:
-  br label %ix27444
-ix27444:
-  %r27451 = load i64, ptr %a27440
-  %r27452 = load i64, ptr %a27441
-  %r27453 = call i64 @_rl_collect_fields(i64 %r27451, i64 %r27452)
-  store i64 %r27453, ptr %a27454
-  %r27458 = load i64, ptr %a27454
-  %r27459 = call i64 @_rl_duplicate_field(i64 %r27458)
-  %r27461 = icmp ne i64 %r27459, 0
-  %r27460 = zext i1 %r27461 to i64
-  %r27462 = icmp ne i64 %r27460, 0
-  br i1 %r27462, label %it27455, label %ix27457
-it27455:
-  %r27463 = load i64, ptr %a27454
-  %r27464 = inttoptr i64 %r27463 to ptr
-  call void @free(ptr %r27464)
+d27482:
+  br label %ix27476
+ix27476:
+  %r27483 = load i64, ptr %a27472
+  %r27484 = load i64, ptr %a27473
+  %r27485 = call i64 @_rl_collect_fields(i64 %r27483, i64 %r27484)
+  store i64 %r27485, ptr %a27486
+  %r27490 = load i64, ptr %a27486
+  %r27491 = call i64 @_rl_duplicate_field(i64 %r27490)
+  %r27493 = icmp ne i64 %r27491, 0
+  %r27492 = zext i1 %r27493 to i64
+  %r27494 = icmp ne i64 %r27492, 0
+  br i1 %r27494, label %it27487, label %ix27489
+it27487:
+  %r27495 = load i64, ptr %a27486
+  %r27496 = inttoptr i64 %r27495 to ptr
+  call void @free(ptr %r27496)
   ret i64 8
-d27465:
-  br label %ix27457
-ix27457:
-  %r27469 = load i64, ptr %a27439
-  %r27470 = call i64 @_rl_schema_find(i64 %r27469)
-  %r27472 = icmp eq i64 %r27470, 0
-  %r27471 = zext i1 %r27472 to i64
-  %r27473 = icmp ne i64 %r27471, 0
-  br i1 %r27473, label %it27466, label %ix27468
-it27466:
-  %r27474 = load i64, ptr %a27454
-  %r27475 = mul i64 0, 8
-  %r27476 = add i64 %r27474, %r27475
-  %r27478 = inttoptr i64 %r27476 to ptr
-  %r27477 = load i64, ptr %r27478, align 8
-  store i64 %r27477, ptr %a27479
-  %r27480 = call ptr @calloc(i64 1, i64 32)
-  %r27481 = ptrtoint ptr %r27480 to i64
-  store i64 %r27481, ptr %a27482
-  %r27483 = load i64, ptr %a27482
-  %r27484 = add i64 %r27483, 8
-  %r27485 = load i64, ptr %a27439
-  %r27486 = call i64 @_rl_dup(i64 %r27485)
-  %r27488 = inttoptr i64 %r27484 to ptr
-  store i64 %r27486, ptr %r27488, align 8
-  %r27489 = load i64, ptr %a27482
-  %r27490 = add i64 %r27489, 16
-  %r27491 = load i64, ptr %a27479
-  %r27493 = inttoptr i64 %r27490 to ptr
-  store i64 %r27491, ptr %r27493, align 8
-  %r27494 = load i64, ptr %a27482
-  %r27495 = add i64 %r27494, 24
-  %r27496 = load i64, ptr %a27479
-  %r27497 = add i64 %r27496, 1
-  %r27498 = call ptr @calloc(i64 %r27497, i64 8)
-  %r27499 = ptrtoint ptr %r27498 to i64
-  %r27501 = inttoptr i64 %r27495 to ptr
-  store i64 %r27499, ptr %r27501, align 8
-  store i64 0, ptr %a27502
-  br label %fh27503
-fh27503:
-  %r27507 = load i64, ptr %a27502
-  %r27508 = load i64, ptr %a27479
-  %r27510 = icmp slt i64 %r27507, %r27508
-  %r27509 = zext i1 %r27510 to i64
-  %r27511 = icmp ne i64 %r27509, 0
-  br i1 %r27511, label %fb27504, label %fe27506
-fb27504:
-  %r27512 = load i64, ptr %a27482
-  %r27513 = add i64 %r27512, 24
-  %r27515 = inttoptr i64 %r27513 to ptr
-  %r27514 = load i64, ptr %r27515, align 8
-  %r27516 = load i64, ptr %a27502
-  %r27517 = mul i64 %r27516, 8
-  %r27518 = add i64 %r27514, %r27517
-  %r27519 = load i64, ptr %a27454
-  %r27520 = load i64, ptr %a27502
-  %r27521 = add i64 %r27520, 1
-  %r27522 = mul i64 %r27521, 8
-  %r27523 = add i64 %r27519, %r27522
-  %r27525 = inttoptr i64 %r27523 to ptr
-  %r27524 = load i64, ptr %r27525, align 8
-  %r27526 = call i64 @_rl_dup(i64 %r27524)
-  %r27528 = inttoptr i64 %r27518 to ptr
-  store i64 %r27526, ptr %r27528, align 8
-  br label %fs27505
-fs27505:
-  %r27529 = load i64, ptr %a27502
-  %r27530 = add i64 %r27529, 1
-  store i64 %r27530, ptr %a27502
-  br label %fh27503
-fe27506:
-  %r27531 = load i64, ptr %a27482
-  %r27532 = add i64 %r27531, 0
-  %r27533 = load i64, ptr @rl_schemas
-  %r27535 = inttoptr i64 %r27532 to ptr
-  store i64 %r27533, ptr %r27535, align 8
-  %r27536 = load i64, ptr %a27482
-  store i64 %r27536, ptr @rl_schemas
-  br label %ix27468
-ix27468:
-  %r27537 = load i64, ptr %a27454
-  %r27538 = inttoptr i64 %r27537 to ptr
-  call void @free(ptr %r27538)
+d27497:
+  br label %ix27489
+ix27489:
+  %r27501 = load i64, ptr %a27471
+  %r27502 = call i64 @_rl_schema_find(i64 %r27501)
+  %r27504 = icmp eq i64 %r27502, 0
+  %r27503 = zext i1 %r27504 to i64
+  %r27505 = icmp ne i64 %r27503, 0
+  br i1 %r27505, label %it27498, label %ix27500
+it27498:
+  %r27506 = load i64, ptr %a27486
+  %r27507 = mul i64 0, 8
+  %r27508 = add i64 %r27506, %r27507
+  %r27510 = inttoptr i64 %r27508 to ptr
+  %r27509 = load i64, ptr %r27510, align 8
+  store i64 %r27509, ptr %a27511
+  %r27512 = call ptr @calloc(i64 1, i64 32)
+  %r27513 = ptrtoint ptr %r27512 to i64
+  store i64 %r27513, ptr %a27514
+  %r27515 = load i64, ptr %a27514
+  %r27516 = add i64 %r27515, 8
+  %r27517 = load i64, ptr %a27471
+  %r27518 = call i64 @_rl_dup(i64 %r27517)
+  %r27520 = inttoptr i64 %r27516 to ptr
+  store i64 %r27518, ptr %r27520, align 8
+  %r27521 = load i64, ptr %a27514
+  %r27522 = add i64 %r27521, 16
+  %r27523 = load i64, ptr %a27511
+  %r27525 = inttoptr i64 %r27522 to ptr
+  store i64 %r27523, ptr %r27525, align 8
+  %r27526 = load i64, ptr %a27514
+  %r27527 = add i64 %r27526, 24
+  %r27528 = load i64, ptr %a27511
+  %r27529 = add i64 %r27528, 1
+  %r27530 = call ptr @calloc(i64 %r27529, i64 8)
+  %r27531 = ptrtoint ptr %r27530 to i64
+  %r27533 = inttoptr i64 %r27527 to ptr
+  store i64 %r27531, ptr %r27533, align 8
+  store i64 0, ptr %a27534
+  br label %fh27535
+fh27535:
+  %r27539 = load i64, ptr %a27534
+  %r27540 = load i64, ptr %a27511
+  %r27542 = icmp slt i64 %r27539, %r27540
+  %r27541 = zext i1 %r27542 to i64
+  %r27543 = icmp ne i64 %r27541, 0
+  br i1 %r27543, label %fb27536, label %fe27538
+fb27536:
+  %r27544 = load i64, ptr %a27514
+  %r27545 = add i64 %r27544, 24
+  %r27547 = inttoptr i64 %r27545 to ptr
+  %r27546 = load i64, ptr %r27547, align 8
+  %r27548 = load i64, ptr %a27534
+  %r27549 = mul i64 %r27548, 8
+  %r27550 = add i64 %r27546, %r27549
+  %r27551 = load i64, ptr %a27486
+  %r27552 = load i64, ptr %a27534
+  %r27553 = add i64 %r27552, 1
+  %r27554 = mul i64 %r27553, 8
+  %r27555 = add i64 %r27551, %r27554
+  %r27557 = inttoptr i64 %r27555 to ptr
+  %r27556 = load i64, ptr %r27557, align 8
+  %r27558 = call i64 @_rl_dup(i64 %r27556)
+  %r27560 = inttoptr i64 %r27550 to ptr
+  store i64 %r27558, ptr %r27560, align 8
+  br label %fs27537
+fs27537:
+  %r27561 = load i64, ptr %a27534
+  %r27562 = add i64 %r27561, 1
+  store i64 %r27562, ptr %a27534
+  br label %fh27535
+fe27538:
+  %r27563 = load i64, ptr %a27514
+  %r27564 = add i64 %r27563, 0
+  %r27565 = load i64, ptr @rl_schemas
+  %r27567 = inttoptr i64 %r27564 to ptr
+  store i64 %r27565, ptr %r27567, align 8
+  %r27568 = load i64, ptr %a27514
+  store i64 %r27568, ptr @rl_schemas
+  br label %ix27500
+ix27500:
+  %r27569 = load i64, ptr %a27486
+  %r27570 = inttoptr i64 %r27569 to ptr
+  call void @free(ptr %r27570)
   ret i64 0
-d27539:
+d27571:
   ret i64 0
 }
 define i64 @luna_data_template_arity_ok(i64 %p0, i64 %p1) {
 entry:
-  %a27540 = alloca i64, align 8
-  %a27541 = alloca i64, align 8
-  %a27553 = alloca i64, align 8
-  %a27557 = alloca i64, align 8
+  %a27572 = alloca i64, align 8
+  %a27573 = alloca i64, align 8
+  %a27585 = alloca i64, align 8
+  %a27589 = alloca i64, align 8
   br label %start
 start:
-  store i64 %p0, ptr %a27540
-  store i64 %p1, ptr %a27541
-  %r27545 = load i64, ptr %a27540
-  %r27546 = call i64 @_rl_utf8_ok(i64 %r27545)
-  %r27548 = icmp eq i64 %r27546, 0
-  %r27547 = zext i1 %r27548 to i64
-  %r27549 = icmp ne i64 %r27547, 0
-  br i1 %r27549, label %it27542, label %ix27544
-it27542:
+  store i64 %p0, ptr %a27572
+  store i64 %p1, ptr %a27573
+  %r27577 = load i64, ptr %a27572
+  %r27578 = call i64 @_rl_utf8_ok(i64 %r27577)
+  %r27580 = icmp eq i64 %r27578, 0
+  %r27579 = zext i1 %r27580 to i64
+  %r27581 = icmp ne i64 %r27579, 0
+  br i1 %r27581, label %it27574, label %ix27576
+it27574:
   ret i64 7
-d27550:
-  br label %ix27544
-ix27544:
-  %r27551 = load i64, ptr %a27540
-  %r27552 = call i64 @_rl_schema_find(i64 %r27551)
-  store i64 %r27552, ptr %a27553
-  %r27560 = load i64, ptr %a27553
-  %r27562 = icmp eq i64 %r27560, 0
-  %r27561 = zext i1 %r27562 to i64
-  %r27563 = icmp ne i64 %r27561, 0
-  %r27564 = zext i1 %r27563 to i64
-  store i64 %r27564, ptr %a27557
-  br i1 %r27563, label %ld27559, label %lr27558
-lr27558:
-  %r27565 = load i64, ptr %a27553
-  %r27566 = add i64 %r27565, 16
-  %r27568 = inttoptr i64 %r27566 to ptr
-  %r27567 = load i64, ptr %r27568, align 8
-  %r27569 = load i64, ptr %a27541
-  %r27571 = icmp eq i64 %r27567, %r27569
-  %r27570 = zext i1 %r27571 to i64
-  %r27572 = icmp ne i64 %r27570, 0
-  %r27573 = zext i1 %r27572 to i64
-  store i64 %r27573, ptr %a27557
-  br label %ld27559
-ld27559:
-  %r27574 = load i64, ptr %a27557
-  %r27575 = icmp ne i64 %r27574, 0
-  br i1 %r27575, label %it27554, label %ix27556
-it27554:
+d27582:
+  br label %ix27576
+ix27576:
+  %r27583 = load i64, ptr %a27572
+  %r27584 = call i64 @_rl_schema_find(i64 %r27583)
+  store i64 %r27584, ptr %a27585
+  %r27592 = load i64, ptr %a27585
+  %r27594 = icmp eq i64 %r27592, 0
+  %r27593 = zext i1 %r27594 to i64
+  %r27595 = icmp ne i64 %r27593, 0
+  %r27596 = zext i1 %r27595 to i64
+  store i64 %r27596, ptr %a27589
+  br i1 %r27595, label %ld27591, label %lr27590
+lr27590:
+  %r27597 = load i64, ptr %a27585
+  %r27598 = add i64 %r27597, 16
+  %r27600 = inttoptr i64 %r27598 to ptr
+  %r27599 = load i64, ptr %r27600, align 8
+  %r27601 = load i64, ptr %a27573
+  %r27603 = icmp eq i64 %r27599, %r27601
+  %r27602 = zext i1 %r27603 to i64
+  %r27604 = icmp ne i64 %r27602, 0
+  %r27605 = zext i1 %r27604 to i64
+  store i64 %r27605, ptr %a27589
+  br label %ld27591
+ld27591:
+  %r27606 = load i64, ptr %a27589
+  %r27607 = icmp ne i64 %r27606, 0
+  br i1 %r27607, label %it27586, label %ix27588
+it27586:
   ret i64 0
-d27576:
-  br label %ix27556
-ix27556:
+d27608:
+  br label %ix27588
+ix27588:
   ret i64 10
-d27577:
+d27609:
   ret i64 0
 }
 define i64 @luna_data_template_field_ok(i64 %p0, i64 %p1) {
 entry:
-  %a27578 = alloca i64, align 8
-  %a27579 = alloca i64, align 8
-  %a27600 = alloca i64, align 8
-  %a27613 = alloca i64, align 8
-  %a27614 = alloca i64, align 8
+  %a27610 = alloca i64, align 8
+  %a27611 = alloca i64, align 8
+  %a27632 = alloca i64, align 8
+  %a27645 = alloca i64, align 8
+  %a27646 = alloca i64, align 8
   br label %start
 start:
-  store i64 %p0, ptr %a27578
-  store i64 %p1, ptr %a27579
-  %r27583 = load i64, ptr %a27578
-  %r27584 = call i64 @_rl_utf8_ok(i64 %r27583)
-  %r27586 = icmp eq i64 %r27584, 0
-  %r27585 = zext i1 %r27586 to i64
-  %r27587 = icmp ne i64 %r27585, 0
-  br i1 %r27587, label %it27580, label %ix27582
-it27580:
+  store i64 %p0, ptr %a27610
+  store i64 %p1, ptr %a27611
+  %r27615 = load i64, ptr %a27610
+  %r27616 = call i64 @_rl_utf8_ok(i64 %r27615)
+  %r27618 = icmp eq i64 %r27616, 0
+  %r27617 = zext i1 %r27618 to i64
+  %r27619 = icmp ne i64 %r27617, 0
+  br i1 %r27619, label %it27612, label %ix27614
+it27612:
   ret i64 7
-d27588:
-  br label %ix27582
-ix27582:
-  %r27592 = load i64, ptr %a27579
-  %r27593 = call i64 @_rl_utf8_ok(i64 %r27592)
-  %r27595 = icmp eq i64 %r27593, 0
-  %r27594 = zext i1 %r27595 to i64
-  %r27596 = icmp ne i64 %r27594, 0
-  br i1 %r27596, label %it27589, label %ix27591
-it27589:
+d27620:
+  br label %ix27614
+ix27614:
+  %r27624 = load i64, ptr %a27611
+  %r27625 = call i64 @_rl_utf8_ok(i64 %r27624)
+  %r27627 = icmp eq i64 %r27625, 0
+  %r27626 = zext i1 %r27627 to i64
+  %r27628 = icmp ne i64 %r27626, 0
+  br i1 %r27628, label %it27621, label %ix27623
+it27621:
   ret i64 11
-d27597:
-  br label %ix27591
-ix27591:
-  %r27598 = load i64, ptr %a27578
-  %r27599 = call i64 @_rl_schema_find(i64 %r27598)
-  store i64 %r27599, ptr %a27600
-  %r27604 = load i64, ptr %a27600
-  %r27606 = icmp eq i64 %r27604, 0
-  %r27605 = zext i1 %r27606 to i64
-  %r27607 = icmp ne i64 %r27605, 0
-  br i1 %r27607, label %it27601, label %ix27603
-it27601:
+d27629:
+  br label %ix27623
+ix27623:
+  %r27630 = load i64, ptr %a27610
+  %r27631 = call i64 @_rl_schema_find(i64 %r27630)
+  store i64 %r27631, ptr %a27632
+  %r27636 = load i64, ptr %a27632
+  %r27638 = icmp eq i64 %r27636, 0
+  %r27637 = zext i1 %r27638 to i64
+  %r27639 = icmp ne i64 %r27637, 0
+  br i1 %r27639, label %it27633, label %ix27635
+it27633:
   ret i64 0
-d27608:
-  br label %ix27603
-ix27603:
-  %r27609 = load i64, ptr %a27600
-  %r27610 = add i64 %r27609, 16
-  %r27612 = inttoptr i64 %r27610 to ptr
-  %r27611 = load i64, ptr %r27612, align 8
-  store i64 %r27611, ptr %a27613
-  store i64 0, ptr %a27614
-  br label %fh27615
-fh27615:
-  %r27619 = load i64, ptr %a27614
-  %r27620 = load i64, ptr %a27613
-  %r27622 = icmp slt i64 %r27619, %r27620
-  %r27621 = zext i1 %r27622 to i64
-  %r27623 = icmp ne i64 %r27621, 0
-  br i1 %r27623, label %fb27616, label %fe27618
-fb27616:
-  %r27627 = load i64, ptr %a27600
-  %r27628 = add i64 %r27627, 24
-  %r27630 = inttoptr i64 %r27628 to ptr
-  %r27629 = load i64, ptr %r27630, align 8
-  %r27631 = load i64, ptr %a27614
-  %r27632 = mul i64 %r27631, 8
-  %r27633 = add i64 %r27629, %r27632
-  %r27635 = inttoptr i64 %r27633 to ptr
-  %r27634 = load i64, ptr %r27635, align 8
-  %r27636 = inttoptr i64 %r27634 to ptr
-  %r27637 = load i64, ptr %a27579
-  %r27638 = inttoptr i64 %r27637 to ptr
-  %r27639 = call i32 @strcmp(ptr %r27636, ptr %r27638)
-  %r27640 = sext i32 %r27639 to i64
-  %r27642 = icmp eq i64 %r27640, 0
-  %r27641 = zext i1 %r27642 to i64
-  %r27643 = icmp ne i64 %r27641, 0
-  br i1 %r27643, label %it27624, label %ix27626
-it27624:
+d27640:
+  br label %ix27635
+ix27635:
+  %r27641 = load i64, ptr %a27632
+  %r27642 = add i64 %r27641, 16
+  %r27644 = inttoptr i64 %r27642 to ptr
+  %r27643 = load i64, ptr %r27644, align 8
+  store i64 %r27643, ptr %a27645
+  store i64 0, ptr %a27646
+  br label %fh27647
+fh27647:
+  %r27651 = load i64, ptr %a27646
+  %r27652 = load i64, ptr %a27645
+  %r27654 = icmp slt i64 %r27651, %r27652
+  %r27653 = zext i1 %r27654 to i64
+  %r27655 = icmp ne i64 %r27653, 0
+  br i1 %r27655, label %fb27648, label %fe27650
+fb27648:
+  %r27659 = load i64, ptr %a27632
+  %r27660 = add i64 %r27659, 24
+  %r27662 = inttoptr i64 %r27660 to ptr
+  %r27661 = load i64, ptr %r27662, align 8
+  %r27663 = load i64, ptr %a27646
+  %r27664 = mul i64 %r27663, 8
+  %r27665 = add i64 %r27661, %r27664
+  %r27667 = inttoptr i64 %r27665 to ptr
+  %r27666 = load i64, ptr %r27667, align 8
+  %r27668 = inttoptr i64 %r27666 to ptr
+  %r27669 = load i64, ptr %a27611
+  %r27670 = inttoptr i64 %r27669 to ptr
+  %r27671 = call i32 @strcmp(ptr %r27668, ptr %r27670)
+  %r27672 = sext i32 %r27671 to i64
+  %r27674 = icmp eq i64 %r27672, 0
+  %r27673 = zext i1 %r27674 to i64
+  %r27675 = icmp ne i64 %r27673, 0
+  br i1 %r27675, label %it27656, label %ix27658
+it27656:
   ret i64 0
-d27644:
-  br label %ix27626
-ix27626:
-  br label %fs27617
-fs27617:
-  %r27645 = load i64, ptr %a27614
-  %r27646 = add i64 %r27645, 1
-  store i64 %r27646, ptr %a27614
-  br label %fh27615
-fe27618:
+d27676:
+  br label %ix27658
+ix27658:
+  br label %fs27649
+fs27649:
+  %r27677 = load i64, ptr %a27646
+  %r27678 = add i64 %r27677, 1
+  store i64 %r27678, ptr %a27646
+  br label %fh27647
+fe27650:
   ret i64 11
-d27647:
+d27679:
   ret i64 0
 }
 define i64 @luna_data_containment_ok(i64 %p0, i64 %p1) {
 entry:
-  %a27648 = alloca i64, align 8
-  %a27649 = alloca i64, align 8
-  %a27653 = alloca i64, align 8
-  %a27661 = alloca i64, align 8
-  %a27664 = alloca i64, align 8
-  %a27694 = alloca i64, align 8
+  %a27680 = alloca i64, align 8
+  %a27681 = alloca i64, align 8
+  %a27685 = alloca i64, align 8
+  %a27693 = alloca i64, align 8
+  %a27696 = alloca i64, align 8
+  %a27726 = alloca i64, align 8
   br label %start
 start:
-  store i64 %p0, ptr %a27648
-  store i64 %p1, ptr %a27649
-  %r27656 = load i64, ptr %a27648
-  %r27658 = icmp eq i64 %r27656, 3
-  %r27657 = zext i1 %r27658 to i64
-  %r27659 = icmp ne i64 %r27657, 0
-  %r27660 = zext i1 %r27659 to i64
-  store i64 %r27660, ptr %a27653
-  br i1 %r27659, label %lr27654, label %ld27655
-lr27654:
-  %r27667 = load i64, ptr %a27649
-  %r27669 = icmp eq i64 %r27667, 1
-  %r27668 = zext i1 %r27669 to i64
-  %r27670 = icmp ne i64 %r27668, 0
-  %r27671 = zext i1 %r27670 to i64
-  store i64 %r27671, ptr %a27664
-  br i1 %r27670, label %ld27666, label %lr27665
-lr27665:
-  %r27672 = load i64, ptr %a27649
-  %r27674 = icmp eq i64 %r27672, 2
-  %r27673 = zext i1 %r27674 to i64
-  %r27675 = icmp ne i64 %r27673, 0
-  %r27676 = zext i1 %r27675 to i64
-  store i64 %r27676, ptr %a27664
-  br label %ld27666
-ld27666:
-  %r27677 = load i64, ptr %a27664
-  %r27678 = icmp ne i64 %r27677, 0
-  %r27679 = zext i1 %r27678 to i64
-  store i64 %r27679, ptr %a27661
-  br i1 %r27678, label %ld27663, label %lr27662
-lr27662:
-  %r27680 = load i64, ptr %a27649
-  %r27682 = icmp eq i64 %r27680, 3
-  %r27681 = zext i1 %r27682 to i64
-  %r27683 = icmp ne i64 %r27681, 0
-  %r27684 = zext i1 %r27683 to i64
-  store i64 %r27684, ptr %a27661
-  br label %ld27663
-ld27663:
-  %r27685 = load i64, ptr %a27661
-  %r27686 = icmp ne i64 %r27685, 0
-  %r27687 = zext i1 %r27686 to i64
-  store i64 %r27687, ptr %a27653
-  br label %ld27655
-ld27655:
-  %r27688 = load i64, ptr %a27653
-  %r27689 = icmp ne i64 %r27688, 0
-  br i1 %r27689, label %it27650, label %ix27652
-it27650:
+  store i64 %p0, ptr %a27680
+  store i64 %p1, ptr %a27681
+  %r27688 = load i64, ptr %a27680
+  %r27690 = icmp eq i64 %r27688, 3
+  %r27689 = zext i1 %r27690 to i64
+  %r27691 = icmp ne i64 %r27689, 0
+  %r27692 = zext i1 %r27691 to i64
+  store i64 %r27692, ptr %a27685
+  br i1 %r27691, label %lr27686, label %ld27687
+lr27686:
+  %r27699 = load i64, ptr %a27681
+  %r27701 = icmp eq i64 %r27699, 1
+  %r27700 = zext i1 %r27701 to i64
+  %r27702 = icmp ne i64 %r27700, 0
+  %r27703 = zext i1 %r27702 to i64
+  store i64 %r27703, ptr %a27696
+  br i1 %r27702, label %ld27698, label %lr27697
+lr27697:
+  %r27704 = load i64, ptr %a27681
+  %r27706 = icmp eq i64 %r27704, 2
+  %r27705 = zext i1 %r27706 to i64
+  %r27707 = icmp ne i64 %r27705, 0
+  %r27708 = zext i1 %r27707 to i64
+  store i64 %r27708, ptr %a27696
+  br label %ld27698
+ld27698:
+  %r27709 = load i64, ptr %a27696
+  %r27710 = icmp ne i64 %r27709, 0
+  %r27711 = zext i1 %r27710 to i64
+  store i64 %r27711, ptr %a27693
+  br i1 %r27710, label %ld27695, label %lr27694
+lr27694:
+  %r27712 = load i64, ptr %a27681
+  %r27714 = icmp eq i64 %r27712, 3
+  %r27713 = zext i1 %r27714 to i64
+  %r27715 = icmp ne i64 %r27713, 0
+  %r27716 = zext i1 %r27715 to i64
+  store i64 %r27716, ptr %a27693
+  br label %ld27695
+ld27695:
+  %r27717 = load i64, ptr %a27693
+  %r27718 = icmp ne i64 %r27717, 0
+  %r27719 = zext i1 %r27718 to i64
+  store i64 %r27719, ptr %a27685
+  br label %ld27687
+ld27687:
+  %r27720 = load i64, ptr %a27685
+  %r27721 = icmp ne i64 %r27720, 0
+  br i1 %r27721, label %it27682, label %ix27684
+it27682:
   ret i64 0
-d27690:
-  br label %ix27652
-ix27652:
-  %r27697 = load i64, ptr %a27648
-  %r27699 = icmp eq i64 %r27697, 1
-  %r27698 = zext i1 %r27699 to i64
-  %r27700 = icmp ne i64 %r27698, 0
-  %r27701 = zext i1 %r27700 to i64
-  store i64 %r27701, ptr %a27694
-  br i1 %r27700, label %lr27695, label %ld27696
-lr27695:
-  %r27702 = load i64, ptr %a27649
-  %r27704 = icmp eq i64 %r27702, 2
-  %r27703 = zext i1 %r27704 to i64
-  %r27705 = icmp ne i64 %r27703, 0
-  %r27706 = zext i1 %r27705 to i64
-  store i64 %r27706, ptr %a27694
-  br label %ld27696
-ld27696:
-  %r27707 = load i64, ptr %a27694
-  %r27708 = icmp ne i64 %r27707, 0
-  br i1 %r27708, label %it27691, label %ix27693
-it27691:
+d27722:
+  br label %ix27684
+ix27684:
+  %r27729 = load i64, ptr %a27680
+  %r27731 = icmp eq i64 %r27729, 1
+  %r27730 = zext i1 %r27731 to i64
+  %r27732 = icmp ne i64 %r27730, 0
+  %r27733 = zext i1 %r27732 to i64
+  store i64 %r27733, ptr %a27726
+  br i1 %r27732, label %lr27727, label %ld27728
+lr27727:
+  %r27734 = load i64, ptr %a27681
+  %r27736 = icmp eq i64 %r27734, 2
+  %r27735 = zext i1 %r27736 to i64
+  %r27737 = icmp ne i64 %r27735, 0
+  %r27738 = zext i1 %r27737 to i64
+  store i64 %r27738, ptr %a27726
+  br label %ld27728
+ld27728:
+  %r27739 = load i64, ptr %a27726
+  %r27740 = icmp ne i64 %r27739, 0
+  br i1 %r27740, label %it27723, label %ix27725
+it27723:
   ret i64 0
-d27709:
-  br label %ix27693
-ix27693:
+d27741:
+  br label %ix27725
+ix27725:
   ret i64 12
-d27710:
+d27742:
   ret i64 0
 }
 define internal i64 @_rl_mem_message(i64 %p0) {
 entry:
-  %a27711 = alloca i64, align 8
+  %a27743 = alloca i64, align 8
   br label %start
 start:
-  store i64 %p0, ptr %a27711
-  %r27715 = load i64, ptr %a27711
-  %r27717 = icmp eq i64 %r27715, 0
-  %r27716 = zext i1 %r27717 to i64
-  %r27718 = icmp ne i64 %r27716, 0
-  br i1 %r27718, label %it27712, label %ix27714
-it27712:
-  ret i64 ptrtoint (ptr @.n329 to i64)
-d27719:
-  br label %ix27714
-ix27714:
-  %r27723 = load i64, ptr %a27711
-  %r27725 = icmp eq i64 %r27723, 1
-  %r27724 = zext i1 %r27725 to i64
-  %r27726 = icmp ne i64 %r27724, 0
-  br i1 %r27726, label %it27720, label %ix27722
-it27720:
-  ret i64 ptrtoint (ptr @.n341 to i64)
-d27727:
-  br label %ix27722
-ix27722:
-  %r27731 = load i64, ptr %a27711
-  %r27733 = icmp eq i64 %r27731, 2
-  %r27732 = zext i1 %r27733 to i64
-  %r27734 = icmp ne i64 %r27732, 0
-  br i1 %r27734, label %it27728, label %ix27730
-it27728:
-  ret i64 ptrtoint (ptr @.n342 to i64)
-d27735:
-  br label %ix27730
-ix27730:
-  %r27739 = load i64, ptr %a27711
-  %r27741 = icmp eq i64 %r27739, 3
-  %r27740 = zext i1 %r27741 to i64
-  %r27742 = icmp ne i64 %r27740, 0
-  br i1 %r27742, label %it27736, label %ix27738
-it27736:
-  ret i64 ptrtoint (ptr @.n343 to i64)
-d27743:
-  br label %ix27738
-ix27738:
-  %r27747 = load i64, ptr %a27711
-  %r27749 = icmp eq i64 %r27747, 4
+  store i64 %p0, ptr %a27743
+  %r27747 = load i64, ptr %a27743
+  %r27749 = icmp eq i64 %r27747, 0
   %r27748 = zext i1 %r27749 to i64
   %r27750 = icmp ne i64 %r27748, 0
   br i1 %r27750, label %it27744, label %ix27746
 it27744:
-  ret i64 ptrtoint (ptr @.n344 to i64)
+  ret i64 ptrtoint (ptr @.n334 to i64)
 d27751:
   br label %ix27746
 ix27746:
-  %r27755 = load i64, ptr %a27711
-  %r27757 = icmp eq i64 %r27755, 5
+  %r27755 = load i64, ptr %a27743
+  %r27757 = icmp eq i64 %r27755, 1
   %r27756 = zext i1 %r27757 to i64
   %r27758 = icmp ne i64 %r27756, 0
   br i1 %r27758, label %it27752, label %ix27754
 it27752:
-  ret i64 ptrtoint (ptr @.n188 to i64)
+  ret i64 ptrtoint (ptr @.n346 to i64)
 d27759:
   br label %ix27754
 ix27754:
-  %r27763 = load i64, ptr %a27711
-  %r27765 = icmp eq i64 %r27763, 7
+  %r27763 = load i64, ptr %a27743
+  %r27765 = icmp eq i64 %r27763, 2
   %r27764 = zext i1 %r27765 to i64
   %r27766 = icmp ne i64 %r27764, 0
   br i1 %r27766, label %it27760, label %ix27762
 it27760:
-  ret i64 ptrtoint (ptr @.n345 to i64)
+  ret i64 ptrtoint (ptr @.n347 to i64)
 d27767:
   br label %ix27762
 ix27762:
-  %r27771 = load i64, ptr %a27711
-  %r27773 = icmp eq i64 %r27771, 8
+  %r27771 = load i64, ptr %a27743
+  %r27773 = icmp eq i64 %r27771, 3
   %r27772 = zext i1 %r27773 to i64
   %r27774 = icmp ne i64 %r27772, 0
   br i1 %r27774, label %it27768, label %ix27770
 it27768:
-  ret i64 ptrtoint (ptr @.n346 to i64)
+  ret i64 ptrtoint (ptr @.n348 to i64)
 d27775:
   br label %ix27770
 ix27770:
-  %r27779 = load i64, ptr %a27711
-  %r27781 = icmp eq i64 %r27779, 9
+  %r27779 = load i64, ptr %a27743
+  %r27781 = icmp eq i64 %r27779, 4
   %r27780 = zext i1 %r27781 to i64
   %r27782 = icmp ne i64 %r27780, 0
   br i1 %r27782, label %it27776, label %ix27778
 it27776:
-  ret i64 ptrtoint (ptr @.n347 to i64)
+  ret i64 ptrtoint (ptr @.n349 to i64)
 d27783:
   br label %ix27778
 ix27778:
-  %r27787 = load i64, ptr %a27711
-  %r27789 = icmp eq i64 %r27787, 10
+  %r27787 = load i64, ptr %a27743
+  %r27789 = icmp eq i64 %r27787, 5
   %r27788 = zext i1 %r27789 to i64
   %r27790 = icmp ne i64 %r27788, 0
   br i1 %r27790, label %it27784, label %ix27786
 it27784:
-  ret i64 ptrtoint (ptr @.n348 to i64)
+  ret i64 ptrtoint (ptr @.n188 to i64)
 d27791:
   br label %ix27786
 ix27786:
-  %r27795 = load i64, ptr %a27711
-  %r27797 = icmp eq i64 %r27795, 12
+  %r27795 = load i64, ptr %a27743
+  %r27797 = icmp eq i64 %r27795, 7
   %r27796 = zext i1 %r27797 to i64
   %r27798 = icmp ne i64 %r27796, 0
   br i1 %r27798, label %it27792, label %ix27794
 it27792:
-  ret i64 ptrtoint (ptr @.n349 to i64)
+  ret i64 ptrtoint (ptr @.n350 to i64)
 d27799:
   br label %ix27794
 ix27794:
-  %r27803 = load i64, ptr %a27711
-  %r27805 = icmp eq i64 %r27803, 13
+  %r27803 = load i64, ptr %a27743
+  %r27805 = icmp eq i64 %r27803, 8
   %r27804 = zext i1 %r27805 to i64
   %r27806 = icmp ne i64 %r27804, 0
   br i1 %r27806, label %it27800, label %ix27802
 it27800:
-  ret i64 ptrtoint (ptr @.n350 to i64)
+  ret i64 ptrtoint (ptr @.n351 to i64)
 d27807:
   br label %ix27802
 ix27802:
-  ret i64 ptrtoint (ptr @.n351 to i64)
-d27808:
+  %r27811 = load i64, ptr %a27743
+  %r27813 = icmp eq i64 %r27811, 9
+  %r27812 = zext i1 %r27813 to i64
+  %r27814 = icmp ne i64 %r27812, 0
+  br i1 %r27814, label %it27808, label %ix27810
+it27808:
+  ret i64 ptrtoint (ptr @.n352 to i64)
+d27815:
+  br label %ix27810
+ix27810:
+  %r27819 = load i64, ptr %a27743
+  %r27821 = icmp eq i64 %r27819, 10
+  %r27820 = zext i1 %r27821 to i64
+  %r27822 = icmp ne i64 %r27820, 0
+  br i1 %r27822, label %it27816, label %ix27818
+it27816:
+  ret i64 ptrtoint (ptr @.n353 to i64)
+d27823:
+  br label %ix27818
+ix27818:
+  %r27827 = load i64, ptr %a27743
+  %r27829 = icmp eq i64 %r27827, 12
+  %r27828 = zext i1 %r27829 to i64
+  %r27830 = icmp ne i64 %r27828, 0
+  br i1 %r27830, label %it27824, label %ix27826
+it27824:
+  ret i64 ptrtoint (ptr @.n354 to i64)
+d27831:
+  br label %ix27826
+ix27826:
+  %r27835 = load i64, ptr %a27743
+  %r27837 = icmp eq i64 %r27835, 13
+  %r27836 = zext i1 %r27837 to i64
+  %r27838 = icmp ne i64 %r27836, 0
+  br i1 %r27838, label %it27832, label %ix27834
+it27832:
+  ret i64 ptrtoint (ptr @.n355 to i64)
+d27839:
+  br label %ix27834
+ix27834:
+  ret i64 ptrtoint (ptr @.n356 to i64)
+d27840:
   ret i64 0
 }
 define i64 @luna_mem_error_message(i64 %p0, i64 %p1, i64 %p2) {
 entry:
-  %a27809 = alloca i64, align 8
-  %a27810 = alloca i64, align 8
-  %a27811 = alloca i64, align 8
+  %a27841 = alloca i64, align 8
+  %a27842 = alloca i64, align 8
+  %a27843 = alloca i64, align 8
   br label %start
 start:
-  store i64 %p0, ptr %a27809
-  store i64 %p1, ptr %a27810
-  store i64 %p2, ptr %a27811
-  %r27812 = load i64, ptr %a27809
-  %r27813 = call i64 @_rl_mem_message(i64 %r27812)
-  %r27814 = load i64, ptr %a27810
-  %r27815 = load i64, ptr %a27811
-  %r27816 = call i64 @_rl_copy_message(i64 %r27813, i64 %r27814, i64 %r27815)
+  store i64 %p0, ptr %a27841
+  store i64 %p1, ptr %a27842
+  store i64 %p2, ptr %a27843
+  %r27844 = load i64, ptr %a27841
+  %r27845 = call i64 @_rl_mem_message(i64 %r27844)
+  %r27846 = load i64, ptr %a27842
+  %r27847 = load i64, ptr %a27843
+  %r27848 = call i64 @_rl_copy_message(i64 %r27845, i64 %r27846, i64 %r27847)
   ret i64 0
 }
 define i64 @luna_mem_init() {
 entry:
   br label %start
 start:
-  %r27817 = call i64 @_rl_hm_clear(i64 ptrtoint (ptr @rl_alloc_map to i64))
+  %r27849 = call i64 @_rl_hm_clear(i64 ptrtoint (ptr @rl_alloc_map to i64))
   store i64 0, ptr @rl_entry_n
   store i64 0, ptr @rl_defer_n
   store i64 0, ptr @rl_inside
@@ -36997,742 +37050,742 @@ start:
 }
 define i64 @luna_mem_track_alloc(i64 %p0, i64 %p1) {
 entry:
-  %a27818 = alloca i64, align 8
-  %a27819 = alloca i64, align 8
-  %a27820 = alloca i64, align 8
-  %a27824 = alloca i64, align 8
-  %a27838 = alloca i64, align 8
-  %a27857 = alloca i64, align 8
-  %a27880 = alloca i64, align 8
+  %a27850 = alloca i64, align 8
+  %a27851 = alloca i64, align 8
+  %a27852 = alloca i64, align 8
+  %a27856 = alloca i64, align 8
+  %a27870 = alloca i64, align 8
+  %a27889 = alloca i64, align 8
+  %a27912 = alloca i64, align 8
   br label %start
 start:
-  store i64 %p0, ptr %a27818
-  store i64 %p1, ptr %a27819
-  store i64 ptrtoint (ptr @rl_alloc_map to i64), ptr %a27820
-  %r27821 = load i64, ptr %a27820
-  %r27822 = load i64, ptr %a27818
-  %r27823 = call i64 @_rl_hm_get(i64 %r27821, i64 %r27822)
-  store i64 %r27823, ptr %a27824
-  %r27828 = load i64, ptr %a27824
-  %r27830 = icmp ne i64 %r27828, 0
-  %r27829 = zext i1 %r27830 to i64
-  %r27831 = icmp ne i64 %r27829, 0
-  br i1 %r27831, label %it27825, label %ix27827
-it27825:
-  %r27832 = load i64, ptr @rl_entries
-  %r27833 = load i64, ptr %a27824
-  %r27834 = sub i64 %r27833, 1
-  %r27835 = mul i64 %r27834, 3
-  %r27836 = mul i64 %r27835, 8
-  %r27837 = add i64 %r27832, %r27836
-  store i64 %r27837, ptr %a27838
-  %r27839 = load i64, ptr %a27838
-  %r27840 = add i64 %r27839, 8
-  %r27841 = load i64, ptr %a27819
-  %r27843 = inttoptr i64 %r27840 to ptr
-  store i64 %r27841, ptr %r27843, align 8
-  %r27844 = load i64, ptr %a27838
-  %r27845 = add i64 %r27844, 16
-  %r27847 = inttoptr i64 %r27845 to ptr
-  store i64 0, ptr %r27847, align 8
-  ret i64 0
-d27848:
-  br label %ix27827
-ix27827:
-  %r27852 = load i64, ptr @rl_entry_n
-  %r27853 = load i64, ptr @rl_entry_cap
-  %r27855 = icmp eq i64 %r27852, %r27853
-  %r27854 = zext i1 %r27855 to i64
-  %r27856 = icmp ne i64 %r27854, 0
-  br i1 %r27856, label %it27849, label %ix27851
-it27849:
-  store i64 16, ptr %a27857
-  %r27861 = load i64, ptr @rl_entry_cap
+  store i64 %p0, ptr %a27850
+  store i64 %p1, ptr %a27851
+  store i64 ptrtoint (ptr @rl_alloc_map to i64), ptr %a27852
+  %r27853 = load i64, ptr %a27852
+  %r27854 = load i64, ptr %a27850
+  %r27855 = call i64 @_rl_hm_get(i64 %r27853, i64 %r27854)
+  store i64 %r27855, ptr %a27856
+  %r27860 = load i64, ptr %a27856
+  %r27862 = icmp ne i64 %r27860, 0
+  %r27861 = zext i1 %r27862 to i64
   %r27863 = icmp ne i64 %r27861, 0
-  %r27862 = zext i1 %r27863 to i64
-  %r27864 = icmp ne i64 %r27862, 0
-  br i1 %r27864, label %it27858, label %ix27860
-it27858:
-  %r27865 = load i64, ptr @rl_entry_cap
-  %r27866 = mul i64 %r27865, 2
-  store i64 %r27866, ptr %a27857
-  br label %ix27860
-ix27860:
-  %r27867 = load i64, ptr @rl_entries
-  %r27868 = inttoptr i64 %r27867 to ptr
-  %r27869 = load i64, ptr %a27857
-  %r27870 = mul i64 %r27869, 3
-  %r27871 = mul i64 %r27870, 8
-  %r27872 = call ptr @realloc(ptr %r27868, i64 %r27871)
-  %r27873 = ptrtoint ptr %r27872 to i64
-  store i64 %r27873, ptr @rl_entries
-  %r27874 = load i64, ptr %a27857
-  store i64 %r27874, ptr @rl_entry_cap
-  br label %ix27851
-ix27851:
-  %r27875 = load i64, ptr @rl_entries
-  %r27876 = load i64, ptr @rl_entry_n
-  %r27877 = mul i64 %r27876, 3
-  %r27878 = mul i64 %r27877, 8
-  %r27879 = add i64 %r27875, %r27878
-  store i64 %r27879, ptr %a27880
-  %r27881 = load i64, ptr %a27880
-  %r27882 = add i64 %r27881, 0
-  %r27883 = load i64, ptr %a27818
-  %r27885 = inttoptr i64 %r27882 to ptr
-  store i64 %r27883, ptr %r27885, align 8
-  %r27886 = load i64, ptr %a27880
-  %r27887 = add i64 %r27886, 8
-  %r27888 = load i64, ptr %a27819
-  %r27890 = inttoptr i64 %r27887 to ptr
-  store i64 %r27888, ptr %r27890, align 8
-  %r27891 = load i64, ptr %a27880
-  %r27892 = add i64 %r27891, 16
-  %r27894 = inttoptr i64 %r27892 to ptr
-  store i64 0, ptr %r27894, align 8
-  %r27895 = load i64, ptr @rl_entry_n
-  %r27896 = add i64 %r27895, 1
-  store i64 %r27896, ptr @rl_entry_n
-  %r27897 = load i64, ptr %a27820
-  %r27898 = load i64, ptr %a27818
-  %r27899 = load i64, ptr @rl_entry_n
-  %r27900 = call i64 @_rl_hm_put(i64 %r27897, i64 %r27898, i64 %r27899)
+  br i1 %r27863, label %it27857, label %ix27859
+it27857:
+  %r27864 = load i64, ptr @rl_entries
+  %r27865 = load i64, ptr %a27856
+  %r27866 = sub i64 %r27865, 1
+  %r27867 = mul i64 %r27866, 3
+  %r27868 = mul i64 %r27867, 8
+  %r27869 = add i64 %r27864, %r27868
+  store i64 %r27869, ptr %a27870
+  %r27871 = load i64, ptr %a27870
+  %r27872 = add i64 %r27871, 8
+  %r27873 = load i64, ptr %a27851
+  %r27875 = inttoptr i64 %r27872 to ptr
+  store i64 %r27873, ptr %r27875, align 8
+  %r27876 = load i64, ptr %a27870
+  %r27877 = add i64 %r27876, 16
+  %r27879 = inttoptr i64 %r27877 to ptr
+  store i64 0, ptr %r27879, align 8
+  ret i64 0
+d27880:
+  br label %ix27859
+ix27859:
+  %r27884 = load i64, ptr @rl_entry_n
+  %r27885 = load i64, ptr @rl_entry_cap
+  %r27887 = icmp eq i64 %r27884, %r27885
+  %r27886 = zext i1 %r27887 to i64
+  %r27888 = icmp ne i64 %r27886, 0
+  br i1 %r27888, label %it27881, label %ix27883
+it27881:
+  store i64 16, ptr %a27889
+  %r27893 = load i64, ptr @rl_entry_cap
+  %r27895 = icmp ne i64 %r27893, 0
+  %r27894 = zext i1 %r27895 to i64
+  %r27896 = icmp ne i64 %r27894, 0
+  br i1 %r27896, label %it27890, label %ix27892
+it27890:
+  %r27897 = load i64, ptr @rl_entry_cap
+  %r27898 = mul i64 %r27897, 2
+  store i64 %r27898, ptr %a27889
+  br label %ix27892
+ix27892:
+  %r27899 = load i64, ptr @rl_entries
+  %r27900 = inttoptr i64 %r27899 to ptr
+  %r27901 = load i64, ptr %a27889
+  %r27902 = mul i64 %r27901, 3
+  %r27903 = mul i64 %r27902, 8
+  %r27904 = call ptr @realloc(ptr %r27900, i64 %r27903)
+  %r27905 = ptrtoint ptr %r27904 to i64
+  store i64 %r27905, ptr @rl_entries
+  %r27906 = load i64, ptr %a27889
+  store i64 %r27906, ptr @rl_entry_cap
+  br label %ix27883
+ix27883:
+  %r27907 = load i64, ptr @rl_entries
+  %r27908 = load i64, ptr @rl_entry_n
+  %r27909 = mul i64 %r27908, 3
+  %r27910 = mul i64 %r27909, 8
+  %r27911 = add i64 %r27907, %r27910
+  store i64 %r27911, ptr %a27912
+  %r27913 = load i64, ptr %a27912
+  %r27914 = add i64 %r27913, 0
+  %r27915 = load i64, ptr %a27850
+  %r27917 = inttoptr i64 %r27914 to ptr
+  store i64 %r27915, ptr %r27917, align 8
+  %r27918 = load i64, ptr %a27912
+  %r27919 = add i64 %r27918, 8
+  %r27920 = load i64, ptr %a27851
+  %r27922 = inttoptr i64 %r27919 to ptr
+  store i64 %r27920, ptr %r27922, align 8
+  %r27923 = load i64, ptr %a27912
+  %r27924 = add i64 %r27923, 16
+  %r27926 = inttoptr i64 %r27924 to ptr
+  store i64 0, ptr %r27926, align 8
+  %r27927 = load i64, ptr @rl_entry_n
+  %r27928 = add i64 %r27927, 1
+  store i64 %r27928, ptr @rl_entry_n
+  %r27929 = load i64, ptr %a27852
+  %r27930 = load i64, ptr %a27850
+  %r27931 = load i64, ptr @rl_entry_n
+  %r27932 = call i64 @_rl_hm_put(i64 %r27929, i64 %r27930, i64 %r27931)
   ret i64 0
 }
 define internal i64 @_rl_exact(i64 %p0) {
 entry:
-  %a27901 = alloca i64, align 8
-  %a27904 = alloca i64, align 8
+  %a27933 = alloca i64, align 8
+  %a27936 = alloca i64, align 8
   br label %start
 start:
-  store i64 %p0, ptr %a27901
-  %r27902 = load i64, ptr %a27901
-  %r27903 = call i64 @_rl_hm_get(i64 ptrtoint (ptr @rl_alloc_map to i64), i64 %r27902)
-  store i64 %r27903, ptr %a27904
-  %r27908 = load i64, ptr %a27904
-  %r27910 = icmp eq i64 %r27908, 0
-  %r27909 = zext i1 %r27910 to i64
-  %r27911 = icmp ne i64 %r27909, 0
-  br i1 %r27911, label %it27905, label %ix27907
-it27905:
+  store i64 %p0, ptr %a27933
+  %r27934 = load i64, ptr %a27933
+  %r27935 = call i64 @_rl_hm_get(i64 ptrtoint (ptr @rl_alloc_map to i64), i64 %r27934)
+  store i64 %r27935, ptr %a27936
+  %r27940 = load i64, ptr %a27936
+  %r27942 = icmp eq i64 %r27940, 0
+  %r27941 = zext i1 %r27942 to i64
+  %r27943 = icmp ne i64 %r27941, 0
+  br i1 %r27943, label %it27937, label %ix27939
+it27937:
   ret i64 0
-d27912:
-  br label %ix27907
-ix27907:
-  %r27913 = load i64, ptr @rl_entries
-  %r27914 = load i64, ptr %a27904
-  %r27915 = sub i64 %r27914, 1
-  %r27916 = mul i64 %r27915, 3
-  %r27917 = mul i64 %r27916, 8
-  %r27918 = add i64 %r27913, %r27917
-  ret i64 %r27918
-d27919:
+d27944:
+  br label %ix27939
+ix27939:
+  %r27945 = load i64, ptr @rl_entries
+  %r27946 = load i64, ptr %a27936
+  %r27947 = sub i64 %r27946, 1
+  %r27948 = mul i64 %r27947, 3
+  %r27949 = mul i64 %r27948, 8
+  %r27950 = add i64 %r27945, %r27949
+  ret i64 %r27950
+d27951:
   ret i64 0
 }
 define internal i64 @_rl_owner(i64 %p0) {
 entry:
-  %a27920 = alloca i64, align 8
-  %a27923 = alloca i64, align 8
-  %a27936 = alloca i64, align 8
-  %a27941 = alloca i64, align 8
-  %a27948 = alloca i64, align 8
-  %a27960 = alloca i64, align 8
+  %a27952 = alloca i64, align 8
+  %a27955 = alloca i64, align 8
+  %a27968 = alloca i64, align 8
+  %a27973 = alloca i64, align 8
+  %a27980 = alloca i64, align 8
+  %a27992 = alloca i64, align 8
   br label %start
 start:
-  store i64 %p0, ptr %a27920
-  %r27921 = load i64, ptr @rl_entry_n
-  %r27922 = sub i64 %r27921, 1
-  store i64 %r27922, ptr %a27923
-  br label %wh27924
-wh27924:
-  %r27927 = load i64, ptr %a27923
-  %r27929 = icmp sge i64 %r27927, 0
-  %r27928 = zext i1 %r27929 to i64
-  %r27930 = icmp ne i64 %r27928, 0
-  br i1 %r27930, label %wb27925, label %we27926
-wb27925:
-  %r27931 = load i64, ptr @rl_entries
-  %r27932 = load i64, ptr %a27923
-  %r27933 = mul i64 %r27932, 3
-  %r27934 = mul i64 %r27933, 8
-  %r27935 = add i64 %r27931, %r27934
-  store i64 %r27935, ptr %a27936
-  %r27937 = load i64, ptr %a27936
-  %r27938 = add i64 %r27937, 0
-  %r27940 = inttoptr i64 %r27938 to ptr
-  %r27939 = load i64, ptr %r27940, align 8
-  store i64 %r27939, ptr %a27941
-  %r27942 = load i64, ptr %a27941
-  %r27943 = load i64, ptr %a27936
-  %r27944 = add i64 %r27943, 8
-  %r27946 = inttoptr i64 %r27944 to ptr
-  %r27945 = load i64, ptr %r27946, align 8
-  %r27947 = add i64 %r27942, %r27945
-  store i64 %r27947, ptr %a27948
-  %r27952 = load i64, ptr %a27948
-  %r27953 = load i64, ptr %a27941
-  %r27955 = icmp ult i64 %r27952, %r27953
-  %r27954 = zext i1 %r27955 to i64
-  %r27956 = icmp ne i64 %r27954, 0
-  br i1 %r27956, label %it27949, label %ix27951
-it27949:
-  store i64 -1, ptr %a27948
-  br label %ix27951
-ix27951:
-  %r27963 = load i64, ptr %a27920
-  %r27964 = load i64, ptr %a27941
-  %r27966 = icmp uge i64 %r27963, %r27964
-  %r27965 = zext i1 %r27966 to i64
-  %r27967 = icmp ne i64 %r27965, 0
-  %r27968 = zext i1 %r27967 to i64
-  store i64 %r27968, ptr %a27960
-  br i1 %r27967, label %lr27961, label %ld27962
-lr27961:
-  %r27969 = load i64, ptr %a27920
-  %r27970 = load i64, ptr %a27948
-  %r27972 = icmp ult i64 %r27969, %r27970
-  %r27971 = zext i1 %r27972 to i64
-  %r27973 = icmp ne i64 %r27971, 0
-  %r27974 = zext i1 %r27973 to i64
-  store i64 %r27974, ptr %a27960
-  br label %ld27962
-ld27962:
-  %r27975 = load i64, ptr %a27960
-  %r27976 = icmp ne i64 %r27975, 0
-  br i1 %r27976, label %it27957, label %ix27959
-it27957:
-  %r27977 = load i64, ptr %a27936
-  ret i64 %r27977
-d27978:
-  br label %ix27959
-ix27959:
-  %r27979 = load i64, ptr %a27923
-  %r27980 = sub i64 %r27979, 1
-  store i64 %r27980, ptr %a27923
-  br label %wh27924
-we27926:
+  store i64 %p0, ptr %a27952
+  %r27953 = load i64, ptr @rl_entry_n
+  %r27954 = sub i64 %r27953, 1
+  store i64 %r27954, ptr %a27955
+  br label %wh27956
+wh27956:
+  %r27959 = load i64, ptr %a27955
+  %r27961 = icmp sge i64 %r27959, 0
+  %r27960 = zext i1 %r27961 to i64
+  %r27962 = icmp ne i64 %r27960, 0
+  br i1 %r27962, label %wb27957, label %we27958
+wb27957:
+  %r27963 = load i64, ptr @rl_entries
+  %r27964 = load i64, ptr %a27955
+  %r27965 = mul i64 %r27964, 3
+  %r27966 = mul i64 %r27965, 8
+  %r27967 = add i64 %r27963, %r27966
+  store i64 %r27967, ptr %a27968
+  %r27969 = load i64, ptr %a27968
+  %r27970 = add i64 %r27969, 0
+  %r27972 = inttoptr i64 %r27970 to ptr
+  %r27971 = load i64, ptr %r27972, align 8
+  store i64 %r27971, ptr %a27973
+  %r27974 = load i64, ptr %a27973
+  %r27975 = load i64, ptr %a27968
+  %r27976 = add i64 %r27975, 8
+  %r27978 = inttoptr i64 %r27976 to ptr
+  %r27977 = load i64, ptr %r27978, align 8
+  %r27979 = add i64 %r27974, %r27977
+  store i64 %r27979, ptr %a27980
+  %r27984 = load i64, ptr %a27980
+  %r27985 = load i64, ptr %a27973
+  %r27987 = icmp ult i64 %r27984, %r27985
+  %r27986 = zext i1 %r27987 to i64
+  %r27988 = icmp ne i64 %r27986, 0
+  br i1 %r27988, label %it27981, label %ix27983
+it27981:
+  store i64 -1, ptr %a27980
+  br label %ix27983
+ix27983:
+  %r27995 = load i64, ptr %a27952
+  %r27996 = load i64, ptr %a27973
+  %r27998 = icmp uge i64 %r27995, %r27996
+  %r27997 = zext i1 %r27998 to i64
+  %r27999 = icmp ne i64 %r27997, 0
+  %r28000 = zext i1 %r27999 to i64
+  store i64 %r28000, ptr %a27992
+  br i1 %r27999, label %lr27993, label %ld27994
+lr27993:
+  %r28001 = load i64, ptr %a27952
+  %r28002 = load i64, ptr %a27980
+  %r28004 = icmp ult i64 %r28001, %r28002
+  %r28003 = zext i1 %r28004 to i64
+  %r28005 = icmp ne i64 %r28003, 0
+  %r28006 = zext i1 %r28005 to i64
+  store i64 %r28006, ptr %a27992
+  br label %ld27994
+ld27994:
+  %r28007 = load i64, ptr %a27992
+  %r28008 = icmp ne i64 %r28007, 0
+  br i1 %r28008, label %it27989, label %ix27991
+it27989:
+  %r28009 = load i64, ptr %a27968
+  ret i64 %r28009
+d28010:
+  br label %ix27991
+ix27991:
+  %r28011 = load i64, ptr %a27955
+  %r28012 = sub i64 %r28011, 1
+  store i64 %r28012, ptr %a27955
+  br label %wh27956
+we27958:
   ret i64 0
-d27981:
+d28013:
   ret i64 0
 }
 define i64 @luna_mem_begin() {
 entry:
-  %a27990 = alloca i64, align 8
+  %a28022 = alloca i64, align 8
   br label %start
 start:
-  %r27985 = load i64, ptr @rl_inside
-  %r27986 = load i64, ptr @rl_mark_cap
-  %r27988 = icmp eq i64 %r27985, %r27986
-  %r27987 = zext i1 %r27988 to i64
-  %r27989 = icmp ne i64 %r27987, 0
-  br i1 %r27989, label %it27982, label %ix27984
-it27982:
-  store i64 8, ptr %a27990
-  %r27994 = load i64, ptr @rl_mark_cap
-  %r27996 = icmp ne i64 %r27994, 0
-  %r27995 = zext i1 %r27996 to i64
-  %r27997 = icmp ne i64 %r27995, 0
-  br i1 %r27997, label %it27991, label %ix27993
-it27991:
-  %r27998 = load i64, ptr @rl_mark_cap
-  %r27999 = mul i64 %r27998, 2
-  store i64 %r27999, ptr %a27990
-  br label %ix27993
-ix27993:
-  %r28000 = load i64, ptr @rl_marks
-  %r28001 = inttoptr i64 %r28000 to ptr
-  %r28002 = load i64, ptr %a27990
-  %r28003 = mul i64 %r28002, 8
-  %r28004 = call ptr @realloc(ptr %r28001, i64 %r28003)
-  %r28005 = ptrtoint ptr %r28004 to i64
-  store i64 %r28005, ptr @rl_marks
-  %r28006 = load i64, ptr %a27990
-  store i64 %r28006, ptr @rl_mark_cap
-  br label %ix27984
-ix27984:
-  %r28007 = load i64, ptr @rl_marks
-  %r28008 = load i64, ptr @rl_inside
-  %r28009 = mul i64 %r28008, 8
-  %r28010 = add i64 %r28007, %r28009
-  %r28011 = inttoptr i64 %r28010 to ptr
-  %r28012 = load i64, ptr @rl_defer_n
-  store i64 %r28012, ptr %r28011, align 8
-  %r28013 = load i64, ptr @rl_inside
-  %r28014 = add i64 %r28013, 1
-  store i64 %r28014, ptr @rl_inside
+  %r28017 = load i64, ptr @rl_inside
+  %r28018 = load i64, ptr @rl_mark_cap
+  %r28020 = icmp eq i64 %r28017, %r28018
+  %r28019 = zext i1 %r28020 to i64
+  %r28021 = icmp ne i64 %r28019, 0
+  br i1 %r28021, label %it28014, label %ix28016
+it28014:
+  store i64 8, ptr %a28022
+  %r28026 = load i64, ptr @rl_mark_cap
+  %r28028 = icmp ne i64 %r28026, 0
+  %r28027 = zext i1 %r28028 to i64
+  %r28029 = icmp ne i64 %r28027, 0
+  br i1 %r28029, label %it28023, label %ix28025
+it28023:
+  %r28030 = load i64, ptr @rl_mark_cap
+  %r28031 = mul i64 %r28030, 2
+  store i64 %r28031, ptr %a28022
+  br label %ix28025
+ix28025:
+  %r28032 = load i64, ptr @rl_marks
+  %r28033 = inttoptr i64 %r28032 to ptr
+  %r28034 = load i64, ptr %a28022
+  %r28035 = mul i64 %r28034, 8
+  %r28036 = call ptr @realloc(ptr %r28033, i64 %r28035)
+  %r28037 = ptrtoint ptr %r28036 to i64
+  store i64 %r28037, ptr @rl_marks
+  %r28038 = load i64, ptr %a28022
+  store i64 %r28038, ptr @rl_mark_cap
+  br label %ix28016
+ix28016:
+  %r28039 = load i64, ptr @rl_marks
+  %r28040 = load i64, ptr @rl_inside
+  %r28041 = mul i64 %r28040, 8
+  %r28042 = add i64 %r28039, %r28041
+  %r28043 = inttoptr i64 %r28042 to ptr
+  %r28044 = load i64, ptr @rl_defer_n
+  store i64 %r28044, ptr %r28043, align 8
+  %r28045 = load i64, ptr @rl_inside
+  %r28046 = add i64 %r28045, 1
+  store i64 %r28046, ptr @rl_inside
   ret i64 0
-d28015:
+d28047:
   ret i64 0
 }
 define i64 @luna_mem_end() {
 entry:
   br label %start
 start:
-  %r28019 = load i64, ptr @rl_inside
-  %r28021 = icmp eq i64 %r28019, 0
-  %r28020 = zext i1 %r28021 to i64
-  %r28022 = icmp ne i64 %r28020, 0
-  br i1 %r28022, label %it28016, label %ix28018
-it28016:
+  %r28051 = load i64, ptr @rl_inside
+  %r28053 = icmp eq i64 %r28051, 0
+  %r28052 = zext i1 %r28053 to i64
+  %r28054 = icmp ne i64 %r28052, 0
+  br i1 %r28054, label %it28048, label %ix28050
+it28048:
   ret i64 0
-d28023:
-  br label %ix28018
-ix28018:
-  %r28024 = load i64, ptr @rl_inside
-  %r28025 = sub i64 %r28024, 1
-  store i64 %r28025, ptr @rl_inside
-  %r28026 = load i64, ptr @rl_marks
-  %r28027 = load i64, ptr @rl_inside
-  %r28028 = mul i64 %r28027, 8
-  %r28029 = add i64 %r28026, %r28028
-  %r28031 = inttoptr i64 %r28029 to ptr
-  %r28030 = load i64, ptr %r28031, align 8
-  %r28032 = call i64 @luna_mem_run_defers(i64 %r28030)
+d28055:
+  br label %ix28050
+ix28050:
+  %r28056 = load i64, ptr @rl_inside
+  %r28057 = sub i64 %r28056, 1
+  store i64 %r28057, ptr @rl_inside
+  %r28058 = load i64, ptr @rl_marks
+  %r28059 = load i64, ptr @rl_inside
+  %r28060 = mul i64 %r28059, 8
+  %r28061 = add i64 %r28058, %r28060
+  %r28063 = inttoptr i64 %r28061 to ptr
+  %r28062 = load i64, ptr %r28063, align 8
+  %r28064 = call i64 @luna_mem_run_defers(i64 %r28062)
   ret i64 0
 }
 define i64 @luna_mem_free_ok(i64 %p0) {
 entry:
-  %a28033 = alloca i64, align 8
-  %a28036 = alloca i64, align 8
+  %a28065 = alloca i64, align 8
+  %a28068 = alloca i64, align 8
   br label %start
 start:
-  store i64 %p0, ptr %a28033
-  %r28034 = load i64, ptr %a28033
-  %r28035 = call i64 @_rl_exact(i64 %r28034)
-  store i64 %r28035, ptr %a28036
-  %r28040 = load i64, ptr %a28036
-  %r28042 = icmp eq i64 %r28040, 0
-  %r28041 = zext i1 %r28042 to i64
-  %r28043 = icmp ne i64 %r28041, 0
-  br i1 %r28043, label %it28037, label %ix28039
-it28037:
+  store i64 %p0, ptr %a28065
+  %r28066 = load i64, ptr %a28065
+  %r28067 = call i64 @_rl_exact(i64 %r28066)
+  store i64 %r28067, ptr %a28068
+  %r28072 = load i64, ptr %a28068
+  %r28074 = icmp eq i64 %r28072, 0
+  %r28073 = zext i1 %r28074 to i64
+  %r28075 = icmp ne i64 %r28073, 0
+  br i1 %r28075, label %it28069, label %ix28071
+it28069:
   ret i64 13
-d28044:
-  br label %ix28039
-ix28039:
-  %r28048 = load i64, ptr %a28036
-  %r28049 = add i64 %r28048, 16
-  %r28051 = inttoptr i64 %r28049 to ptr
-  %r28050 = load i64, ptr %r28051, align 8
-  %r28053 = icmp ne i64 %r28050, 0
-  %r28052 = zext i1 %r28053 to i64
-  %r28054 = icmp ne i64 %r28052, 0
-  br i1 %r28054, label %it28045, label %ix28047
-it28045:
+d28076:
+  br label %ix28071
+ix28071:
+  %r28080 = load i64, ptr %a28068
+  %r28081 = add i64 %r28080, 16
+  %r28083 = inttoptr i64 %r28081 to ptr
+  %r28082 = load i64, ptr %r28083, align 8
+  %r28085 = icmp ne i64 %r28082, 0
+  %r28084 = zext i1 %r28085 to i64
+  %r28086 = icmp ne i64 %r28084, 0
+  br i1 %r28086, label %it28077, label %ix28079
+it28077:
   ret i64 4
-d28055:
-  br label %ix28047
-ix28047:
-  %r28056 = load i64, ptr %a28036
-  %r28057 = add i64 %r28056, 16
-  %r28059 = inttoptr i64 %r28057 to ptr
-  store i64 1, ptr %r28059, align 8
+d28087:
+  br label %ix28079
+ix28079:
+  %r28088 = load i64, ptr %a28068
+  %r28089 = add i64 %r28088, 16
+  %r28091 = inttoptr i64 %r28089 to ptr
+  store i64 1, ptr %r28091, align 8
   ret i64 0
-d28060:
+d28092:
   ret i64 0
 }
 define i64 @luna_mem_deref_ok(i64 %p0) {
 entry:
-  %a28061 = alloca i64, align 8
-  %a28064 = alloca i64, align 8
+  %a28093 = alloca i64, align 8
+  %a28096 = alloca i64, align 8
   br label %start
 start:
-  store i64 %p0, ptr %a28061
-  %r28062 = load i64, ptr %a28061
-  %r28063 = call i64 @_rl_owner(i64 %r28062)
-  store i64 %r28063, ptr %a28064
-  %r28068 = load i64, ptr %a28064
-  %r28070 = icmp eq i64 %r28068, 0
-  %r28069 = zext i1 %r28070 to i64
-  %r28071 = icmp ne i64 %r28069, 0
-  br i1 %r28071, label %it28065, label %ix28067
-it28065:
+  store i64 %p0, ptr %a28093
+  %r28094 = load i64, ptr %a28093
+  %r28095 = call i64 @_rl_owner(i64 %r28094)
+  store i64 %r28095, ptr %a28096
+  %r28100 = load i64, ptr %a28096
+  %r28102 = icmp eq i64 %r28100, 0
+  %r28101 = zext i1 %r28102 to i64
+  %r28103 = icmp ne i64 %r28101, 0
+  br i1 %r28103, label %it28097, label %ix28099
+it28097:
   ret i64 13
-d28072:
-  br label %ix28067
-ix28067:
-  %r28076 = load i64, ptr %a28064
-  %r28077 = add i64 %r28076, 16
-  %r28079 = inttoptr i64 %r28077 to ptr
-  %r28078 = load i64, ptr %r28079, align 8
-  %r28081 = icmp ne i64 %r28078, 0
-  %r28080 = zext i1 %r28081 to i64
-  %r28082 = icmp ne i64 %r28080, 0
-  br i1 %r28082, label %it28073, label %ix28075
-it28073:
+d28104:
+  br label %ix28099
+ix28099:
+  %r28108 = load i64, ptr %a28096
+  %r28109 = add i64 %r28108, 16
+  %r28111 = inttoptr i64 %r28109 to ptr
+  %r28110 = load i64, ptr %r28111, align 8
+  %r28113 = icmp ne i64 %r28110, 0
+  %r28112 = zext i1 %r28113 to i64
+  %r28114 = icmp ne i64 %r28112, 0
+  br i1 %r28114, label %it28105, label %ix28107
+it28105:
   ret i64 4
-d28083:
-  br label %ix28075
-ix28075:
+d28115:
+  br label %ix28107
+ix28107:
   ret i64 0
-d28084:
+d28116:
   ret i64 0
 }
 define i64 @luna_mem_store_ok(i64 %p0) {
 entry:
-  %a28085 = alloca i64, align 8
+  %a28117 = alloca i64, align 8
   br label %start
 start:
-  store i64 %p0, ptr %a28085
-  %r28086 = load i64, ptr %a28085
-  %r28087 = call i64 @luna_mem_deref_ok(i64 %r28086)
-  ret i64 %r28087
-d28088:
+  store i64 %p0, ptr %a28117
+  %r28118 = load i64, ptr %a28117
+  %r28119 = call i64 @luna_mem_deref_ok(i64 %r28118)
+  ret i64 %r28119
+d28120:
   ret i64 0
 }
 define i64 @luna_mem_ptr_add_ok(i64 %p0, i64 %p1, i64 %p2) {
 entry:
-  %a28089 = alloca i64, align 8
-  %a28090 = alloca i64, align 8
-  %a28091 = alloca i64, align 8
-  %a28094 = alloca i64, align 8
-  %a28129 = alloca i64, align 8
+  %a28121 = alloca i64, align 8
+  %a28122 = alloca i64, align 8
+  %a28123 = alloca i64, align 8
+  %a28126 = alloca i64, align 8
+  %a28161 = alloca i64, align 8
   br label %start
 start:
-  store i64 %p0, ptr %a28089
-  store i64 %p1, ptr %a28090
-  store i64 %p2, ptr %a28091
-  %r28092 = load i64, ptr %a28089
-  %r28093 = call i64 @_rl_exact(i64 %r28092)
-  store i64 %r28093, ptr %a28094
-  %r28098 = load i64, ptr %a28094
-  %r28100 = icmp eq i64 %r28098, 0
-  %r28099 = zext i1 %r28100 to i64
-  %r28101 = icmp ne i64 %r28099, 0
-  br i1 %r28101, label %it28095, label %ix28097
-it28095:
+  store i64 %p0, ptr %a28121
+  store i64 %p1, ptr %a28122
+  store i64 %p2, ptr %a28123
+  %r28124 = load i64, ptr %a28121
+  %r28125 = call i64 @_rl_exact(i64 %r28124)
+  store i64 %r28125, ptr %a28126
+  %r28130 = load i64, ptr %a28126
+  %r28132 = icmp eq i64 %r28130, 0
+  %r28131 = zext i1 %r28132 to i64
+  %r28133 = icmp ne i64 %r28131, 0
+  br i1 %r28133, label %it28127, label %ix28129
+it28127:
   ret i64 13
-d28102:
-  br label %ix28097
-ix28097:
-  %r28106 = load i64, ptr %a28094
-  %r28107 = add i64 %r28106, 16
-  %r28109 = inttoptr i64 %r28107 to ptr
-  %r28108 = load i64, ptr %r28109, align 8
-  %r28111 = icmp ne i64 %r28108, 0
-  %r28110 = zext i1 %r28111 to i64
-  %r28112 = icmp ne i64 %r28110, 0
-  br i1 %r28112, label %it28103, label %ix28105
-it28103:
-  ret i64 4
-d28113:
-  br label %ix28105
-ix28105:
-  %r28117 = load i64, ptr %a28090
-  %r28118 = load i64, ptr %a28094
-  %r28119 = add i64 %r28118, 8
-  %r28121 = inttoptr i64 %r28119 to ptr
-  %r28120 = load i64, ptr %r28121, align 8
-  %r28123 = icmp uge i64 %r28117, %r28120
-  %r28122 = zext i1 %r28123 to i64
-  %r28124 = icmp ne i64 %r28122, 0
-  br i1 %r28124, label %it28114, label %ix28116
-it28114:
-  ret i64 3
-d28125:
-  br label %ix28116
-ix28116:
-  %r28126 = load i64, ptr %a28089
-  %r28127 = load i64, ptr %a28090
-  %r28128 = add i64 %r28126, %r28127
-  store i64 %r28128, ptr %a28129
-  %r28133 = load i64, ptr %a28129
-  %r28134 = load i64, ptr %a28089
-  %r28136 = icmp ult i64 %r28133, %r28134
-  %r28135 = zext i1 %r28136 to i64
-  %r28137 = icmp ne i64 %r28135, 0
-  br i1 %r28137, label %it28130, label %ix28132
-it28130:
-  store i64 -1, ptr %a28129
-  br label %ix28132
-ix28132:
-  %r28141 = load i64, ptr %a28091
-  %r28143 = icmp ne i64 %r28141, 0
+d28134:
+  br label %ix28129
+ix28129:
+  %r28138 = load i64, ptr %a28126
+  %r28139 = add i64 %r28138, 16
+  %r28141 = inttoptr i64 %r28139 to ptr
+  %r28140 = load i64, ptr %r28141, align 8
+  %r28143 = icmp ne i64 %r28140, 0
   %r28142 = zext i1 %r28143 to i64
   %r28144 = icmp ne i64 %r28142, 0
-  br i1 %r28144, label %it28138, label %ix28140
-it28138:
-  %r28145 = load i64, ptr %a28091
-  %r28146 = load i64, ptr %a28129
-  %r28148 = inttoptr i64 %r28145 to ptr
-  store i64 %r28146, ptr %r28148, align 8
-  br label %ix28140
-ix28140:
+  br i1 %r28144, label %it28135, label %ix28137
+it28135:
+  ret i64 4
+d28145:
+  br label %ix28137
+ix28137:
+  %r28149 = load i64, ptr %a28122
+  %r28150 = load i64, ptr %a28126
+  %r28151 = add i64 %r28150, 8
+  %r28153 = inttoptr i64 %r28151 to ptr
+  %r28152 = load i64, ptr %r28153, align 8
+  %r28155 = icmp uge i64 %r28149, %r28152
+  %r28154 = zext i1 %r28155 to i64
+  %r28156 = icmp ne i64 %r28154, 0
+  br i1 %r28156, label %it28146, label %ix28148
+it28146:
+  ret i64 3
+d28157:
+  br label %ix28148
+ix28148:
+  %r28158 = load i64, ptr %a28121
+  %r28159 = load i64, ptr %a28122
+  %r28160 = add i64 %r28158, %r28159
+  store i64 %r28160, ptr %a28161
+  %r28165 = load i64, ptr %a28161
+  %r28166 = load i64, ptr %a28121
+  %r28168 = icmp ult i64 %r28165, %r28166
+  %r28167 = zext i1 %r28168 to i64
+  %r28169 = icmp ne i64 %r28167, 0
+  br i1 %r28169, label %it28162, label %ix28164
+it28162:
+  store i64 -1, ptr %a28161
+  br label %ix28164
+ix28164:
+  %r28173 = load i64, ptr %a28123
+  %r28175 = icmp ne i64 %r28173, 0
+  %r28174 = zext i1 %r28175 to i64
+  %r28176 = icmp ne i64 %r28174, 0
+  br i1 %r28176, label %it28170, label %ix28172
+it28170:
+  %r28177 = load i64, ptr %a28123
+  %r28178 = load i64, ptr %a28161
+  %r28180 = inttoptr i64 %r28177 to ptr
+  store i64 %r28178, ptr %r28180, align 8
+  br label %ix28172
+ix28172:
   ret i64 0
-d28149:
+d28181:
   ret i64 0
 }
 define i64 @luna_mem_addr_ok(i64 %p0, i64 %p1) {
 entry:
-  %a28150 = alloca i64, align 8
-  %a28151 = alloca i64, align 8
+  %a28182 = alloca i64, align 8
+  %a28183 = alloca i64, align 8
   br label %start
 start:
-  store i64 %p0, ptr %a28150
-  store i64 %p1, ptr %a28151
-  %r28155 = load i64, ptr %a28151
-  %r28157 = icmp eq i64 %r28155, 0
-  %r28156 = zext i1 %r28157 to i64
-  %r28158 = icmp ne i64 %r28156, 0
-  br i1 %r28158, label %it28152, label %ix28154
-it28152:
+  store i64 %p0, ptr %a28182
+  store i64 %p1, ptr %a28183
+  %r28187 = load i64, ptr %a28183
+  %r28189 = icmp eq i64 %r28187, 0
+  %r28188 = zext i1 %r28189 to i64
+  %r28190 = icmp ne i64 %r28188, 0
+  br i1 %r28190, label %it28184, label %ix28186
+it28184:
   ret i64 5
-d28159:
-  br label %ix28154
-ix28154:
-  %r28163 = load i64, ptr %a28150
-  %r28164 = call i64 @_rl_owner(i64 %r28163)
-  %r28166 = icmp ne i64 %r28164, 0
-  %r28165 = zext i1 %r28166 to i64
-  %r28167 = icmp ne i64 %r28165, 0
-  br i1 %r28167, label %it28160, label %ix28162
-it28160:
+d28191:
+  br label %ix28186
+ix28186:
+  %r28195 = load i64, ptr %a28182
+  %r28196 = call i64 @_rl_owner(i64 %r28195)
+  %r28198 = icmp ne i64 %r28196, 0
+  %r28197 = zext i1 %r28198 to i64
+  %r28199 = icmp ne i64 %r28197, 0
+  br i1 %r28199, label %it28192, label %ix28194
+it28192:
   ret i64 1
-d28168:
-  br label %ix28162
-ix28162:
+d28200:
+  br label %ix28194
+ix28194:
   ret i64 0
-d28169:
+d28201:
   ret i64 0
 }
 define i64 @luna_mem_escape_ok(i64 %p0) {
 entry:
-  %a28170 = alloca i64, align 8
+  %a28202 = alloca i64, align 8
   br label %start
 start:
-  store i64 %p0, ptr %a28170
+  store i64 %p0, ptr %a28202
   ret i64 2
-d28171:
+d28203:
   ret i64 0
 }
 define i64 @luna_mem_cmp_ok(i64 %p0, i64 %p1, i64 %p2) {
 entry:
-  %a28172 = alloca i64, align 8
-  %a28173 = alloca i64, align 8
-  %a28174 = alloca i64, align 8
-  %a28178 = alloca i64, align 8
-  %a28196 = alloca i64, align 8
-  %a28207 = alloca i64, align 8
+  %a28204 = alloca i64, align 8
+  %a28205 = alloca i64, align 8
+  %a28206 = alloca i64, align 8
+  %a28210 = alloca i64, align 8
+  %a28228 = alloca i64, align 8
+  %a28239 = alloca i64, align 8
   br label %start
 start:
-  store i64 %p0, ptr %a28172
-  store i64 %p1, ptr %a28173
-  store i64 %p2, ptr %a28174
-  %r28181 = load i64, ptr %a28174
-  %r28183 = icmp eq i64 %r28181, 0
-  %r28182 = zext i1 %r28183 to i64
-  %r28184 = icmp ne i64 %r28182, 0
-  %r28185 = zext i1 %r28184 to i64
-  store i64 %r28185, ptr %a28178
-  br i1 %r28184, label %ld28180, label %lr28179
-lr28179:
-  %r28186 = load i64, ptr %a28174
-  %r28188 = icmp eq i64 %r28186, 1
-  %r28187 = zext i1 %r28188 to i64
-  %r28189 = icmp ne i64 %r28187, 0
-  %r28190 = zext i1 %r28189 to i64
-  store i64 %r28190, ptr %a28178
-  br label %ld28180
-ld28180:
-  %r28191 = load i64, ptr %a28178
-  %r28192 = icmp ne i64 %r28191, 0
-  br i1 %r28192, label %it28175, label %ix28177
-it28175:
+  store i64 %p0, ptr %a28204
+  store i64 %p1, ptr %a28205
+  store i64 %p2, ptr %a28206
+  %r28213 = load i64, ptr %a28206
+  %r28215 = icmp eq i64 %r28213, 0
+  %r28214 = zext i1 %r28215 to i64
+  %r28216 = icmp ne i64 %r28214, 0
+  %r28217 = zext i1 %r28216 to i64
+  store i64 %r28217, ptr %a28210
+  br i1 %r28216, label %ld28212, label %lr28211
+lr28211:
+  %r28218 = load i64, ptr %a28206
+  %r28220 = icmp eq i64 %r28218, 1
+  %r28219 = zext i1 %r28220 to i64
+  %r28221 = icmp ne i64 %r28219, 0
+  %r28222 = zext i1 %r28221 to i64
+  store i64 %r28222, ptr %a28210
+  br label %ld28212
+ld28212:
+  %r28223 = load i64, ptr %a28210
+  %r28224 = icmp ne i64 %r28223, 0
+  br i1 %r28224, label %it28207, label %ix28209
+it28207:
   ret i64 0
-d28193:
-  br label %ix28177
-ix28177:
-  %r28194 = load i64, ptr %a28172
-  %r28195 = call i64 @_rl_owner(i64 %r28194)
-  store i64 %r28195, ptr %a28196
-  %r28200 = load i64, ptr %a28196
-  %r28202 = icmp eq i64 %r28200, 0
-  %r28201 = zext i1 %r28202 to i64
-  %r28203 = icmp ne i64 %r28201, 0
-  br i1 %r28203, label %it28197, label %ix28199
-it28197:
+d28225:
+  br label %ix28209
+ix28209:
+  %r28226 = load i64, ptr %a28204
+  %r28227 = call i64 @_rl_owner(i64 %r28226)
+  store i64 %r28227, ptr %a28228
+  %r28232 = load i64, ptr %a28228
+  %r28234 = icmp eq i64 %r28232, 0
+  %r28233 = zext i1 %r28234 to i64
+  %r28235 = icmp ne i64 %r28233, 0
+  br i1 %r28235, label %it28229, label %ix28231
+it28229:
   ret i64 13
-d28204:
-  br label %ix28199
-ix28199:
-  %r28205 = load i64, ptr %a28173
-  %r28206 = call i64 @_rl_owner(i64 %r28205)
-  store i64 %r28206, ptr %a28207
-  %r28211 = load i64, ptr %a28207
-  %r28213 = icmp eq i64 %r28211, 0
-  %r28212 = zext i1 %r28213 to i64
-  %r28214 = icmp ne i64 %r28212, 0
-  br i1 %r28214, label %it28208, label %ix28210
-it28208:
+d28236:
+  br label %ix28231
+ix28231:
+  %r28237 = load i64, ptr %a28205
+  %r28238 = call i64 @_rl_owner(i64 %r28237)
+  store i64 %r28238, ptr %a28239
+  %r28243 = load i64, ptr %a28239
+  %r28245 = icmp eq i64 %r28243, 0
+  %r28244 = zext i1 %r28245 to i64
+  %r28246 = icmp ne i64 %r28244, 0
+  br i1 %r28246, label %it28240, label %ix28242
+it28240:
   ret i64 13
-d28215:
-  br label %ix28210
-ix28210:
-  %r28219 = load i64, ptr %a28196
-  %r28220 = add i64 %r28219, 0
-  %r28222 = inttoptr i64 %r28220 to ptr
-  %r28221 = load i64, ptr %r28222, align 8
-  %r28223 = load i64, ptr %a28207
-  %r28224 = add i64 %r28223, 0
-  %r28226 = inttoptr i64 %r28224 to ptr
-  %r28225 = load i64, ptr %r28226, align 8
-  %r28228 = icmp eq i64 %r28221, %r28225
-  %r28227 = zext i1 %r28228 to i64
-  %r28229 = icmp ne i64 %r28227, 0
-  br i1 %r28229, label %it28216, label %ix28218
-it28216:
+d28247:
+  br label %ix28242
+ix28242:
+  %r28251 = load i64, ptr %a28228
+  %r28252 = add i64 %r28251, 0
+  %r28254 = inttoptr i64 %r28252 to ptr
+  %r28253 = load i64, ptr %r28254, align 8
+  %r28255 = load i64, ptr %a28239
+  %r28256 = add i64 %r28255, 0
+  %r28258 = inttoptr i64 %r28256 to ptr
+  %r28257 = load i64, ptr %r28258, align 8
+  %r28260 = icmp eq i64 %r28253, %r28257
+  %r28259 = zext i1 %r28260 to i64
+  %r28261 = icmp ne i64 %r28259, 0
+  br i1 %r28261, label %it28248, label %ix28250
+it28248:
   ret i64 0
-d28230:
-  br label %ix28218
-ix28218:
+d28262:
+  br label %ix28250
+ix28250:
   ret i64 9
-d28231:
+d28263:
   ret i64 0
 }
 define i64 @luna_mem_cast_ok(i64 %p0, i64 %p1) {
 entry:
-  %a28232 = alloca i64, align 8
-  %a28233 = alloca i64, align 8
+  %a28264 = alloca i64, align 8
+  %a28265 = alloca i64, align 8
   br label %start
 start:
-  store i64 %p0, ptr %a28232
-  store i64 %p1, ptr %a28233
-  %r28237 = load i64, ptr %a28233
-  %r28239 = icmp eq i64 %r28237, 0
-  %r28238 = zext i1 %r28239 to i64
-  %r28240 = icmp ne i64 %r28238, 0
-  br i1 %r28240, label %it28234, label %ix28236
-it28234:
+  store i64 %p0, ptr %a28264
+  store i64 %p1, ptr %a28265
+  %r28269 = load i64, ptr %a28265
+  %r28271 = icmp eq i64 %r28269, 0
+  %r28270 = zext i1 %r28271 to i64
+  %r28272 = icmp ne i64 %r28270, 0
+  br i1 %r28272, label %it28266, label %ix28268
+it28266:
   ret i64 0
-d28241:
-  br label %ix28236
-ix28236:
+d28273:
+  br label %ix28268
+ix28268:
   ret i64 10
-d28242:
+d28274:
   ret i64 0
 }
 define i64 @luna_mem_alloc_size_ok(i64 %p0, i64 %p1) {
 entry:
-  %a28243 = alloca i64, align 8
-  %a28244 = alloca i64, align 8
-  %a28248 = alloca i64, align 8
+  %a28275 = alloca i64, align 8
+  %a28276 = alloca i64, align 8
+  %a28280 = alloca i64, align 8
   br label %start
 start:
-  store i64 %p0, ptr %a28243
-  store i64 %p1, ptr %a28244
-  %r28251 = load i64, ptr %a28244
-  %r28253 = icmp eq i64 %r28251, 0
-  %r28252 = zext i1 %r28253 to i64
-  %r28254 = icmp ne i64 %r28252, 0
-  %r28255 = zext i1 %r28254 to i64
-  store i64 %r28255, ptr %a28248
-  br i1 %r28254, label %ld28250, label %lr28249
-lr28249:
-  %r28256 = load i64, ptr %a28243
-  %r28258 = icmp sle i64 %r28256, 0
-  %r28257 = zext i1 %r28258 to i64
-  %r28259 = icmp ne i64 %r28257, 0
-  %r28260 = zext i1 %r28259 to i64
-  store i64 %r28260, ptr %a28248
-  br label %ld28250
-ld28250:
-  %r28261 = load i64, ptr %a28248
-  %r28262 = icmp ne i64 %r28261, 0
-  br i1 %r28262, label %it28245, label %ix28247
-it28245:
+  store i64 %p0, ptr %a28275
+  store i64 %p1, ptr %a28276
+  %r28283 = load i64, ptr %a28276
+  %r28285 = icmp eq i64 %r28283, 0
+  %r28284 = zext i1 %r28285 to i64
+  %r28286 = icmp ne i64 %r28284, 0
+  %r28287 = zext i1 %r28286 to i64
+  store i64 %r28287, ptr %a28280
+  br i1 %r28286, label %ld28282, label %lr28281
+lr28281:
+  %r28288 = load i64, ptr %a28275
+  %r28290 = icmp sle i64 %r28288, 0
+  %r28289 = zext i1 %r28290 to i64
+  %r28291 = icmp ne i64 %r28289, 0
+  %r28292 = zext i1 %r28291 to i64
+  store i64 %r28292, ptr %a28280
+  br label %ld28282
+ld28282:
+  %r28293 = load i64, ptr %a28280
+  %r28294 = icmp ne i64 %r28293, 0
+  br i1 %r28294, label %it28277, label %ix28279
+it28277:
   ret i64 8
-d28263:
-  br label %ix28247
-ix28247:
+d28295:
+  br label %ix28279
+ix28279:
   ret i64 0
-d28264:
+d28296:
   ret i64 0
 }
 define i64 @luna_mem_defer(i64 %p0) {
 entry:
-  %a28265 = alloca i64, align 8
-  %a28274 = alloca i64, align 8
+  %a28297 = alloca i64, align 8
+  %a28306 = alloca i64, align 8
   br label %start
 start:
-  store i64 %p0, ptr %a28265
-  %r28269 = load i64, ptr @rl_defer_n
-  %r28270 = load i64, ptr @rl_defer_cap
-  %r28272 = icmp eq i64 %r28269, %r28270
-  %r28271 = zext i1 %r28272 to i64
-  %r28273 = icmp ne i64 %r28271, 0
-  br i1 %r28273, label %it28266, label %ix28268
-it28266:
-  store i64 16, ptr %a28274
-  %r28278 = load i64, ptr @rl_defer_cap
-  %r28280 = icmp ne i64 %r28278, 0
-  %r28279 = zext i1 %r28280 to i64
-  %r28281 = icmp ne i64 %r28279, 0
-  br i1 %r28281, label %it28275, label %ix28277
-it28275:
-  %r28282 = load i64, ptr @rl_defer_cap
-  %r28283 = mul i64 %r28282, 2
-  store i64 %r28283, ptr %a28274
-  br label %ix28277
-ix28277:
-  %r28284 = load i64, ptr @rl_defers
-  %r28285 = inttoptr i64 %r28284 to ptr
-  %r28286 = load i64, ptr %a28274
-  %r28287 = mul i64 %r28286, 8
-  %r28288 = call ptr @realloc(ptr %r28285, i64 %r28287)
-  %r28289 = ptrtoint ptr %r28288 to i64
-  store i64 %r28289, ptr @rl_defers
-  %r28290 = load i64, ptr %a28274
-  store i64 %r28290, ptr @rl_defer_cap
-  br label %ix28268
-ix28268:
-  %r28291 = load i64, ptr @rl_defers
-  %r28292 = load i64, ptr @rl_defer_n
-  %r28293 = mul i64 %r28292, 8
-  %r28294 = add i64 %r28291, %r28293
-  %r28295 = inttoptr i64 %r28294 to ptr
-  %r28296 = load i64, ptr %a28265
-  store i64 %r28296, ptr %r28295, align 8
-  %r28297 = load i64, ptr @rl_defer_n
-  %r28298 = add i64 %r28297, 1
-  store i64 %r28298, ptr @rl_defer_n
+  store i64 %p0, ptr %a28297
+  %r28301 = load i64, ptr @rl_defer_n
+  %r28302 = load i64, ptr @rl_defer_cap
+  %r28304 = icmp eq i64 %r28301, %r28302
+  %r28303 = zext i1 %r28304 to i64
+  %r28305 = icmp ne i64 %r28303, 0
+  br i1 %r28305, label %it28298, label %ix28300
+it28298:
+  store i64 16, ptr %a28306
+  %r28310 = load i64, ptr @rl_defer_cap
+  %r28312 = icmp ne i64 %r28310, 0
+  %r28311 = zext i1 %r28312 to i64
+  %r28313 = icmp ne i64 %r28311, 0
+  br i1 %r28313, label %it28307, label %ix28309
+it28307:
+  %r28314 = load i64, ptr @rl_defer_cap
+  %r28315 = mul i64 %r28314, 2
+  store i64 %r28315, ptr %a28306
+  br label %ix28309
+ix28309:
+  %r28316 = load i64, ptr @rl_defers
+  %r28317 = inttoptr i64 %r28316 to ptr
+  %r28318 = load i64, ptr %a28306
+  %r28319 = mul i64 %r28318, 8
+  %r28320 = call ptr @realloc(ptr %r28317, i64 %r28319)
+  %r28321 = ptrtoint ptr %r28320 to i64
+  store i64 %r28321, ptr @rl_defers
+  %r28322 = load i64, ptr %a28306
+  store i64 %r28322, ptr @rl_defer_cap
+  br label %ix28300
+ix28300:
+  %r28323 = load i64, ptr @rl_defers
+  %r28324 = load i64, ptr @rl_defer_n
+  %r28325 = mul i64 %r28324, 8
+  %r28326 = add i64 %r28323, %r28325
+  %r28327 = inttoptr i64 %r28326 to ptr
+  %r28328 = load i64, ptr %a28297
+  store i64 %r28328, ptr %r28327, align 8
+  %r28329 = load i64, ptr @rl_defer_n
+  %r28330 = add i64 %r28329, 1
+  store i64 %r28330, ptr @rl_defer_n
   ret i64 0
 }
 define i64 @luna_mem_run_defers(i64 %p0) {
 entry:
-  %a28299 = alloca i64, align 8
+  %a28331 = alloca i64, align 8
   br label %start
 start:
-  store i64 %p0, ptr %a28299
-  br label %wh28300
-wh28300:
-  %r28303 = load i64, ptr @rl_defer_n
-  %r28304 = load i64, ptr %a28299
-  %r28306 = icmp sgt i64 %r28303, %r28304
-  %r28305 = zext i1 %r28306 to i64
-  %r28307 = icmp ne i64 %r28305, 0
-  br i1 %r28307, label %wb28301, label %we28302
-wb28301:
-  %r28308 = load i64, ptr @rl_defer_n
-  %r28309 = sub i64 %r28308, 1
-  store i64 %r28309, ptr @rl_defer_n
-  %r28310 = load i64, ptr @rl_defers
-  %r28311 = load i64, ptr @rl_defer_n
-  %r28312 = mul i64 %r28311, 8
-  %r28313 = add i64 %r28310, %r28312
-  %r28315 = inttoptr i64 %r28313 to ptr
-  %r28314 = load i64, ptr %r28315, align 8
-  %r28316 = call i64 @luna_mem_free_ok(i64 %r28314)
-  br label %wh28300
-we28302:
+  store i64 %p0, ptr %a28331
+  br label %wh28332
+wh28332:
+  %r28335 = load i64, ptr @rl_defer_n
+  %r28336 = load i64, ptr %a28331
+  %r28338 = icmp sgt i64 %r28335, %r28336
+  %r28337 = zext i1 %r28338 to i64
+  %r28339 = icmp ne i64 %r28337, 0
+  br i1 %r28339, label %wb28333, label %we28334
+wb28333:
+  %r28340 = load i64, ptr @rl_defer_n
+  %r28341 = sub i64 %r28340, 1
+  store i64 %r28341, ptr @rl_defer_n
+  %r28342 = load i64, ptr @rl_defers
+  %r28343 = load i64, ptr @rl_defer_n
+  %r28344 = mul i64 %r28343, 8
+  %r28345 = add i64 %r28342, %r28344
+  %r28347 = inttoptr i64 %r28345 to ptr
+  %r28346 = load i64, ptr %r28347, align 8
+  %r28348 = call i64 @luna_mem_free_ok(i64 %r28346)
+  br label %wh28332
+we28334:
   ret i64 0
 }
 define i64 @luna_mem_gc_store_ok(i64 %p0) {
 entry:
-  %a28317 = alloca i64, align 8
+  %a28349 = alloca i64, align 8
   br label %start
 start:
-  store i64 %p0, ptr %a28317
+  store i64 %p0, ptr %a28349
   ret i64 7
-d28318:
+d28350:
   ret i64 0
 }

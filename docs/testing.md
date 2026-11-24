@@ -19,7 +19,7 @@ compared with a recorded copy.
 | `luna unparse prog.lu` | Writes the program back as source, with every binary expression parenthesized |
 | `make round-trip` | Runs `tools/check_round_trip.sh`: for every Luna file in the project, parse, unparse, parse again, and require the same tree |
 | `make verify-ir` | Runs the tests and checks every generated IR file with LLVM's verifier (`opt-18`) |
-| `make fuzz` | Needs `python3`. `tools/fuzz_expressions.py` builds random int and bool expressions and compares what Luna prints with an independent evaluator; `tools/fuzz_programs.py` does the same for whole programs with loops, branches, functions and scoping, and also runs each program after `luna unparse` |
+| `make fuzz` | Needs `python3`. `tools/fuzz_expressions.py` builds random int and bool expressions and compares what Luna prints with an independent evaluator; `tools/fuzz_programs.py` does the same for whole programs with loops, branches, functions and scoping, and also runs each program after `luna unparse`; `tools/fuzz_annotations.py` builds random type annotations such as `list<map<float>>` and checks parsing, the unparse round trip, the result, and that a wrong element type is a Type Error |
 | `luna run bench/frontend_phases.lu file.lu` | Times the lexer, the parser and the type checker on a file |
 | `bench/instruction_count.sh [file.lu]` | Counts the machine instructions the lexer, parser and checker execute (needs valgrind). Counts do not depend on machine load, so they compare cleanly between changes |
 

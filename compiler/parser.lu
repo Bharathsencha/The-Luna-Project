@@ -231,12 +231,53 @@ func p_map_literal(line) {
     n.vals = vals
     return n
 }
+# A type annotation after ':' on a variable, a parameter or a field: a type name, and for list and
+# map an element type in angle brackets, as in list<int> or map<list<float>>. Returned as text.
+func p_type(what) {
+    if (not (P_kind == "id")) {
+        p_fail("Expected a type after ':' in {what}")
+    }
+    let name = p_next().v
+    if (not (P_kind == "<")) {
+        return name
+    }
+    if (name != "list" and name != "map") {
+        p_fail("Only list and map take an element type, for example list<int>")
+    }
+    p_next()
+    let inner = p_type(what)
+    p_close_angle()
+    return "{name}<{inner}>"
+}
+
+# The '>' that ends an element type. A '>>' or '>=' token is split: the first '>' is used up and the
+# rest stays as the current token.
+func p_close_angle() {
+    if (P_kind == ">") {
+        p_next()
+        return null
+    }
+    if (P_kind == ">>" or P_kind == ">=") {
+        let rest = ">"
+        if (P_kind == ">=") {
+            rest = "="
+        }
+        P_tk.t = rest
+        P_tk.v = rest
+        P_kind = rest
+        return null
+    }
+    p_fail("Expected '>' to close the element type")
+}
+
 func p_func_rest(name, line, is_export) {
     p_open("(", "Expected '('")
     p_scope_push()
     let params = []
     let defaults = []
+    let ptypes = []
     let has_default = false
+    let has_type = false
     while (not (P_kind == ")")) {
         if (not (P_kind == "id")) {
             p_fail("Expected parameter name")
@@ -244,6 +285,12 @@ func p_func_rest(name, line, is_export) {
         let pt = p_next()
         p_declare(pt.v, pt.line)
         append(params, pt.v)
+        if (p_eat(":")) {
+            append(ptypes, p_type("a parameter"))
+            has_type = true
+        } else {
+            append(ptypes, null)
+        }
         if (p_eat("=")) {
             append(defaults, p_expr())
             has_default = true
@@ -263,6 +310,9 @@ func p_func_rest(name, line, is_export) {
     n.name = name
     n.params = params
     n.defaults = defaults
+    if (has_type) {
+        n.ptypes = ptypes
+    }
     n.body = p_block_body()
     p_scope_pop()
     n.exported = is_export
@@ -532,6 +582,7 @@ func p_block_body() {
 func p_declaration(is_const, is_export) {
     let line = P_tk.line
     let names = []
+    let types = []
     let more = true
     while (more) {
         if (not (P_kind == "id")) {
@@ -540,6 +591,11 @@ func p_declaration(is_const, is_export) {
         let nt = p_next()
         p_declare(nt.v, nt.line)
         append(names, nt.v)
+        if (p_eat(":")) {
+            append(types, p_type("a variable"))
+        } else {
+            append(types, null)
+        }
         more = p_eat(",")
         if (more) {
             p_skip_nl()
@@ -573,6 +629,9 @@ func p_declaration(is_const, is_export) {
         }
         n.exported = is_export
         n.const_decl = is_const
+        if (types[i] != null) {
+            n.type = types[i]
+        }
         append(lets, n)
     }
     if (len(lets) == 1) {
@@ -643,6 +702,9 @@ func p_for_header(line) {
         init.name = name
         init.init = null
         init.exported = false
+        if (p_eat(":")) {
+            init.type = p_type("a variable")
+        }
         if (p_eat("=")) {
             init.init = p_expr()
         }
@@ -838,10 +900,7 @@ func p_field_type(word) {
         p_expect("]", "Expected ']' after the box size")
         return "box:{size}"
     }
-    if (not (P_kind == "id")) {
-        p_fail("Expected a type after ':' in a {word} field")
-    }
-    return p_next().v
+    return p_type("a {word} field")
 }
 
 # A data type has no field types. A bloc has types on all its fields or on none.

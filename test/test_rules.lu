@@ -8,7 +8,7 @@ func say(t) {
 bloc V { x, y }
 let made = 0
 for (let i in range(10000)) {
-    let v = V{i, i * 0.5}
+    let v = V{i, float(i) * 0.5}
     if (v.x == i) { made += 1 }
 }
 assert(made == 10000)

@@ -19,7 +19,9 @@ use { ll_call_out, ll_char, ll_condbr, ll_copy, ll_cstr, ll_float, ll_gname, ll_
 use { ll_kstr, ll_label, ll_mark, ll_new_ctx, ll_new_label, ll_null, ll_reg } from "ll_state.lu"
 use { ll_reg_global, ll_slot, ll_use_builtin, ll_use_native } from "ll_state.lu"
 use { at_top, cap_cell, declare, find_local_index, pop_scope, push_scope, resolve, run_defers } from "ll_scope.lu"
-use { var_get, var_set } from "ll_scope.lu"
+use { declare_typed, find_local, var_get, var_set } from "ll_scope.lu"
+use { box_raw, ty_load, ty_store, unbox_checked, uses_address } from "ll_unbox.lu"
+use { lit_int, skind, tex, tex_step } from "ll_typed.lu"
 use { check_program } from "check.lu"
 use { ST } from "state.lu"
 
@@ -243,21 +245,8 @@ func ll_truth_flag(slot) {
 
 # Expressions
 
-# An integer literal must fit in 64 bits; -9223372036854775808 is the one that needs the sign.
 func int_literal(n) {
-    let digits = n.v
-    let limit = "9223372036854775807"
-    if (starts_with(digits, "-")) {
-        digits = slice(digits, 1, len(digits))
-        limit = "9223372036854775808"
-    }
-    while (len(digits) > 1 and starts_with(digits, "0")) {
-        digits = slice(digits, 1, len(digits))
-    }
-    if (len(digits) > 19 or (len(digits) == 19 and digits > limit)) {
-        die("Syntax Error", n.line, "Integer literal {n.v} does not fit in 64 bits")
-    }
-    return ll_int(n.v)
+    return ll_int(lit_int(n))
 }
 
 func ex_list(nodes) {
@@ -431,6 +420,20 @@ func ex_incdec(n, as_statement) {
     if (n.op == "--") {
         op = "-"
     }
+    let r = resolve(n.name)
+    if (r.kind == "local" and (r.v.ty == "int" or r.v.ty == "float")) {
+        let kind = r.v.ty
+        let raw = ty_load(r.v)
+        let stepped = tex_step(kind, op, raw)
+        ty_store(r.v, stepped)
+        if (as_statement) {
+            return ll_null()
+        }
+        if (n.prefix == true) {
+            return box_raw(kind, stepped)
+        }
+        return box_raw(kind, raw)
+    }
     let cur = ex_id(n)
     let old = null
     if (n.prefix != true and not as_statement) {
@@ -483,6 +486,12 @@ func ex(n) {
     }
     if (k == "tmpl") {
         return ex_tmpl(n)
+    }
+    if (k == "bin" or k == "not") {
+        let sk = skind(n)
+        if (sk != null) {
+            return box_raw(sk, tex(n))
+        }
     }
     if (k == "bin") {
         return ex_bin(n)
@@ -612,6 +621,7 @@ func compile_function(n) {
     walk_nested(n.defaults, nested)
     child.nested = nested
     child.capmap = capmap
+    child.no_unbox = uses_address(n.body) or uses_address(n.defaults)
     ST.ctx = child
 
     let min_args = 0
@@ -625,7 +635,15 @@ func compile_function(n) {
     for (let i = 0; i < len(n.params); i++) {
         let slot = ll_reg()
         ll("{slot} = getelementptr inbounds %LV, ptr %argv, i64 {i}")
-        if (n.defaults[i] == null) {
+        let pk = null
+        if (n.ptypes != null and (n.ptypes[i] == "int" or n.ptypes[i] == "float" or n.ptypes[i] == "bool")) {
+            if (not child.no_unbox and nested[n.params[i]] == null) {
+                pk = n.ptypes[i]
+            }
+        }
+        if (n.defaults[i] == null and pk != null) {
+            declare_typed(n.params[i], pk, unbox_checked(slot, pk, n.params[i]))
+        } else if (n.defaults[i] == null) {
             declare(n.params[i], slot)
         } else {
             let v = declare(n.params[i], ll_null())
@@ -745,8 +763,34 @@ func copy_if_box(node, v) {
     return v
 }
 
+# The scalar kind a variable is kept raw as, or null: the checker proved the type, nothing captures
+# the variable and the function never takes an address.
+func raw_kind(n) {
+    let t = n.sty
+    if (ST.ctx.no_unbox or (t != "int" and t != "float" and t != "bool")) {
+        return null
+    }
+    if (ST.ctx.nested[n.name] != null) {
+        return null
+    }
+    return t
+}
+
 func st_let(n) {
     ll_mark(n.line)
+    if (not at_top() and n.init != null) {
+        let kind = raw_kind(n)
+        if (kind != null) {
+            let raw = null
+            if (skind(n.init) == kind) {
+                raw = tex(n.init)
+            } else {
+                raw = unbox_checked(ex(n.init), kind, n.name)
+            }
+            declare_typed(n.name, kind, raw)
+            return null
+        }
+    }
     let init_ptr = ll_null()
     if (n.init != null) {
         init_ptr = copy_if_box(n.init, ex(n.init))
@@ -789,10 +833,20 @@ func st_setidx(n) {
     ll("call void @lvp_index_set(ptr {t}, ptr {i}, ptr {v})")
 }
 
+# The i1 for a condition. A condition computed raw needs no LV; any other goes through the check
+# that it is a boolean.
+func cond_flag(e, line) {
+    if (skind(e) == "bool") {
+        ll_mark(line)
+        return tex(e)
+    }
+    let c = ex(e)
+    ll_mark(line)
+    return ll_truth_flag(c)
+}
+
 func st_if(n) {
-    let c = ex(n.cond)
-    ll_mark(n.line)
-    let flag = ll_truth_flag(c)
+    let flag = cond_flag(n.cond, n.line)
     let yes = ll_new_label("then")
     let no = ll_new_label("else")
     let done = ll_new_label("endif")
@@ -823,9 +877,7 @@ func st_while(n) {
     loop_push("loop", done, cond)
     ll_br(cond)
     ll_label(cond)
-    let c = ex(n.cond)
-    ll_mark(n.line)
-    ll_condbr(ll_truth_flag(c), body, done)
+    ll_condbr(cond_flag(n.cond, n.line), body, done)
     ll_label(body)
     st_block(n.body)
     ll_br(cond)
@@ -848,9 +900,7 @@ func st_for(n) {
     if (n.cond == null) {
         ll_br(body)
     } else {
-        let c = ex(n.cond)
-        ll_mark(n.line)
-        ll_condbr(ll_truth_flag(c), body, done)
+        ll_condbr(cond_flag(n.cond, n.line), body, done)
     }
     ll_label(body)
     st_block(n.body)
@@ -892,7 +942,12 @@ func st_forin(n) {
     let at = ll_reg()
     ll("{at} = load i64, ptr {idx}")
     let item = ll_call_out("lvp_iter_at", "ptr {prepared}, i64 {at}")
-    declare(n.name, item)
+    let kind = raw_kind(n)
+    if (kind != null) {
+        declare_typed(n.name, kind, unbox_checked(item, kind, n.name))
+    } else {
+        declare(n.name, item)
+    }
     for (let s in n.body) {
         st(s)
     }
@@ -1036,8 +1091,13 @@ func st(n) {
         st_funcdef(n)
     } else if (k == "assign") {
         ll_mark(n.line)
-        let v = copy_if_box(n.e, ex(n.e))
-        store_name(n.name, v)
+        let r = resolve(n.name)
+        if (r.kind == "local" and r.v.ty != null and skind(n.e) == r.v.ty) {
+            ty_store(r.v, tex(n.e))
+        } else {
+            let v = copy_if_box(n.e, ex(n.e))
+            store_name(n.name, v)
+        }
     } else if (k == "setidx") {
         st_setidx(n)
     } else if (k == "return") {
@@ -1134,6 +1194,11 @@ func define_types(stmts) {
                     append(type_texts, "ptr null")
                 } else {
                     typed = true
+                    # The runtime checks the container only; list<int> is judged at compile time.
+                    let lt = index_of(ft, "<")
+                    if (lt >= 0) {
+                        ft = slice(ft, 0, lt)
+                    }
                     append(type_texts, "ptr {ll_cstr(ft)}")
                 }
             }
@@ -1167,6 +1232,7 @@ func define_types(stmts) {
 # Compiles the statements of module m into a function named `fname`.
 func compile_module_body(m, stmts, fname) {
     ST.ctx = ll_new_ctx(true)
+    ST.ctx.no_unbox = uses_address(stmts)
     walk_nested(stmts, ST.ctx.nested)
     prescan_globals(stmts)
     ll("store ptr @mod_{m.id}, ptr @lv_pos_mod")
@@ -1202,6 +1268,7 @@ func compile_module(canon) {
     ST.src_lines = split_lines(text)
     decl_module_source(m, ST.src_lines)
     let stmts = parse_program(lex(text, 1))
+    check_program(stmts)
     collect_exports(stmts, m.exports)
     compile_module_body(m, stmts, "mod_{m.id}_run")
     m.state = "done"
@@ -1331,6 +1398,7 @@ func declarations() {
     append(d, "declare %LV @lv_addr_invalid(i32)")
     append(d, "declare void @lv_arity(ptr, i32, i32, i32)")
     append(d, "declare void @lv_name_error(ptr, ptr, ptr, ptr)")
+    append(d, "declare void @lvv_unbox_fail(ptr, i64, i64, i64)")
     append(d, "declare i32 @lv_main(i32, ptr, ptr)")
     for (let b in LL_BUILTINS) {
         append(d, "declare %LV @lb_{b}(ptr, i32, ptr)")

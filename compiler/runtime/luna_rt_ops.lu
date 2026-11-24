@@ -1056,6 +1056,22 @@ func lvv_truth(t, p) {
     return lvp_truth(a)
 }
 
+# A value that does not have the type its variable is kept in registers as (int, float or boolean).
+# The checker proved the type, so this only happens when a value came from code it cannot see.
+func lvv_unbox_fail(name, want_i, t, p) {
+    let a = stack_buf(16)
+    _set(a, t, p)
+    let want = cstr("an int")
+    if (want_i == T_FLOAT) {
+        want = cstr("a float")
+    }
+    if (want_i == T_BOOL) {
+        want = cstr("a boolean")
+    }
+    _errf(E_TYPE, cstr("The type checker could not follow where this value came from"),
+          cstr("variable '%s' must be %s, got %s"), name, want, _type_name(a))
+}
+
 func lvv_global_store_check(t, p, in_function_i) {
     let a = stack_buf(16)
     _set(a, t, p)

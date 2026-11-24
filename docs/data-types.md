@@ -23,7 +23,8 @@ bloc Packet { id: int, payload: box[16] }
 ```
 
 A field type is `int`, `float`, `bool`, `char`, `string`, `list`, `map`, `function`, the name of a
-`bloc` or `template`, or `box[N]`. A value of another type is an error when the object is built
+`bloc` or `template`, or `box[N]`. `list<int>` and `map<float>` give the items a type, which the
+compiler checks; at run time only `list` or `map` is checked. A value of another type is an error when the object is built
 and when a field is assigned: `Template 'Player' field 'hp' must be an int, got string`. A whole
 number written in the source adapts to a float field (`Vec{1, 2}` has floats); a variable never
 does. A `bloc` types all its fields or none. `data` fields have no types.

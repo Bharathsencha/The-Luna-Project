@@ -78,6 +78,7 @@ verify-ir: $(BINDIR)/luna
 fuzz: $(BINDIR)/luna
 	@python3 tools/fuzz_expressions.py --programs 30 --per-program 100
 	@python3 tools/fuzz_programs.py --programs 40
+	@python3 tools/fuzz_annotations.py --count 60
 
 round-trip: $(BINDIR)/luna
 	@tools/check_round_trip.sh

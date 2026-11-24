@@ -73,10 +73,14 @@ func exprs(list) {
 func params_text(n) {
     let parts = []
     for (let i = 0; i < len(n.params); i++) {
+        let pname = n.params[i]
+        if (n.ptypes != null and n.ptypes[i] != null) {
+            pname = "{pname}: {n.ptypes[i]}"
+        }
         if (n.defaults[i] == null) {
-            append(parts, n.params[i])
+            append(parts, pname)
         } else {
-            append(parts, "{n.params[i]} = {expr(n.defaults[i])}")
+            append(parts, "{pname} = {expr(n.defaults[i])}")
         }
     }
     return join(parts, ", ")
@@ -180,10 +184,14 @@ func let_text(n) {
     if (n.exported == true) {
         head = "export {word}"
     }
-    if (n.init == null) {
-        return "{head} {n.name}"
+    let target = n.name
+    if (n.type != null) {
+        target = "{target}: {n.type}"
     }
-    return "{head} {n.name} = {expr(n.init)}"
+    if (n.init == null) {
+        return "{head} {target}"
+    }
+    return "{head} {target} = {expr(n.init)}"
 }
 
 func block_text(stmts, depth) {
@@ -224,7 +232,11 @@ func stmt_body(n, depth) {
         let names = []
         let vals = []
         for (let item in n.items) {
-            append(names, item.name)
+            if (item.type != null) {
+                append(names, "{item.name}: {item.type}")
+            } else {
+                append(names, item.name)
+            }
             if (item.init != null) {
                 append(vals, expr(item.init))
             }
